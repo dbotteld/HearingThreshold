@@ -1,4 +1,4 @@
-@prefix ex: <https://ugentbe.sharepoint.com/sites/PR202202038/WPs/Forms/AllItems.aspx?id=%2Fsites%2FPR202202038%2FWPs%2FWP02%20%2D%20Modelling%20spatio%2Dtemporal%20impacts%20at%20regional%20scale%2FWP02%2E2%2Fhearing&viewid=a4c6d690%2D2c2e%2D4ccd%2D9d80%2Df8ed23d8bb88> .
+@prefix ex: <https://github.com/dbotteld/HearingThreshold/blob/main/> .
 @prefix gbif: <https://www.gbif.org/species/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
