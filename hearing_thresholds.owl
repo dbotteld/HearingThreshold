@@ -1,0 +1,87 @@
+@prefix ex: <https://ugentbe.sharepoint.com/sites/PR202202038/WPs/Forms/AllItems.aspx?id=%2Fsites%2FPR202202038%2FWPs%2FWP02%20%2D%20Modelling%20spatio%2Dtemporal%20impacts%20at%20regional%20scale%2FWP02%2E2%2Fhearing&viewid=a4c6d690%2D2c2e%2D4ccd%2D9d80%2Df8ed23d8bb88> .
+@prefix gbif: <https://www.gbif.org/species/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:frequency a owl:DatatypeProperty ;
+    rdfs:label "frequency [Hz]"@en ;
+    rdfs:domain ex:HearingThresholdMeasurement ;
+    rdfs:range xsd:double .
+
+ex:hasHearingThresholdCampaign a owl:ObjectProperty ;
+    rdfs:label "has HT Measurement Campaign"@en ;
+    rdfs:domain ex:Animal ;
+    rdfs:range ex:HearingThresholdMeasurementCampaign .
+
+ex:hasMeasurement a owl:ObjectProperty ;
+    rdfs:label "contain frequency-level pair"@en .
+
+ex:measuredOnTaxon a owl:ObjectProperty ;
+    rdfs:label "is measured on Taxon"@en ;
+    rdfs:domain ex:HearingThresholdMeasurementCampaign ;
+    rdfs:range ex:Animal .
+
+ex:partOf a owl:ObjectProperty ;
+    rdfs:label "is part of"@en ;
+    rdfs:domain ex:HearingThresholdMeasurement ;
+    rdfs:range ex:HearingThresholdMeasurementCampaign .
+
+ex:thresholdLevel a owl:DatatypeProperty ;
+    rdfs:label "threshold [dB]"@en ;
+    rdfs:domain ex:HearingThresholdMeasurement ;
+    rdfs:range xsd:double .
+
+ex:usesMeasurementMethod a owl:ObjectProperty ;
+    rdfs:label "uses Measurement Method"@en ;
+    rdfs:domain ex:HearingThresholdMeasurementCampaign ;
+    rdfs:range ex:MeasurementMethod .
+
+ex:ABR a ex:MeasurementMethod ;
+    rdfs:label "Auditory Brainstem Response"@en .
+
+ex:Aves a owl:Class ;
+    rdfs:label "Birds (Aves)"@en ;
+    rdfs:subClassOf ex:Animal .
+
+ex:HT_1000Hz a ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+03 ;
+    ex:partOf ex:Campaign_Robin_ABR_2021 ;
+    ex:thresholdLevel 2e+01 .
+
+ex:HT_2000Hz a ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+03 ;
+    ex:partOf ex:Campaign_Robin_ABR_2021 ;
+    ex:thresholdLevel 1.5e+01 .
+
+ex:HT_4000Hz a ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+03 ;
+    ex:partOf ex:Campaign_Robin_ABR_2021 ;
+    ex:thresholdLevel 2.5e+01 .
+
+ex:Robin a owl:Class ;
+    rdfs:label "Robin"@en ;
+    rdfs:seeAlso gbif:2492462 ;
+    rdfs:subClassOf ex:Aves ;
+    ex:hasHearingThresholdCampaign ex:Campaign_Robin_ABR_2021 .
+
+ex:MeasurementMethod a owl:Class ;
+    rdfs:label "Measurement Method"@en .
+
+ex:Animal a owl:Class ;
+    rdfs:label "Animal"@en .
+
+ex:Campaign_Robin_ABR_2021 a ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Robin ABR hearing study (2021)"@en ;
+    ex:hasMeasurement ex:HT_1000Hz,
+        ex:HT_2000Hz,
+        ex:HT_4000Hz ;
+    ex:measuredOnTaxon ex:Robin ;
+    ex:usesMeasurementMethod ex:ABR .
+
+ex:HearingThresholdMeasurementCampaign a owl:Class ;
+    rdfs:label "Hearing Threshold Measurement Campaign"@en .
+
+ex:HearingThresholdMeasurement a owl:Class ;
+    rdfs:label "Hearing Threshold Measurement"@en .
+
