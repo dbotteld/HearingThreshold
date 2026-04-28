@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hearing thresholds</title>
+  <script src="https://rdf.js.org/comunica-browser/versions/v5/engines/query-sparql/comunica-browser.js"></script>
+</head>
+
+<body>
+  <h1>Hearing-threshold data</h1>
+
+  <!-- STEP 1: select animal -->
+  <label>
+    Animal:
+    <select id="animalSelect">
+      <option value="">-- select animal --</option>
+    </select>
+  </label>
+
+  <!-- STEP 2: select campaign -->
+  <label>
+    Campaign:
+    <select id="campaignSelect" disabled>
+      <option value="">-- select campaign --</option>
+    </select>
+  </label>
+
+  <!-- STEP 3: display campaign + table -->
+  <h2 id="campaignLabel"></h2>
+
+  <table id="htTable" border="1">
+    <thead>
+      <tr>
+        <th>Frequency (Hz)</th>
+        <th>Threshold (dB)</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+    const SOURCE = [
+      "https://raw.githubusercontent.com/dbotteld/HearingThreshold/main/hearing_thresholds.ttl"
+    ];
+
+    const engine = new Comunica.QueryEngine();
+
+    async function loadAnimals() {
+      console.log("Loading animals...");
+	  const query = `
+        PREFIX ex: <https://github.com/dbotteld/HearingThreshold/blob/main/>
+        
+        SELECT ?animal ?label
+        WHERE {
+			?animal rdfs:subClassOf+ ex:Animal ;
+				rdfs:label ?label .
+        }
+        ORDER BY ?label
+      `;
+
+	  const result = await engine.queryBindings(query, {
+			sources: [
+      "https://raw.githubusercontent.com/dbotteld/HearingThreshold/main/hearing_thresholds.ttl"
+			]
+	  });
+      const animalSelect = document.getElementById("animalSelect");
+
+      for await (const b of result) {
+        const opt = document.createElement("option");
+        opt.value = b.get("animal").value;
+        opt.textContent = b.get("label").value;
+		console.log(opt);
+        animalSelect.appendChild(opt);
+      }
+	  console.log(animalSelect);
+    }
+
+    document.getElementById("animalSelect").addEventListener("change", async (e) => {
+      const animalIRI = e.target.value;
+      const campaignSelect = document.getElementById("campaignSelect");
+
+      campaignSelect.innerHTML = "<option value=''>-- select campaign --</option>";
+      campaignSelect.disabled = !animalIRI;
+      document.getElementById("campaignLabel").textContent = "";
+      document.querySelector("#htTable tbody").innerHTML = "";
+
+      if (!animalIRI) return;
+
+      const query = `
+        PREFIX ex: <https://github.com/dbotteld/HearingThreshold/blob/main/>
+
+        SELECT ?campaign ?label
+        WHERE {
+          <${animalIRI}> ex:hasHearingThresholdCampaign ?campaign .
+          ?campaign rdfs:label ?label .
+        }
+        ORDER BY ?label
+      `;
+
+      const result = await engine.queryBindings(query, { sources: SOURCE });
+
+      for await (const b of result) {
+        const opt = document.createElement("option");
+        opt.value = b.get("campaign").value;
+        opt.textContent = b.get("label").value;
+        campaignSelect.appendChild(opt);
+      }
+    });
+
+    document.getElementById("campaignSelect").addEventListener("change", async (e) => {
+      const campaignIRI = e.target.value;
+      const tbody = document.querySelector("#htTable tbody");
+      tbody.innerHTML = "";
+
+      if (!campaignIRI) return;
+
+      document.getElementById("campaignLabel").textContent =
+        e.target.selectedOptions[0].textContent;
+
+      const query = `
+        PREFIX ex: <https://github.com/dbotteld/HearingThreshold/blob/main/>
+
+        SELECT ?frequency ?threshold
+        WHERE {
+          ?m a ex:HearingThresholdMeasurement ;
+             ex:partOf <${campaignIRI}> ;
+             ex:frequency ?frequency ;
+             ex:thresholdLevel ?threshold .
+        }
+        ORDER BY ?frequency
+      `;
+
+      const result = await engine.queryBindings(query, { sources: SOURCE });
+
+      for await (const b of result) {
+        const tr = document.createElement("tr");
+
+        const freqTd = document.createElement("td");
+        freqTd.textContent = b.get("frequency").value;
+
+        const thrTd = document.createElement("td");
+        thrTd.textContent = b.get("threshold").value;
+
+        tr.appendChild(freqTd);
+        tr.appendChild(thrTd);
+        tbody.appendChild(tr);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadAnimals();
+    });
+  </script>
+
+</body>
+</html>
