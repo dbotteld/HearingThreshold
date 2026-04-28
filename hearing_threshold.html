@@ -1,10 +1,10 @@
-<script type="module">
-  import { QueryEngine } from "https://cdn.jsdelivr.net/npm/@comunica/query-sparql@latest/+esm";
-
-  const engine = new QueryEngine();
+<script src="http://rdf.js.org/comunica-browser/versions/v5/engines/query-sparql/comunica-browser.js"></script>
+<script language="JavaScript">
+  (async function() {
+  const engine = new Comunica.QueryEngine();
 
   const query = `
-    PREFIX ex: <ttps://github.com/dbotteld/HearingThreshold/blob/main/>
+    PREFIX ex: <https://github.com/dbotteld/HearingThreshold/blob/main/>
     SELECT ?campaign WHERE {
       ?campaign a ex:HearingThresholdMeasurementCampaign ;
                 ex:measuredOnTaxon ex:Robin .
@@ -13,11 +13,12 @@
 
   const result = await engine.queryBindings(query, {
     sources: [
-      "https://github.com/dbotteld/HearingThreshold/blob/main/hearing_thresholds.owl"
+      "https://raw.githubusercontent.com/dbotteld/HearingThreshold/refs/heads/main/hearing_thresholds.ttl"
     ]
   });
 
   for await (const b of result) {
     console.log(b.get("campaign").value);
   }
+  })();
 </script>
