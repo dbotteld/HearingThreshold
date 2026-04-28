@@ -1,24 +1,42 @@
-<script src="http://rdf.js.org/comunica-browser/versions/v5/engines/query-sparql/comunica-browser.js"></script>
-<script language="JavaScript">
-  (async function() {
-  const engine = new Comunica.QueryEngine();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hearing thresholds</title>
+</head>
 
-  const query = `
-    PREFIX ex: <https://github.com/dbotteld/HearingThreshold/blob/main/>
-    SELECT ?campaign WHERE {
-      ?campaign a ex:HearingThresholdMeasurementCampaign ;
-                ex:measuredOnTaxon ex:Robin .
-    }
-  `;
+<body>
+	<h1>Hearing-threshold measurement campaigns (Robin)</h1>
+	<ul id="results"></ul>
+	
+	<script src="http://rdf.js.org/comunica-browser/versions/v5/engines/query-sparql/comunica-browser.js"></script>
+	<script language="JavaScript">
+		(async function() {
+		const engine = new Comunica.QueryEngine();
 
-  const result = await engine.queryBindings(query, {
-    sources: [
-      "https://raw.githubusercontent.com/dbotteld/HearingThreshold/refs/heads/main/hearing_thresholds.ttl"
-    ]
-  });
+		const query = `
+			PREFIX ex: <https://github.com/dbotteld/HearingThreshold/blob/main/>
+			SELECT ?campaign WHERE {
+				?campaign a ex:HearingThresholdMeasurementCampaign ;
+					ex:measuredOnTaxon ex:Robin .
+			}
+		`;
 
-  for await (const b of result) {
-    console.log(b.get("campaign").value);
-  }
-  })();
-</script>
+		const result = await engine.queryBindings(query, {
+			sources: [
+				"https://raw.githubusercontent.com/dbotteld/HearingThreshold/refs/heads/main/hearing_thresholds.ttl"
+			]
+		});
+		
+		const list = document.getElementById("results");
+		
+
+		for await (const b of result) {
+			const li = document.createElement("li");
+			li.textContent = b.get("campaign").value;
+			list.appendChild(li);
+		}
+	})();
+	</script>
+</body>
+</html>
