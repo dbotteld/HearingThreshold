@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hearing Threshold Database</title>
+  <meta name="description" content="Browse animal hearing-threshold measurement campaigns by species, method, frequency and threshold level." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Hearing Threshold Database home">
+        <span class="brand-mark">HT</span>
+        <span>
+          <strong>Hearing Threshold</strong>
+          <small>Ontology Browser</small>
+        </span>
+      </a>
+      <div class="nav-links">
+        <a href="#browse">Browse species</a>
+        <a href="#about">About</a>
+        <a href="#data">Data</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <p class="eyebrow">Open ontology viewer for animal hearing-threshold data</p>
+        <h1>Search species and explore hearing-threshold measurement campaigns.</h1>
+        <p class="hero-text">
+          A simple public-facing website for browsing scientific names, common names,
+          measurement methods, publication metadata, and frequency-threshold curves.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#browse">Start browsing</a>
+          <a class="button secondary" href="#data">View project structure</a>
+        </div>
+      </div>
+
+      <aside class="hero-panel" aria-label="Database overview">
+        <div class="mini-card">
+          <span class="mini-label">Species</span>
+          <strong id="heroSpecies">—</strong>
+        </div>
+        <div class="mini-card">
+          <span class="mini-label">Campaigns</span>
+          <strong id="heroCampaigns">—</strong>
+        </div>
+        <div class="mini-card">
+          <span class="mini-label">Measurements</span>
+          <strong id="heroMeasurements">—</strong>
+        </div>
+        <div class="source-box">
+          <span>Source</span>
+          <strong id="sourceFile">Ontology data</strong>
+        </div>
+      </aside>
+    </section>
+
+    <section class="stats-strip shell" aria-label="Database statistics">
+      <article>
+        <span>Frequency range</span>
+        <strong id="freqRange">—</strong>
+      </article>
+      <article>
+        <span>Threshold range</span>
+        <strong id="thresholdRange">—</strong>
+      </article>
+      <article>
+        <span>Methods</span>
+        <strong id="methodCount">—</strong>
+      </article>
+      <article>
+        <span>Selected species</span>
+        <strong id="selectedSpeciesStat">—</strong>
+      </article>
+    </section>
+
+    <section id="browse" class="browser shell">
+      <div class="section-heading">
+        <p class="eyebrow">Browse ontology</p>
+        <h2>Select by scientific name or common name</h2>
+        <p>
+          Search on either name. After selecting a species, choose a measurement campaign
+          to display its metadata, chart and raw table.
+        </p>
+      </div>
+
+      <div class="browser-grid">
+        <aside class="species-panel card">
+          <div class="panel-top">
+            <div>
+              <h3>Species</h3>
+              <p id="speciesCountText">—</p>
+            </div>
+            <button id="clearSearch" class="icon-button" title="Clear search" type="button">×</button>
+          </div>
+
+          <label class="search-label" for="speciesSearch">Search</label>
+          <div class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input id="speciesSearch" type="search" placeholder="e.g. dog, Sturnus vulgaris, bat" autocomplete="off" />
+          </div>
+
+          <div id="speciesList" class="species-list" aria-live="polite"></div>
+        </aside>
+
+        <section class="detail-panel">
+          <article class="species-summary card">
+            <div>
+              <p class="common-name" id="commonName">—</p>
+              <h3 id="scientificName">—</h3>
+              <p class="taxonomy" id="taxonomyPath">—</p>
+            </div>
+            <div class="summary-badges" id="summaryBadges"></div>
+          </article>
+
+          <article class="campaign-card card">
+            <div class="campaign-header">
+              <div>
+                <p class="eyebrow">Measurement campaign</p>
+                <h3 id="campaignTitle">—</h3>
+              </div>
+              <label class="select-wrap">
+                <span>Campaign</span>
+                <select id="campaignSelect"></select>
+              </label>
+            </div>
+
+            <dl class="metadata-grid" id="metadataGrid"></dl>
+          </article>
+
+          <div class="visual-grid">
+            <article class="chart-card card">
+              <div class="chart-header">
+                <div>
+                  <p class="eyebrow">Audiogram</p>
+                  <h3>Frequency vs threshold</h3>
+                </div>
+                <button id="downloadCsv" class="button small" type="button">Download CSV</button>
+              </div>
+              <div id="chartWrap" class="chart-wrap" role="img" aria-label="Hearing threshold chart"></div>
+              <p class="chart-note">X-axis uses a logarithmic frequency scale. Y-axis shows threshold level in dB SPL.</p>
+            </article>
+
+            <article class="table-card card">
+              <div class="table-header">
+                <p class="eyebrow">Raw measurements</p>
+                <h3>Frequency table</h3>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Frequency</th>
+                      <th>Threshold</th>
+                    </tr>
+                  </thead>
+                  <tbody id="measurementTable"></tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="about" class="about shell">
+      <div class="section-heading narrow">
+        <p class="eyebrow">What this website is doing</p>
+        <h2>A clean front end for an ontology-backed hearing-threshold database.</h2>
+      </div>
+      <div class="steps">
+        <article class="card step">
+          <span>1</span>
+          <h3>Ontology data</h3>
+          <p>The species, campaigns, methods, publications and frequency-threshold pairs are stored as structured ontology data.</p>
+        </article>
+        <article class="card step">
+          <span>2</span>
+          <h3>Static data file</h3>
+          <p>The ontology is converted into a simple JavaScript data file so the site can run on GitHub Pages without a server.</p>
+        </article>
+        <article class="card step">
+          <span>3</span>
+          <h3>Interactive browser</h3>
+          <p>Visitors can search common or scientific names, select campaigns, and view the audiogram as a chart and table.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="data" class="data-section shell">
+      <article class="card data-card">
+        <div>
+          <p class="eyebrow">GitHub Pages ready</p>
+          <h2>How to publish</h2>
+          <p>
+            Upload these files to a GitHub repository, then enable GitHub Pages from the repository settings.
+            No backend is needed for this first version.
+          </p>
+        </div>
+        <pre><code>index.html
+styles.css
+app.js
+data.js</code></pre>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <p>Hearing Threshold Ontology Browser · Static website prototype</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
