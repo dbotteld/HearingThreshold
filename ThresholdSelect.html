@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hearing Thresholds</title>
+  <script src="n3.bundle.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <style>
+    body { font-family: sans-serif; font-size: 14px; margin: 20px; }
+    h1 { font-size: 18px; margin-bottom: 16px; }
+    label { display: block; margin-bottom: 4px; font-weight: bold; }
+    select { width: 320px; margin-bottom: 16px; display: block; }
+    #status { color: #666; font-size: 12px; margin-bottom: 12px; }
+    #metaCard { border: 1px solid #ccc; padding: 12px; margin-bottom: 16px;
+                display: none; width: 520px; background: #fafafa; }
+    #metaCard table { border: none; margin: 0; width: 100%; }
+    #metaCard td { border: none; padding: 3px 8px 3px 0; vertical-align: top; }
+    #metaCard td:first-child { color: #666; width: 80px; white-space: nowrap; }
+    table.ht { border-collapse: collapse; margin-top: 16px; }
+    table.ht th, table.ht td { border: 1px solid #ccc; padding: 6px 12px; text-align: left; }
+    table.ht th { background: #f0f0f0; }
+    #htChart { margin-top: 16px; max-width: 700px; display: none; }
+  </style>
+</head>
+<body>
+
+<h1>Hearing Thresholds</h1>
+
+<label>OWL / Turtle file:</label>
+<input type="file" id="fileInput" accept=".owl,.ttl,.turtle,.n3">
+<p id="status">First load a .owl file.</p>
+
+<div id="controls" style="display:none">
+  <label for="animalSelect">Species:</label>
+  <select id="animalSelect"><option value="">— select species —</option></select>
+
+  <label for="campaignSelect">Campaign:</label>
+  <select id="campaignSelect" disabled>
+    <option value="">— Select species first —</option>
+  </select>
+
+  <div id="metaCard">
+    <table>
+      <tr><td>Method</td><td id="metaMethod"></td></tr>
+      <tr><td>Authors</td><td id="metaAuthor"></td></tr>
+      <tr><td>Year</td><td id="metaYear"></td></tr>
+      <tr><td>Title</td><td id="metaTitle"></td></tr>
+      <tr><td>DOI</td><td id="metaDOI"></td></tr>
+      <tr><td>GBIF</td><td id="metaGBIF"></td></tr>
+    </table>
+  </div>
+
+  <canvas id="htChart"></canvas>
+
+  <table class="ht" id="htTable" style="display:none">
+    <thead><tr><th>Frequency (Hz)</th><th>Threshold (dB SPL)</th></tr></thead>
+    <tbody id="htBody"></tbody>
+  </table>
+</div>
+
+<script>
+  const EX   = "https://github.com/dbotteld/HearingThreshold/blob/main/";
+  const RDFS = "http://www.w3.org/2000/01/rdf-schema#";
+  const RDF  = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
+  const OWL  = "http://www.w3.org/2002/07/owl#";
+  const GBIF = "https://www.gbif.org/species/";
+
+  let store = null;
+  let htChart = null;
+
+  function ex(n)   { return EX + n; }
+  function rdfs(n) { return RDFS + n; }
+  function rdf(n)  { return RDF + n; }
+  function owl(n)  { return OWL + n; }
+
+  function getOne(s, p) {
+    const q = store.getQuads(s, p, null, null);
+    return q.length ? q[0].object.value : null;
+  }
+
+  function getAll(s, p) {
+    return store.getQuads(s, p, null, null).map(q => q.object.value);
+  }
+
+  // ── Bestand laden ────────────────────────────────────────────────────────
+
+  document.getElementById("fileInput").addEventListener("change", async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const status = document.getElementById("status");
+    try {
+      status.textContent = "Reading file...";
+      const text = await file.text();
+      status.textContent = "Parsing Turtle…";
+      store = new N3.Store();
+      const parser = new N3.Parser({ baseIRI: EX });
+      store.addQuads(parser.parse(text));
+      loadAnimals();
+      document.getElementById("controls").style.display = "block";
+    } catch (err) {
+      status.textContent = "Error: " + err.message;
+      console.error(err);
+    }
+  });
+
+  // ── Soorten laden: owl:Class + heeft minstens 1 campagne ─────────────────
+
+  function loadAnimals() {
+    const sel = document.getElementById("animalSelect");
+    sel.innerHTML = "<option value=''>— select species —</option>";
+
+    const animals = store
+      .getSubjects(rdf("type"), owl("NamedIndividual"), null)
+      .filter(s => store.getQuads(s, ex("hasHearingThresholdCampaign"), null, null).length > 0)
+      .map(s => {
+        const latinName = getOne(s.value, rdfs("label")) || s.value.split("/").pop();
+        const englishName = getOne(s.value, ex("commonName"));
+        const label = englishName ? `${englishName} (${latinName})` : latinName;
+        return { iri: s.value, label };
+      })
+      .sort((a, b) => a.label.localeCompare(b.label));
+
+    animals.forEach(({ iri, label }) => {
+      const opt = document.createElement("option");
+      opt.value = iri;
+      opt.textContent = label;
+      sel.appendChild(opt);
+    });
+
+    document.getElementById("status").textContent =
+      `Loaded — ${animals.length} species found.`;
+  }
+
+  // ── Soort → campagnes ─────────────────────────────────────────────────────
+
+  document.getElementById("animalSelect").addEventListener("change", (e) => {
+    const iri = e.target.value;
+    const campSel = document.getElementById("campaignSelect");
+
+    campSel.innerHTML = "<option value=''>— select campaign —</option>";
+    campSel.disabled = !iri;
+    document.getElementById("metaCard").style.display = "none";
+    document.getElementById("htTable").style.display = "none";
+    document.getElementById("htChart").style.display = "none";
+    document.getElementById("htBody").innerHTML = "";
+    if (htChart) { htChart.destroy(); htChart = null; }
+    if (!iri) return;
+
+    const campaigns = getAll(iri, ex("hasHearingThresholdCampaign"))
+      .map(c => ({ iri: c, label: getOne(c, rdfs("label")) || c.split("/").pop() }))
+      .sort((a, b) => a.label.localeCompare(b.label));
+
+    campaigns.forEach(({ iri: ciri, label }) => {
+      const opt = document.createElement("option");
+      opt.value = ciri;
+      opt.textContent = label;
+      campSel.appendChild(opt);
+    });
+
+    if (campSel.options.length === 2) {
+      campSel.selectedIndex = 1;
+      campSel.dispatchEvent(new Event("change"));
+    }
+  });
+
+  // ── Campagne → meta + meetpunten ──────────────────────────────────────────
+
+  document.getElementById("campaignSelect").addEventListener("change", (e) => {
+    const ciri = e.target.value;
+    document.getElementById("metaCard").style.display = "none";
+    document.getElementById("htTable").style.display = "none";
+    document.getElementById("htChart").style.display = "none";
+    document.getElementById("htBody").innerHTML = "";
+    if (htChart) { htChart.destroy(); htChart = null; }
+    if (!ciri) return;
+
+    // Meta
+    const methodIRI = getOne(ciri, ex("usesMeasurementMethod"));
+    const method = methodIRI ? (getOne(methodIRI, rdfs("label")) || methodIRI.split("/").pop()) : "—";
+    document.getElementById("metaMethod").textContent = method;
+    document.getElementById("metaAuthor").textContent = getOne(ciri, ex("pubAuthor")) || "—";
+    document.getElementById("metaYear").textContent   = getOne(ciri, ex("pubYear"))   || "—";
+    document.getElementById("metaTitle").textContent  = getOne(ciri, ex("pubTitle"))  || "—";
+    const doi = getOne(ciri, ex("pubDOI"));
+    document.getElementById("metaDOI").innerHTML = doi
+      ? `<a href="https://doi.org/${doi}" target="_blank">${doi}</a>`
+      : "—";
+
+    // GBIF seeAlso — staat op het dier, niet de campagne
+    const animalIRI = document.getElementById("animalSelect").value;
+    const gbifIRI = animalIRI ? getOne(animalIRI, rdfs("seeAlso")) : null;
+    document.getElementById("metaGBIF").innerHTML = gbifIRI && gbifIRI.startsWith(GBIF)
+      ? `<a href="${gbifIRI}" target="_blank">${gbifIRI}</a>`
+      : "—";
+    document.getElementById("metaCard").style.display = "block";
+
+    // Meetpunten: alle individuen met ex:partOf = ciri
+    const rows = store
+      .getSubjects(ex("partOf"), ciri, null)
+      .map(m => ({
+        freq: parseFloat(getOne(m.value, ex("frequency"))),
+        db:   parseFloat(getOne(m.value, ex("thresholdLevel")))
+      }))
+      .filter(r => !isNaN(r.freq) && !isNaN(r.db))
+      .sort((a, b) => a.freq - b.freq);
+
+    if (rows.length === 0) return;
+
+    // Grafiek
+    const animalLabel = document.getElementById("animalSelect").selectedOptions[0].textContent;
+    const canvas = document.getElementById("htChart");
+    canvas.style.display = "block";
+    htChart = new Chart(canvas, {
+      type: "line",
+      data: {
+        labels: rows.map(r => r.freq),
+        datasets: [{
+          label: animalLabel,
+          data: rows.map(r => r.db),
+          borderColor: "#2255cc",
+          backgroundColor: "rgba(34,85,204,0.05)",
+          borderWidth: 2,
+          pointRadius: 4,
+          tension: 0.3,
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+          x: { type: "logarithmic", title: { display: true, text: "Frequentie (Hz)" } },
+          y: { title: { display: true, text: "Drempel (dB SPL)" } }
+        }
+      }
+    });
+
+    // Tabel
+    const tbody = document.getElementById("htBody");
+    rows.forEach(r => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `<td>${r.freq.toLocaleString("nl-BE")}</td><td>${r.db}</td>`;
+      tbody.appendChild(tr);
+    });
+    document.getElementById("htTable").style.display = "table";
+  });
+</script>
+</body>
+</html>
