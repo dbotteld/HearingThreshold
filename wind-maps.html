@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weighted Wind-Turbine Sound Maps</title>
+  <meta name="description" content="Apply animal hearing-threshold weightings to wind-turbine sound pressure rasters and inspect them on a terrain map." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="map-body">
+  <header class="map-header">
+    <a class="brand" href="index.html" aria-label="Back to ontology browser">
+      <span class="brand-mark">HT</span>
+      <span>
+        <strong>Weighted sound maps</strong>
+        <small id="mapSubtitle">Animal hearing filter</small>
+      </span>
+    </a>
+    <div class="map-actions">
+      <a class="text-button" href="index.html">Ontology browser</a>
+      <button id="refreshLayer" class="primary-button" type="button">Apply layer</button>
+    </div>
+  </header>
+
+  <main class="map-shell">
+    <aside class="map-sidebar" aria-label="Weighted map controls">
+      <section class="map-card">
+        <p class="eyebrow">Weighting</p>
+        <h1>Wind-turbine SPL</h1>
+        <p id="weightingSummary" class="map-copy">Loading ontology weighting...</p>
+      </section>
+
+      <section class="map-card">
+        <h2>Scenario</h2>
+        <label class="field">
+          <span>Species</span>
+          <select id="speciesSelect"></select>
+        </label>
+        <label class="field">
+          <span>Campaign</span>
+          <select id="campaignSelect"></select>
+        </label>
+        <label class="field">
+          <span>Wind turbine</span>
+          <select id="siteSelect"></select>
+        </label>
+        <div class="compact-grid">
+          <label class="field">
+            <span>Hub height</span>
+            <select id="hubSelect"></select>
+          </label>
+          <label class="field">
+            <span>Receiver</span>
+            <select id="receiverSelect"></select>
+          </label>
+        </div>
+      </section>
+
+      <section class="map-card">
+        <h2>Band selection</h2>
+        <label class="radio-row">
+          <input type="radio" name="mapMode" value="broadband" checked />
+          <span>Broadband weighted from frequency bands</span>
+        </label>
+        <label class="radio-row">
+          <input type="radio" name="mapMode" value="overall" />
+          <span>Unweighted broadband reference</span>
+        </label>
+        <label class="radio-row">
+          <input type="radio" name="mapMode" value="frequency" />
+          <span>Single frequency</span>
+        </label>
+        <label class="radio-row">
+          <input type="radio" name="mapMode" value="multi" />
+          <span>Multiple frequencies, energy-summed</span>
+        </label>
+
+        <label class="field" id="singleFrequencyField">
+          <span>Frequency</span>
+          <select id="frequencySelect"></select>
+        </label>
+
+        <div id="multiFrequencyField" class="frequency-checks" aria-label="Multiple frequency selection"></div>
+      </section>
+
+      <section class="map-card">
+        <div class="layer-title">
+          <h2>Layers</h2>
+          <button id="clearLayers" class="text-button" type="button">Clear</button>
+        </div>
+        <div id="layerList" class="layer-list"></div>
+      </section>
+    </aside>
+
+    <section class="map-stage raster-stage" aria-label="Weighted raster preview">
+      <div class="raster-preview-card">
+        <div class="raster-preview-top">
+          <div>
+            <p class="eyebrow">Preview</p>
+            <h2 id="previewTitle">Weighted raster</h2>
+          </div>
+          <a id="downloadActiveTiff" class="primary-button" href="#" download>Download TIFF</a>
+        </div>
+        <div class="raster-image-wrap">
+          <img id="weightedPreview" alt="Weighted sound pressure raster preview" />
+        </div>
+      </div>
+      <div id="mapStatus" class="map-status">Preparing map...</div>
+      <div id="legendPane" class="legend-pane" hidden>
+        <div class="legend-title" id="legendTitle">Weighted SPL</div>
+        <canvas id="legendCanvas" width="220" height="18"></canvas>
+        <div class="legend-labels">
+          <span id="legendMin">-</span>
+          <span id="legendMax">-</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="wind-maps.js"></script>
+</body>
+</html>

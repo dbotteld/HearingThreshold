@@ -1,12 +1,3 @@
-"""
-Convert the HearingThreshold OWL/Turtle ontology into static JavaScript data.
-
-Usage:
-    python build_data_from_ontology.py Ontology_gbif.owl data.js
-
-The generated data.js can be used directly by the static GitHub Pages website.
-"""
-
 from __future__ import annotations
 
 import json
@@ -53,8 +44,43 @@ def number_literal(value: Any) -> float | None:
         return None
 
 
+def campaign_measurement_uris(g: Graph, campaign_uri: Any) -> list[Any]:
+    uris: list[Any] = []
+    seen = set()
+
+    for measurement_uri in g.objects(campaign_uri, EX.hasMeasurement):
+        if measurement_uri not in seen:
+            seen.add(measurement_uri)
+            uris.append(measurement_uri)
+
+    for measurement_uri in g.subjects(EX.partOf, campaign_uri):
+        if measurement_uri not in seen:
+            seen.add(measurement_uri)
+            uris.append(measurement_uri)
+
+    return uris
+
+
+def cleaned_measurements(g: Graph, campaign_uri: Any) -> list[dict[str, float]]:
+    buckets: dict[float, list[float]] = {}
+
+    for measurement_uri in campaign_measurement_uris(g, campaign_uri):
+        frequency = number_literal(next(g.objects(measurement_uri, EX.frequency), None))
+        threshold = number_literal(next(g.objects(measurement_uri, EX.thresholdLevel), None))
+        if frequency is None or threshold is None or frequency <= 0:
+            continue
+        buckets.setdefault(frequency, []).append(threshold)
+
+    return [
+        {
+            "frequency": frequency,
+            "threshold": sum(thresholds) / len(thresholds),
+        }
+        for frequency, thresholds in sorted(buckets.items())
+    ]
+
+
 def class_ancestors(g: Graph, class_uri: Any) -> list[Any]:
-    """Return class_uri and its rdfs:subClassOf ancestors."""
     ancestors: list[Any] = []
     seen = set()
     current = class_uri
@@ -75,7 +101,6 @@ def is_taxon_class(g: Graph, uri: Any) -> bool:
 
 
 def species_taxon_class(g: Graph, species_uri: Any) -> Any | None:
-    """Find the taxonomy class for a species individual, or the species itself for old exports."""
     if (species_uri, RDF.type, OWL.Class) in g:
         return species_uri
 
@@ -91,7 +116,6 @@ def species_taxon_class(g: Graph, species_uri: Any) -> Any | None:
 
 
 def taxonomy_path(g: Graph, species_uri: Any) -> list[str]:
-    """Return a simple Animal > ... > species taxonomy path."""
     path: list[str] = []
     taxon_class = species_taxon_class(g, species_uri)
     class_path = class_ancestors(g, taxon_class) if taxon_class else []
@@ -109,7 +133,6 @@ def taxonomy_path(g: Graph, species_uri: Any) -> list[str]:
 
 
 def see_also_links(g: Graph, species_uri: Any) -> list[str]:
-    """Collect species and taxonomy rdfs:seeAlso links, usually GBIF URLs."""
     links: list[str] = []
     candidates = [species_uri]
     taxon_class = species_taxon_class(g, species_uri)
@@ -158,16 +181,7 @@ def parse_ontology(input_path: Path) -> dict[str, Any]:
             method_uri = next(g.objects(campaign_uri, EX.usesMeasurementMethod), None)
             method = label(g, method_uri) if method_uri else "Unknown method"
 
-            measurements: list[dict[str, float]] = []
-            for measurement_uri in g.objects(campaign_uri, EX.hasMeasurement):
-                frequency = number_literal(next(g.objects(measurement_uri, EX.frequency), None))
-                threshold = number_literal(next(g.objects(measurement_uri, EX.thresholdLevel), None))
-                if frequency is not None and threshold is not None:
-                    measurements.append({
-                        "frequency": frequency,
-                        "threshold": threshold,
-                    })
-            measurements.sort(key=lambda row: row["frequency"])
+            measurements = cleaned_measurements(g, campaign_uri)
 
             campaigns.append({
                 "id": local_name(campaign_uri),
@@ -227,9 +241,7 @@ def main() -> None:
     output_path = Path(sys.argv[2])
     data = parse_ontology(input_path)
 
-    js = "// Auto-generated from the hearing-threshold ontology.\n"
-    js += "// Do not edit manually unless you know what you are doing.\n"
-    js += "window.HT_DATA = " + json.dumps(data, indent=2, ensure_ascii=False) + ";\n"
+    js = "window.HT_DATA = " + json.dumps(data, indent=2, ensure_ascii=False) + ";\n"
     output_path.write_text(js, encoding="utf-8")
     print(f"Wrote {output_path} with {data['meta']['speciesCount']} species.")
 

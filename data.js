@@ -1,5 +1,3 @@
-// Auto-generated from the hearing-threshold ontology.
-// Do not edit manually unless you know what you are doing.
 window.HT_DATA = {
   "meta": {
     "sourceFile": "Ontology_gbif.owl",

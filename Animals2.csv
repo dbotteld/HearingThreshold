@@ -1,0 +1,332 @@
+Paper_id;Audiogram_id;Species;Breed;Method;Notes;Sample.size;Individuum_ID;Sex;Life_stage;Age;Age_dimension;Freq;Dimension;Threshold_dB_mean;Threshold_dB_lower;Threshold_dB_upper;CI_type;Range_low;Range_high;Data_type;Threshold_dB_mean_extracted;Method_grouped;
+P001;P001_A01;microtus ochrogaster;NA;ABR (auditory brainstem response);Animals were tested between 9?a.m. and 3?p.m. during their light cycle.;7;NA;male;adult;177.3?ñ?27.0;days;1000;Hz;46,2;7,2;7,2;se;25;65;measured;4138;PHYSIOLOGICAL;
+P001;P001_A01;microtus ochrogaster;NA;ABR (auditory brainstem response);Animals were tested between 9?a.m. and 3?p.m. during their light cycle.;7;NA;male;adult;177.3?ñ?27.0;days;2000;Hz;37,5;6,4;6,4;se;25;55;measured;3333;PHYSIOLOGICAL;
+P001;P001_A01;microtus ochrogaster;NA;ABR (auditory brainstem response);Animals were tested between 9?a.m. and 3?p.m. during their light cycle.;7;NA;male;adult;177.3?ñ?27.0;days;4000;Hz;40;2,7;2,7;se;35;45;measured;3859;PHYSIOLOGICAL;
+P001;P001_A01;microtus ochrogaster;NA;ABR (auditory brainstem response);Animals were tested between 9?a.m. and 3?p.m. during their light cycle.;7;NA;male;adult;177.3?ñ?27.0;days;8000;Hz;25;2,7;2,7;se;15;35;measured;2516;PHYSIOLOGICAL;
+P001;P001_A01;microtus ochrogaster;NA;ABR (auditory brainstem response);Animals were tested between 9?a.m. and 3?p.m. during their light cycle.;7;NA;male;adult;177.3?ñ?27.0;days;16000;Hz;28,8;3,2;3,2;se;15;35;measured;2785;PHYSIOLOGICAL;
+P001;P001_A01;microtus ochrogaster;NA;ABR (auditory brainstem response);Animals were tested between 9?a.m. and 3?p.m. during their light cycle.;7;NA;male;adult;177.3?ñ?27.0;days;24000;Hz;35;3,8;3,8;se;15;45;measured;3478;PHYSIOLOGICAL;
+P001;P001_A01;microtus ochrogaster;NA;ABR (auditory brainstem response);Animals were tested between 9?a.m. and 3?p.m. during their light cycle.;7;NA;male;adult;177.3?ñ?27.0;days;32000;Hz;28,8;4,6;4,6;se;15;45;measured;2785;PHYSIOLOGICAL;
+P001;P001_A01;microtus ochrogaster;NA;ABR (auditory brainstem response);Animals were tested between 9?a.m. and 3?p.m. during their light cycle.;7;NA;male;adult;177.3?ñ?27.0;days;46000;Hz;38,8;4,2;4,2;se;25;55;measured;3736;PHYSIOLOGICAL;
+P002;P002_A01;cavia porcellus;NA;ABR (auditory brainstem response);Control;9;NA;mixed;adult;366 ñ 23.8;days;2000;Hz;33,58;3,1;3,8;se;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P002;P002_A01;cavia porcellus;NA;ABR (auditory brainstem response);Control;9;NA;mixed;adult;367 ñ 23.8;days;4000;Hz;28,39;2,4;3,1;se;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P002;P002_A01;cavia porcellus;NA;ABR (auditory brainstem response);Control;9;NA;mixed;adult;368 ñ 23.8;days;8000;Hz;38,08;2;3,4;se;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P002;P002_A01;cavia porcellus;NA;ABR (auditory brainstem response);Control;9;NA;mixed;adult;369 ñ 23.8;days;10000;Hz;39,21;2,4;3,6;se;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P002;P002_A01;cavia porcellus;NA;ABR (auditory brainstem response);Control;9;NA;mixed;adult;370 ñ 23.8;days;12000;Hz;20,96;1,46;2,44;se;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P002;P002_A01;cavia porcellus;NA;ABR (auditory brainstem response);Control;9;NA;mixed;adult;371 ñ 23.8;days;16000;Hz;30,65;1,55;2,65;se;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P002;P002_A01;cavia porcellus;NA;ABR (auditory brainstem response);Control;9;NA;mixed;adult;372 ñ 23.8;days;20000;Hz;27,72;1,92;3,6;se;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;100;Hz;80;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;300;Hz;80;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;400;Hz;70;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;500;Hz;70;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;700;Hz;50;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;900;Hz;35;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;1000;Hz;25;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;1100;Hz;10;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;1200;Hz;9,9;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;1400;Hz;5,4;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;1500;Hz;15;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;1700;Hz;25;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;1900;Hz;40;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;2100;Hz;45;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;2500;Hz;65;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;2700;Hz;55;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;3000;Hz;65;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;3100;Hz;60;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;3500;Hz;45;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;4000;Hz;50;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;4500;Hz;35;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;5000;Hz;55;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;male;adult;NA;NA;5500;Hz;45;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;female;adult;NA;NA;500;Hz;70;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;female;adult;NA;NA;700;Hz;50;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;female;adult;NA;NA;1000;Hz;30,1;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;female;adult;NA;NA;1500;Hz;15;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;female;adult;NA;NA;2000;Hz;40;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;female;adult;NA;NA;2500;Hz;50;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;female;adult;NA;NA;3000;Hz;65;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;female;adult;NA;NA;2500;Hz;60;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;female;adult;NA;NA;4000;Hz;80;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;female;adult;NA;NA;4500;Hz;60;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;female;adult;NA;NA;5000;Hz;75;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P004;P004_A01;lithobates catesbeianus;NA;ELPHYS (electrophysiological, no further information));NA;1;NA;female;adult;NA;NA;5500;Hz;60;NA;NA;NA;NA;NA;extracted;NA;PHYSIOLOGICAL;
+P006;P006_A02;myotis lucifugus;NA;BEHAV (behavioural, no further information));NA;1;NA;NA;NA;2;years;13,2;kHz;-54;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P006;P006_A02;myotis lucifugus;NA;BEHAV (behavioural, no further information));NA;1;NA;NA;NA;2;years;15;kHz;-46;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P006;P006_A02;myotis lucifugus;NA;BEHAV (behavioural, no further information));NA;1;NA;NA;NA;2;years;20;kHz;-57;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P006;P006_A02;myotis lucifugus;NA;BEHAV (behavioural, no further information));NA;1;NA;NA;NA;2;years;25;kHz;-60;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P006;P006_A02;myotis lucifugus;NA;BEHAV (behavioural, no further information));NA;1;NA;NA;NA;2;years;35;kHz;-65;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P006;P006_A02;myotis lucifugus;NA;BEHAV (behavioural, no further information));NA;1;NA;NA;NA;2;years;40;kHz;-55;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P006;P006_A02;myotis lucifugus;NA;BEHAV (behavioural, no further information));NA;1;NA;NA;NA;2;years;50;kHz;-52;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P006;P006_A02;myotis lucifugus;NA;BEHAV (behavioural, no further information));NA;1;NA;NA;NA;2;years;55;kHz;-57;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P006;P006_A02;myotis lucifugus;NA;BEHAV (behavioural, no further information));NA;1;NA;NA;NA;2;years;60;kHz;-59;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P006;P006_A02;myotis lucifugus;NA;BEHAV (behavioural, no further information));NA;1;NA;NA;NA;2;years;70;kHz;-48;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P006;P006_A02;myotis lucifugus;NA;BEHAV (behavioural, no further information));NA;1;NA;NA;NA;2;years;80;kHz;-50;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P006;P006_A02;myotis lucifugus;NA;BEHAV (behavioural, no further information));NA;1;NA;NA;NA;2;years;90;kHz;-52;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P006;P006_A02;myotis lucifugus;NA;BEHAV (behavioural, no further information));NA;1;NA;NA;NA;2;years;100;kHz;-45;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P006;P006_A02;myotis lucifugus;NA;BEHAV (behavioural, no further information));NA;1;NA;NA;NA;2;years;120;kHz;-2,34;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P023;P023_A01;equus caballus;NA;BEHAV (behavioural, no further information));NA;3;NA;NA;NA;NA;NA;0,03;kHz;77;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P023;P023_A01;equus caballus;NA;BEHAV (behavioural, no further information));NA;3;NA;NA;NA;NA;NA;0,06;kHz;55;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P023;P023_A01;equus caballus;NA;BEHAV (behavioural, no further information));NA;3;NA;NA;NA;NA;NA;0,13;kHz;45;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P023;P023_A01;equus caballus;NA;BEHAV (behavioural, no further information));NA;3;NA;NA;NA;NA;NA;0,25;kHz;25;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P023;P023_A01;equus caballus;NA;BEHAV (behavioural, no further information));NA;3;NA;NA;NA;NA;NA;0,5;kHz;15;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P023;P023_A01;equus caballus;NA;BEHAV (behavioural, no further information));NA;3;NA;NA;NA;NA;NA;1;kHz;8;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P023;P023_A01;equus caballus;NA;BEHAV (behavioural, no further information));NA;3;NA;NA;NA;NA;NA;2;kHz;7;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P023;P023_A01;equus caballus;NA;BEHAV (behavioural, no further information));NA;3;NA;NA;NA;NA;NA;4;kHz;15;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P023;P023_A01;equus caballus;NA;BEHAV (behavioural, no further information));NA;3;NA;NA;NA;NA;NA;8;kHz;12;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P023;P023_A01;equus caballus;NA;BEHAV (behavioural, no further information));NA;3;NA;NA;NA;NA;NA;16;kHz;10;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P023;P023_A01;equus caballus;NA;BEHAV (behavioural, no further information));NA;3;NA;NA;NA;NA;NA;32;kHz;50;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P023;P023_A01;equus caballus;NA;BEHAV (behavioural, no further information));NA;3;NA;NA;NA;NA;NA;40;kHz;90;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P041;P041_A01;columba livia domestica;NA;BEHAV (behavioural, no further information));NA;5;NA;NA;NA;1 to 7;years;0,05;kHz;127;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P041;P041_A01;columba livia domestica;NA;BEHAV (behavioural, no further information));NA;5;NA;NA;NA;1 to 7;years;0,1;kHz;121;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P041;P041_A01;columba livia domestica;NA;BEHAV (behavioural, no further information));NA;5;NA;NA;NA;1 to 7;years;0,25;kHz;121;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P041;P041_A01;columba livia domestica;NA;BEHAV (behavioural, no further information));NA;5;NA;NA;NA;1 to 7;years;0,5;kHz;109;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P041;P041_A01;columba livia domestica;NA;BEHAV (behavioural, no further information));NA;5;NA;NA;NA;1 to 7;years;1;kHz;97;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P041;P041_A01;columba livia domestica;NA;BEHAV (behavioural, no further information));NA;5;NA;NA;NA;1 to 7;years;2;kHz;81;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P041;P041_A01;columba livia domestica;NA;BEHAV (behavioural, no further information));NA;5;NA;NA;NA;1 to 7;years;5;kHz;61;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P041;P041_A01;columba livia domestica;NA;BEHAV (behavioural, no further information));NA;5;NA;NA;NA;1 to 7;years;10;kHz;54;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P041;P041_A01;columba livia domestica;NA;BEHAV (behavioural, no further information));NA;5;NA;NA;NA;1 to 7;years;20;kHz;46;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P041;P041_A01;columba livia domestica;NA;BEHAV (behavioural, no further information));NA;5;NA;NA;NA;1 to 7;years;80;kHz;37;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P041;P041_A01;columba livia domestica;NA;BEHAV (behavioural, no further information));NA;5;NA;NA;NA;1 to 7;years;200;kHz;34;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P088;P088_A03;procyon lotor;NA;BEHAV (behavioural, no further information));NA;2;NA;NA;adult;NA;NA;100;Hz;42,3;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P088;P088_A03;procyon lotor;NA;BEHAV (behavioural, no further information));NA;2;NA;NA;adult;NA;NA;125;Hz;31,9;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P088;P088_A03;procyon lotor;NA;BEHAV (behavioural, no further information));NA;2;NA;NA;adult;NA;NA;200;Hz;14;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P088;P088_A03;procyon lotor;NA;BEHAV (behavioural, no further information));NA;2;NA;NA;adult;NA;NA;250;Hz;12;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P088;P088_A03;procyon lotor;NA;BEHAV (behavioural, no further information));NA;2;NA;NA;adult;NA;NA;500;Hz;5,9;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P088;P088_A03;procyon lotor;NA;BEHAV (behavioural, no further information));NA;2;NA;NA;adult;NA;NA;1000;Hz;-12,4;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P088;P088_A03;procyon lotor;NA;BEHAV (behavioural, no further information));NA;2;NA;NA;adult;NA;NA;2000;Hz;-10,7;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P088;P088_A03;procyon lotor;NA;BEHAV (behavioural, no further information));NA;2;NA;NA;adult;NA;NA;4000;Hz;-7,8;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P088;P088_A03;procyon lotor;NA;BEHAV (behavioural, no further information));NA;2;NA;NA;adult;NA;NA;5000;Hz;-6,2;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P088;P088_A03;procyon lotor;NA;BEHAV (behavioural, no further information));NA;2;NA;NA;adult;NA;NA;10000;Hz;-11,4;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P088;P088_A03;procyon lotor;NA;BEHAV (behavioural, no further information));NA;2;NA;NA;adult;NA;NA;20000;Hz;0,3;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P088;P088_A03;procyon lotor;NA;BEHAV (behavioural, no further information));NA;2;NA;NA;adult;NA;NA;40000;Hz;30,6;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P140;P140_A03;corvus brachyrhynchos;NA;BEHAV (behavioural, no further information));NA;NA;NA;NA;NA;NA;NA;200;Hz;44,6;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P140;P140_A03;corvus brachyrhynchos;NA;BEHAV (behavioural, no further information));NA;NA;NA;NA;NA;NA;NA;250;Hz;37;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P140;P140_A03;corvus brachyrhynchos;NA;BEHAV (behavioural, no further information));NA;NA;NA;NA;NA;NA;NA;500;Hz;11,3;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P140;P140_A03;corvus brachyrhynchos;NA;BEHAV (behavioural, no further information));NA;NA;NA;NA;NA;NA;NA;1000;Hz;-9;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P140;P140_A03;corvus brachyrhynchos;NA;BEHAV (behavioural, no further information));NA;NA;NA;NA;NA;NA;NA;1800;Hz;-15;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P140;P140_A03;corvus brachyrhynchos;NA;BEHAV (behavioural, no further information));NA;NA;NA;NA;NA;NA;NA;4000;Hz;7,2;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+P140;P140_A03;corvus brachyrhynchos;NA;BEHAV (behavioural, no further information));NA;NA;NA;NA;NA;NA;NA;6000;Hz;44,2;NA;NA;NA;NA;NA;extracted;NA;BEHAVIORAL;
+1;P005;Phyllostomus hastatus;greater spear-nosed bat;Phyllostomus ;Phyllostomidae;Chiroptera;Mammalia;;BEHAVIORAL;4;;10000;Hz;36;0;0;se;36;41;extracted;;BEHAVIORAL;
+1;P005;Phyllostomus hastatus;greater spear-nosed bat;Phyllostomus ;Phyllostomidae;Chiroptera;Mammalia;;BEHAVIORAL;4;;100000;Hz;45;0;0;se;45;45;extracted;;BEHAVIORAL;
+1;P005;Phyllostomus hastatus;greater spear-nosed bat;Phyllostomus ;Phyllostomidae;Chiroptera;Mammalia;;BEHAVIORAL;4;;15000;Hz;13;0;0;se;12;19;extracted;;BEHAVIORAL;
+1;P005;Phyllostomus hastatus;greater spear-nosed bat;Phyllostomus ;Phyllostomidae;Chiroptera;Mammalia;;BEHAVIORAL;4;;2500;Hz;71;0,5;1,5;se;69;75;extracted;;BEHAVIORAL;
+1;P005;Phyllostomus hastatus;greater spear-nosed bat;Phyllostomus ;Phyllostomidae;Chiroptera;Mammalia;;BEHAVIORAL;4;;20000;Hz;23;0;0;se;16;27;extracted;;BEHAVIORAL;
+1;P005;Phyllostomus hastatus;greater spear-nosed bat;Phyllostomus ;Phyllostomidae;Chiroptera;Mammalia;;BEHAVIORAL;4;;30000;Hz;30;0;0;se;26;32;extracted;;BEHAVIORAL;
+1;P005;Phyllostomus hastatus;greater spear-nosed bat;Phyllostomus ;Phyllostomidae;Chiroptera;Mammalia;;BEHAVIORAL;4;;40000;Hz;35;0;0;se;33;39;extracted;;BEHAVIORAL;
+1;P005;Phyllostomus hastatus;greater spear-nosed bat;Phyllostomus ;Phyllostomidae;Chiroptera;Mammalia;;BEHAVIORAL;4;;5000;Hz;63;0,5;1,7;se;61;69;extracted;;BEHAVIORAL;
+1;P005;Phyllostomus hastatus;greater spear-nosed bat;Phyllostomus ;Phyllostomidae;Chiroptera;Mammalia;;BEHAVIORAL;4;;60000;Hz;45;2,3;1;se;41;47;extracted;;BEHAVIORAL;
+1;P005;Phyllostomus hastatus;greater spear-nosed bat;Phyllostomus ;Phyllostomidae;Chiroptera;Mammalia;;BEHAVIORAL;4;;7390;Hz;46,25;0;0;se;46;48;extracted;;BEHAVIORAL;
+1;P005;Phyllostomus hastatus;greater spear-nosed bat;Phyllostomus ;Phyllostomidae;Chiroptera;Mammalia;;BEHAVIORAL;4;;80000;Hz;43;1,3;1,5;se;40;47;extracted;;BEHAVIORAL;
+1;P006;Eptesicus fuscus;big brown bat;Eptesicus ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;10;kHz;-62;;;;;;extracted;;BEHAVIORAL;
+1;P006;Eptesicus fuscus;big brown bat;Eptesicus ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;100;kHz;-4,2;;;;;;extracted;;BEHAVIORAL;
+1;P006;Eptesicus fuscus;big brown bat;Eptesicus ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;15;kHz;-65;;;;;;extracted;;BEHAVIORAL;
+1;P006;Eptesicus fuscus;big brown bat;Eptesicus ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;2,5;kHz;13,5;;;;;;extracted;;BEHAVIORAL;
+1;P006;Eptesicus fuscus;big brown bat;Eptesicus ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;20;kHz;-68;;;;;;extracted;;BEHAVIORAL;
+1;P006;Eptesicus fuscus;big brown bat;Eptesicus ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;25;kHz;-63;;;;;;extracted;;BEHAVIORAL;
+1;P006;Eptesicus fuscus;big brown bat;Eptesicus ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;35;kHz;-57;;;;;;extracted;;BEHAVIORAL;
+1;P006;Eptesicus fuscus;big brown bat;Eptesicus ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;40;kHz;-41;;;;;;extracted;;BEHAVIORAL;
+1;P006;Eptesicus fuscus;big brown bat;Eptesicus ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;45;kHz;-42;;;;;;extracted;;BEHAVIORAL;
+1;P006;Eptesicus fuscus;big brown bat;Eptesicus ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;5;kHz;-21;;;;;;extracted;;BEHAVIORAL;
+1;P006;Eptesicus fuscus;big brown bat;Eptesicus ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;50;kHz;-55;;;;;;extracted;;BEHAVIORAL;
+1;P006;Eptesicus fuscus;big brown bat;Eptesicus ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;55;kHz;-60;;;;;;extracted;;BEHAVIORAL;
+1;P006;Eptesicus fuscus;big brown bat;Eptesicus ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;60;kHz;-65;;;;;;extracted;;BEHAVIORAL;
+1;P006;Eptesicus fuscus;big brown bat;Eptesicus ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;65;kHz;-58;;;;;;extracted;;BEHAVIORAL;
+1;P006;Eptesicus fuscus;big brown bat;Eptesicus ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;70;kHz;-58,5;;;;;;extracted;;BEHAVIORAL;
+1;P006;Eptesicus fuscus;big brown bat;Eptesicus ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;80;kHz;-45,3;;;;;;extracted;;BEHAVIORAL;
+1;P006;Eptesicus fuscus;big brown bat;Eptesicus ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;90;kHz;-33;;;;;;extracted;;BEHAVIORAL;
+1;P006;Myotis lucifugus;little brown bat;Myotis ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;100;kHz;-45;;;;;;extracted;;BEHAVIORAL;
+1;P006;Myotis lucifugus;little brown bat;Myotis ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;120;kHz;-2,34;;;;;;extracted;;BEHAVIORAL;
+1;P006;Myotis lucifugus;little brown bat;Myotis ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;13,2;kHz;-54;;;;;;extracted;;BEHAVIORAL;
+1;P006;Myotis lucifugus;little brown bat;Myotis ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;15;kHz;-46;;;;;;extracted;;BEHAVIORAL;
+1;P006;Myotis lucifugus;little brown bat;Myotis ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;20;kHz;-57;;;;;;extracted;;BEHAVIORAL;
+1;P006;Myotis lucifugus;little brown bat;Myotis ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;25;kHz;-60;;;;;;extracted;;BEHAVIORAL;
+1;P006;Myotis lucifugus;little brown bat;Myotis ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;35;kHz;-65;;;;;;extracted;;BEHAVIORAL;
+1;P006;Myotis lucifugus;little brown bat;Myotis ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;40;kHz;-55;;;;;;extracted;;BEHAVIORAL;
+1;P006;Myotis lucifugus;little brown bat;Myotis ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;50;kHz;-52;;;;;;extracted;;BEHAVIORAL;
+1;P006;Myotis lucifugus;little brown bat;Myotis ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;55;kHz;-57;;;;;;extracted;;BEHAVIORAL;
+1;P006;Myotis lucifugus;little brown bat;Myotis ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;60;kHz;-59;;;;;;extracted;;BEHAVIORAL;
+1;P006;Myotis lucifugus;little brown bat;Myotis ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;70;kHz;-48;;;;;;extracted;;BEHAVIORAL;
+1;P006;Myotis lucifugus;little brown bat;Myotis ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;80;kHz;-50;;;;;;extracted;;BEHAVIORAL;
+1;P006;Myotis lucifugus;little brown bat;Myotis ;Vespertilionidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;90;kHz;-52;;;;;;extracted;;BEHAVIORAL;
+1;P007;Rousettus aegyptiacus;Egyptian fruit bat;Rousettus ;Pteropodidae;Chiroptera;Mammalia;;BEHAVIORAL;;;10000;Hz;5,25;;;;;;extracted;;BEHAVIORAL;
+1;P007;Rousettus aegyptiacus;Egyptian fruit bat;Rousettus ;Pteropodidae;Chiroptera;Mammalia;;BEHAVIORAL;;;15000;Hz;6,34;;;;;;extracted;;BEHAVIORAL;
+1;P007;Rousettus aegyptiacus;Egyptian fruit bat;Rousettus ;Pteropodidae;Chiroptera;Mammalia;;BEHAVIORAL;;;16000;Hz;10,5;;;;;;extracted;;BEHAVIORAL;
+1;P007;Rousettus aegyptiacus;Egyptian fruit bat;Rousettus ;Pteropodidae;Chiroptera;Mammalia;;BEHAVIORAL;;;2000;Hz;65,2;;;;;;extracted;;BEHAVIORAL;
+1;P007;Rousettus aegyptiacus;Egyptian fruit bat;Rousettus ;Pteropodidae;Chiroptera;Mammalia;;BEHAVIORAL;;;25000;Hz;9,2;;;;;;extracted;;BEHAVIORAL;
+1;P007;Rousettus aegyptiacus;Egyptian fruit bat;Rousettus ;Pteropodidae;Chiroptera;Mammalia;;BEHAVIORAL;;;3000;Hz;50,4;;;;;;extracted;;BEHAVIORAL;
+1;P007;Rousettus aegyptiacus;Egyptian fruit bat;Rousettus ;Pteropodidae;Chiroptera;Mammalia;;BEHAVIORAL;;;31000;Hz;23,5;;;;;;extracted;;BEHAVIORAL;
+1;P007;Rousettus aegyptiacus;Egyptian fruit bat;Rousettus ;Pteropodidae;Chiroptera;Mammalia;;BEHAVIORAL;;;4000;Hz;40,4;;;;;;extracted;;BEHAVIORAL;
+1;P007;Rousettus aegyptiacus;Egyptian fruit bat;Rousettus ;Pteropodidae;Chiroptera;Mammalia;;BEHAVIORAL;;;45000;Hz;12,7;;;;;;extracted;;BEHAVIORAL;
+1;P007;Rousettus aegyptiacus;Egyptian fruit bat;Rousettus ;Pteropodidae;Chiroptera;Mammalia;;BEHAVIORAL;;;5000;Hz;30,6;;;;;;extracted;;BEHAVIORAL;
+1;P007;Rousettus aegyptiacus;Egyptian fruit bat;Rousettus ;Pteropodidae;Chiroptera;Mammalia;;BEHAVIORAL;;;64000;Hz;60,4;;;;;;extracted;;BEHAVIORAL;
+1;P007;Rousettus aegyptiacus;Egyptian fruit bat;Rousettus ;Pteropodidae;Chiroptera;Mammalia;;BEHAVIORAL;;;8000;Hz;10,2;;;;;;extracted;;BEHAVIORAL;
+1;P008;Rhinolophus ferrumequinum;greater horseshoe bat;Rhinolophus ;Rhinolophidae;Chiroptera;Mammalia;;BEHAVIORAL;1;;100000;Hz;60,4;;;;;;extracted;;BEHAVIORAL;
+1;P008;Rhinolophus ferrumequinum;greater horseshoe bat;Rhinolophus ;Rhinolophidae;Chiroptera;Mammalia;;BEHAVIORAL;1;RFL 7;10000;Hz;30,4;;;;;;extracted;;BEHAVIORAL;
+1;P008;Rhinolophus ferrumequinum;greater horseshoe bat;Rhinolophus ;Rhinolophidae;Chiroptera;Mammalia;;BEHAVIORAL;1;RFL 7;15000;Hz;-0,5;;;;;;extracted;;BEHAVIORAL;
+1;P008;Rhinolophus ferrumequinum;greater horseshoe bat;Rhinolophus ;Rhinolophidae;Chiroptera;Mammalia;;BEHAVIORAL;1;RFL 7;20000;Hz;-0,2;;;;;;extracted;;BEHAVIORAL;
+1;P008;Rhinolophus ferrumequinum;greater horseshoe bat;Rhinolophus ;Rhinolophidae;Chiroptera;Mammalia;;BEHAVIORAL;1;RFL 7;30000;Hz;2,67;;;;;;extracted;;BEHAVIORAL;
+1;P008;Rhinolophus ferrumequinum;greater horseshoe bat;Rhinolophus ;Rhinolophidae;Chiroptera;Mammalia;;BEHAVIORAL;1;RFL 7;40000;Hz;25,4;;;;;;extracted;;BEHAVIORAL;
+1;P008;Rhinolophus ferrumequinum;greater horseshoe bat;Rhinolophus ;Rhinolophidae;Chiroptera;Mammalia;;BEHAVIORAL;1;RFL 7;5000;Hz;55;;;;;;extracted;;BEHAVIORAL;
+1;P008;Rhinolophus ferrumequinum;greater horseshoe bat;Rhinolophus ;Rhinolophidae;Chiroptera;Mammalia;;BEHAVIORAL;1;RFL 7;50000;Hz;17,5;;;;;;extracted;;BEHAVIORAL;
+1;P008;Rhinolophus ferrumequinum;greater horseshoe bat;Rhinolophus ;Rhinolophidae;Chiroptera;Mammalia;;BEHAVIORAL;1;RFL 7;60000;Hz;0,59;;;;;;extracted;;BEHAVIORAL;
+1;P008;Rhinolophus ferrumequinum;greater horseshoe bat;Rhinolophus ;Rhinolophidae;Chiroptera;Mammalia;;BEHAVIORAL;1;RFL 7;70000;Hz;10,6;;;;;;extracted;;BEHAVIORAL;
+1;P008;Rhinolophus ferrumequinum;greater horseshoe bat;Rhinolophus ;Rhinolophidae;Chiroptera;Mammalia;;BEHAVIORAL;1;RFL 7;80000;Hz;28,5;;;;;;extracted;;BEHAVIORAL;
+1;P008;Rhinolophus ferrumequinum;greater horseshoe bat;Rhinolophus ;Rhinolophidae;Chiroptera;Mammalia;;BEHAVIORAL;1;RFL 7;81000;Hz;-0,18;;;;;;extracted;;BEHAVIORAL;
+1;P008;Rhinolophus ferrumequinum;greater horseshoe bat;Rhinolophus ;Rhinolophidae;Chiroptera;Mammalia;;BEHAVIORAL;1;RFL 7;83000;Hz;6,4;;;;;;extracted;;BEHAVIORAL;
+1;P008;Rhinolophus ferrumequinum;greater horseshoe bat;Rhinolophus ;Rhinolophidae;Chiroptera;Mammalia;;BEHAVIORAL;1;RFL 7;85000;Hz;12,5;;;;;;extracted;;BEHAVIORAL;
+1;P008;Rhinolophus ferrumequinum;greater horseshoe bat;Rhinolophus ;Rhinolophidae;Chiroptera;Mammalia;;BEHAVIORAL;1;RFL 7;87000;Hz;20,4;;;;;;extracted;;BEHAVIORAL;
+1;P008;Rhinolophus ferrumequinum;greater horseshoe bat;Rhinolophus ;Rhinolophidae;Chiroptera;Mammalia;;BEHAVIORAL;1;RFL 7;90000;Hz;35,5;;;;;;extracted;;BEHAVIORAL;
+1;P008;Rhinolophus ferrumequinum;greater horseshoe bat;Rhinolophus ;Rhinolophidae;Chiroptera;Mammalia;;BEHAVIORAL;1;RFL 7;95000;Hz;40,5;;;;;;extracted;;BEHAVIORAL;
+1;P016;Erebia manto;yellow-spotted ringlet;Erebia ;Nymphalidae;Lepidoptera;Insecta;;BEHAVIORAL;;;1000;Hz;49;;;;;;extracted;;BEHAVIORAL;
+1;P016;Erebia manto;yellow-spotted ringlet;Erebia ;Nymphalidae;Lepidoptera;Insecta;;BEHAVIORAL;;;125;Hz;58;;;;;;extracted;;BEHAVIORAL;
+1;P016;Erebia manto;yellow-spotted ringlet;Erebia ;Nymphalidae;Lepidoptera;Insecta;;BEHAVIORAL;;;16000;Hz;68;;;;;;extracted;;BEHAVIORAL;
+1;P016;Erebia manto;yellow-spotted ringlet;Erebia ;Nymphalidae;Lepidoptera;Insecta;;BEHAVIORAL;;;2000;Hz;55;;;;;;extracted;;BEHAVIORAL;
+1;P016;Erebia manto;yellow-spotted ringlet;Erebia ;Nymphalidae;Lepidoptera;Insecta;;BEHAVIORAL;;;250;Hz;53;;;;;;extracted;;BEHAVIORAL;
+1;P016;Erebia manto;yellow-spotted ringlet;Erebia ;Nymphalidae;Lepidoptera;Insecta;;BEHAVIORAL;;;4000;Hz;63;;;;;;extracted;;BEHAVIORAL;
+1;P016;Erebia manto;yellow-spotted ringlet;Erebia ;Nymphalidae;Lepidoptera;Insecta;;BEHAVIORAL;;;500;Hz;49;;;;;;extracted;;BEHAVIORAL;
+1;P016;Erebia manto;yellow-spotted ringlet;Erebia ;Nymphalidae;Lepidoptera;Insecta;;BEHAVIORAL;;;8000;Hz;66;;;;;;extracted;;BEHAVIORAL;
+1;P018;Rangifer tarandus;reindeer;Rangifer ;Cervidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;0,06;kHz;61;;;;;;extrected;;BEHAVIORAL;
+1;P018;Rangifer tarandus;reindeer;Rangifer ;Cervidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;0,13;kHz;50;;;;;;extrected;;BEHAVIORAL;
+1;P018;Rangifer tarandus;reindeer;Rangifer ;Cervidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;0,25;kHz;38;;;;;;extrected;;BEHAVIORAL;
+1;P018;Rangifer tarandus;reindeer;Rangifer ;Cervidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;0,5;kHz;21;;;;;;extrected;;BEHAVIORAL;
+1;P018;Rangifer tarandus;reindeer;Rangifer ;Cervidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;1;kHz;9;;;;;;extrected;;BEHAVIORAL;
+1;P018;Rangifer tarandus;reindeer;Rangifer ;Cervidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;12;kHz;3;;;;;;extrected;;BEHAVIORAL;
+1;P018;Rangifer tarandus;reindeer;Rangifer ;Cervidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;16;kHz;5;;;;;;extrected;;BEHAVIORAL;
+1;P018;Rangifer tarandus;reindeer;Rangifer ;Cervidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;2;kHz;15;;;;;;extrected;;BEHAVIORAL;
+1;P018;Rangifer tarandus;reindeer;Rangifer ;Cervidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;32;kHz;22;;;;;;extrected;;BEHAVIORAL;
+1;P018;Rangifer tarandus;reindeer;Rangifer ;Cervidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;38;kHz;60;;;;;;extrected;;BEHAVIORAL;
+1;P018;Rangifer tarandus;reindeer;Rangifer ;Cervidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;4;kHz;4;;;;;;extrected;;BEHAVIORAL;
+1;P018;Rangifer tarandus;reindeer;Rangifer ;Cervidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;8;kHz;2;;;;;;extrected;;BEHAVIORAL;
+1;P023;Bos taurus;cattle;Bos ;Bovidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;0,02;kHz;71;;;;;;extracted;;BEHAVIORAL;
+1;P023;Bos taurus;cattle;Bos ;Bovidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;0,03;kHz;55;;;;;;extracted;;BEHAVIORAL;
+1;P023;Bos taurus;cattle;Bos ;Bovidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;0,06;kHz;41;;;;;;extracted;;BEHAVIORAL;
+1;P023;Bos taurus;cattle;Bos ;Bovidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;0,13;kHz;31;;;;;;extracted;;BEHAVIORAL;
+1;P023;Bos taurus;cattle;Bos ;Bovidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;0,25;kHz;20;;;;;;extracted;;BEHAVIORAL;
+1;P023;Bos taurus;cattle;Bos ;Bovidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;0,5;kHz;10;;;;;;extracted;;BEHAVIORAL;
+1;P023;Bos taurus;cattle;Bos ;Bovidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;1;kHz;5;;;;;;extracted;;BEHAVIORAL;
+1;P023;Bos taurus;cattle;Bos ;Bovidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;16;kHz;10;;;;;;extracted;;BEHAVIORAL;
+1;P023;Bos taurus;cattle;Bos ;Bovidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;2;kHz;-5;;;;;;extracted;;BEHAVIORAL;
+1;P023;Bos taurus;cattle;Bos ;Bovidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;32;kHz;41;;;;;;extracted;;BEHAVIORAL;
+1;P023;Bos taurus;cattle;Bos ;Bovidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;4;kHz;-10;;;;;;extracted;;BEHAVIORAL;
+1;P023;Bos taurus;cattle;Bos ;Bovidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;40;kHz;76;;;;;;extracted;;BEHAVIORAL;
+1;P023;Bos taurus;cattle;Bos ;Bovidae;Artiodactyla;Mammalia;;BEHAVIORAL;2;;8;kHz;-15;;;;;;extracted;;BEHAVIORAL;
+1;P026;Felis catus;feral cat;Felis ;Felidae;Carnivora;Mammalia;mixed breed;BEHAVIORAL;2;;0,05;kHz;75;;;;;;extracted;;BEHAVIORAL;
+1;P026;Felis catus;feral cat;Felis ;Felidae;Carnivora;Mammalia;mixed breed;BEHAVIORAL;2;;0,06;kHz;52;;;;;;extracted;;BEHAVIORAL;
+1;P026;Felis catus;feral cat;Felis ;Felidae;Carnivora;Mammalia;mixed breed;BEHAVIORAL;2;;0,13;kHz;36;;;;;;extracted;;BEHAVIORAL;
+1;P026;Felis catus;feral cat;Felis ;Felidae;Carnivora;Mammalia;mixed breed;BEHAVIORAL;2;;0,25;kHz;22;;;;;;extracted;;BEHAVIORAL;
+1;P026;Felis catus;feral cat;Felis ;Felidae;Carnivora;Mammalia;mixed breed;BEHAVIORAL;2;;0,5;kHz;7;;;;;;extracted;;BEHAVIORAL;
+1;P026;Felis catus;feral cat;Felis ;Felidae;Carnivora;Mammalia;mixed breed;BEHAVIORAL;2;;1;kHz;4;;;;;;extracted;;BEHAVIORAL;
+1;P026;Felis catus;feral cat;Felis ;Felidae;Carnivora;Mammalia;mixed breed;BEHAVIORAL;2;;16;kHz;-2;;;;;;extracted;;BEHAVIORAL;
+1;P026;Felis catus;feral cat;Felis ;Felidae;Carnivora;Mammalia;mixed breed;BEHAVIORAL;2;;2;kHz;1,5;;;;;;extracted;;BEHAVIORAL;
+1;P026;Felis catus;feral cat;Felis ;Felidae;Carnivora;Mammalia;mixed breed;BEHAVIORAL;2;;32;kHz;3;;;;;;extracted;;BEHAVIORAL;
+1;P026;Felis catus;feral cat;Felis ;Felidae;Carnivora;Mammalia;mixed breed;BEHAVIORAL;2;;4;kHz;1;;;;;;extracted;;BEHAVIORAL;
+1;P026;Felis catus;feral cat;Felis ;Felidae;Carnivora;Mammalia;mixed breed;BEHAVIORAL;2;;64;kHz;30;;;;;;extracted;;BEHAVIORAL;
+1;P026;Felis catus;feral cat;Felis ;Felidae;Carnivora;Mammalia;mixed breed;BEHAVIORAL;2;;8;kHz;-3;;;;;;extracted;;BEHAVIORAL;
+1;P026;Felis catus;feral cat;Felis ;Felidae;Carnivora;Mammalia;mixed breed;BEHAVIORAL;2;;91;kHz;80;;;;;;extracted;;BEHAVIORAL;
+1;P034;Canis lupus familiaris;domestic dog;Canis ;Canidae;Carnivora;Mammalia;Chihauhua, Dachshund, Poodle, Saint Bernard;BEHAVIORAL;4;;1000;Hz;14;;;;;;extracted;;BEHAVIORAL;mean of 4 dogs of different breeds
+1;P034;Canis lupus familiaris;domestic dog;Canis ;Canidae;Carnivora;Mammalia;Chihauhua, Dachshund, Poodle, Saint Bernard;BEHAVIORAL;4;;125;Hz;44,2;;;;;;extracted;;BEHAVIORAL;mean of 4 dogs of different breeds
+1;P034;Canis lupus familiaris;domestic dog;Canis ;Canidae;Carnivora;Mammalia;Chihauhua, Dachshund, Poodle, Saint Bernard;BEHAVIORAL;4;;16000;Hz;5,9;;;;;;extracted;;BEHAVIORAL;mean of 4 dogs of different breeds
+1;P034;Canis lupus familiaris;domestic dog;Canis ;Canidae;Carnivora;Mammalia;Chihauhua, Dachshund, Poodle, Saint Bernard;BEHAVIORAL;4;;2000;Hz;8,8;;;;;;extracted;;BEHAVIORAL;mean of 4 dogs of different breeds
+1;P034;Canis lupus familiaris;domestic dog;Canis ;Canidae;Carnivora;Mammalia;Chihauhua, Dachshund, Poodle, Saint Bernard;BEHAVIORAL;4;;250;Hz;28;;;;;;extracted;;BEHAVIORAL;mean of 4 dogs of different breeds
+1;P034;Canis lupus familiaris;domestic dog;Canis ;Canidae;Carnivora;Mammalia;Chihauhua, Dachshund, Poodle, Saint Bernard;BEHAVIORAL;4;;32000;Hz;17,9;;;;;;extracted;;BEHAVIORAL;mean of 4 dogs of different breeds
+1;P034;Canis lupus familiaris;domestic dog;Canis ;Canidae;Carnivora;Mammalia;Chihauhua, Dachshund, Poodle, Saint Bernard;BEHAVIORAL;4;;4000;Hz;4,2;;;;;;extracted;;BEHAVIORAL;mean of 4 dogs of different breeds
+1;P034;Canis lupus familiaris;domestic dog;Canis ;Canidae;Carnivora;Mammalia;Chihauhua, Dachshund, Poodle, Saint Bernard;BEHAVIORAL;4;;40000;Hz;40;;;;;;extracted;;BEHAVIORAL;mean of 4 dogs of different breeds
+1;P034;Canis lupus familiaris;domestic dog;Canis ;Canidae;Carnivora;Mammalia;Chihauhua, Dachshund, Poodle, Saint Bernard;BEHAVIORAL;4;;46000;Hz;56,9;;;;;;extracted;;BEHAVIORAL;mean of 4 dogs of different breeds
+1;P034;Canis lupus familiaris;domestic dog;Canis ;Canidae;Carnivora;Mammalia;Chihauhua, Dachshund, Poodle, Saint Bernard;BEHAVIORAL;4;;50000;Hz;69,9;;;;;;extracted;;BEHAVIORAL;mean of 4 dogs of different breeds
+1;P034;Canis lupus familiaris;domestic dog;Canis ;Canidae;Carnivora;Mammalia;Chihauhua, Dachshund, Poodle, Saint Bernard;BEHAVIORAL;4;;500;Hz;19,8;;;;;;extracted;;BEHAVIORAL;mean of 4 dogs of different breeds
+1;P034;Canis lupus familiaris;domestic dog;Canis ;Canidae;Carnivora;Mammalia;Chihauhua, Dachshund, Poodle, Saint Bernard;BEHAVIORAL;4;;6300;Hz;1;;;;;;extracted;;BEHAVIORAL;mean of 4 dogs of different breeds
+1;P034;Canis lupus familiaris;domestic dog;Canis ;Canidae;Carnivora;Mammalia;Chihauhua, Dachshund, Poodle, Saint Bernard;BEHAVIORAL;4;;63;Hz;62,1;;;;;;extracted;;BEHAVIORAL;mean of 4 dogs of different breeds
+1;P034;Canis lupus familiaris;domestic dog;Canis ;Canidae;Carnivora;Mammalia;Chihauhua, Dachshund, Poodle, Saint Bernard;BEHAVIORAL;4;;8000;Hz;-1;;;;;;extracted;;BEHAVIORAL;mean of 4 dogs of different breeds
+1;P043;Sturnus vulgaris;European starling;Sturnus ;Sturnidae;Passeriformes;Aves;;BEHAVIORAL;6;;4000;Hz;4,2;;;;1;5;measured;;BEHAVIORAL;
+1;P043;Sturnus vulgaris;European starling;Sturnus ;Sturnidae;Passeriformes;Aves;;BEHAVIORAL;6;;500;Hz;18,4;;;;15;21;measured;;BEHAVIORAL;
+1;P043;Sturnus vulgaris;European starling;Sturnus ;Sturnidae;Passeriformes;Aves;;BEHAVIORAL;6;;6000;Hz;8,7;;;;2;16;measured;;BEHAVIORAL;
+1;P043;Sturnus vulgaris;European starling;Sturnus ;Sturnidae;Passeriformes;Aves;;BEHAVIORAL;6;;8000;Hz;42,9;;;;38;47;measured;;BEHAVIORAL;
+1;P043;Sturnus vulgaris;European starling;Sturnus ;Sturnidae;Passeriformes;Aves;;BEHAVIORAL;6;;1000;Hz;10,6;;;;7;17;measured;;BEHAVIORAL;
+1;P043;Sturnus vulgaris;European starling;Sturnus ;Sturnidae;Passeriformes;Aves;;BEHAVIORAL;6;;2000;Hz;10,5;;;;6;13;measured;;BEHAVIORAL;
+1;P043;Sturnus vulgaris;European starling;Sturnus ;Sturnidae;Passeriformes;Aves;;BEHAVIORAL;6;;4000;Hz;6,5;;;;5;7;measured;;BEHAVIORAL;
+1;P043;Sturnus vulgaris;European starling;Sturnus ;Sturnidae;Passeriformes;Aves;;BEHAVIORAL;6;;500;Hz;19,8;;;;13;27;measured;;BEHAVIORAL;
+1;P043;Sturnus vulgaris;European starling;Sturnus ;Sturnidae;Passeriformes;Aves;;BEHAVIORAL;6;;6000;Hz;14,8;;;;11;18;measured;;BEHAVIORAL;
+1;P043;Sturnus vulgaris;European starling;Sturnus ;Sturnidae;Passeriformes;Aves;;BEHAVIORAL;6;;8000;Hz;47,8;;;;45;50;measured;;BEHAVIORAL;
+1;P051;Hyla cinerea;green treefrog;Hyla ;Hylidae;Anura;Amphibia;;BEHAVIORAL;1;;0,3;kHz;52;;;;;;extracted;;BEHAVIORAL;
+1;P051;Hyla cinerea;green treefrog;Hyla ;Hylidae;Anura;Amphibia;;BEHAVIORAL;1;;0,6;kHz;38;;;;;;extracted;;BEHAVIORAL;
+1;P051;Hyla cinerea;green treefrog;Hyla ;Hylidae;Anura;Amphibia;;BEHAVIORAL;1;;0,9;kHz;36;;;;;;extracted;;BEHAVIORAL;
+1;P051;Hyla cinerea;green treefrog;Hyla ;Hylidae;Anura;Amphibia;;BEHAVIORAL;1;;1,2;kHz;44;;;;;;extracted;;BEHAVIORAL;
+1;P051;Hyla cinerea;green treefrog;Hyla ;Hylidae;Anura;Amphibia;;BEHAVIORAL;1;;1,8;kHz;46;;;;;;extracted;;BEHAVIORAL;
+1;P051;Hyla cinerea;green treefrog;Hyla ;Hylidae;Anura;Amphibia;;BEHAVIORAL;1;;2,9;kHz;38;;;;;;extracted;;BEHAVIORAL;
+1;P051;Hyla cinerea;green treefrog;Hyla ;Hylidae;Anura;Amphibia;;BEHAVIORAL;1;;3,6;kHz;43;;;;;;extracted;;BEHAVIORAL;
+1;P051;Hyla cinerea;green treefrog;Hyla ;Hylidae;Anura;Amphibia;;BEHAVIORAL;1;;5;kHz;65;;;;;;extracted;;BEHAVIORAL;
+1;P051;Hyla cinerea;green treefrog;Hyla ;Hylidae;Anura;Amphibia;;BEHAVIORAL;1;;5,5;kHz;69;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;20;kHz;87,2;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;30;kHz;77,1;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;33;kHz;70,7;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;36;kHz;68,7;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;40;kHz;69,3;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;44;kHz;71,9;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;45;kHz;67;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;50;kHz;66,7;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;55;kHz;71,6;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;60;kHz;69,6;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;63;kHz;74,5;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;66;kHz;80;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;70;kHz;86,8;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;73;kHz;88,6;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;75;kHz;87,4;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;80;kHz;86,6;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;83;kHz;83,4;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;85;kHz;82,4;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;94;kHz;78,9;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;95;kHz;81,8;;;;;;extracted;;BEHAVIORAL;
+1;P069;Cycnia tenera;dogbane tiger moth;Cycnia ;Erebidae;Lepidoptera;Insecta;;BEHAVIORAL;1;;96;kHz;82,9;;;;;;extracted;;BEHAVIORAL;
+1;P076;Tyto alba;barn owl;Tyto ;Tytonidae;Strigiformes;Aves;;BEHAVIORAL;;;0,1;kHz;10,94;;;;;;extracted;;BEHAVIORAL;
+1;P076;Tyto alba;barn owl;Tyto ;Tytonidae;Strigiformes;Aves;;BEHAVIORAL;;;0,2;kHz;10;;;;;;extracted;;BEHAVIORAL;
+1;P076;Tyto alba;barn owl;Tyto ;Tytonidae;Strigiformes;Aves;;BEHAVIORAL;;;0,3;kHz;8,43;;;;;;extracted;;BEHAVIORAL;
+1;P076;Tyto alba;barn owl;Tyto ;Tytonidae;Strigiformes;Aves;;BEHAVIORAL;;;0,5;kHz;6,54;;;;;;extracted;;BEHAVIORAL;
+1;P076;Tyto alba;barn owl;Tyto ;Tytonidae;Strigiformes;Aves;;BEHAVIORAL;;;0,7;kHz;4,65;;;;;;extracted;;BEHAVIORAL;
+1;P076;Tyto alba;barn owl;Tyto ;Tytonidae;Strigiformes;Aves;;BEHAVIORAL;;;1;kHz;2,14;;;;;;extracted;;BEHAVIORAL;
+1;P076;Tyto alba;barn owl;Tyto ;Tytonidae;Strigiformes;Aves;;BEHAVIORAL;;;1,5;kHz;-2,58;;;;;;extracted;;BEHAVIORAL;
+1;P076;Tyto alba;barn owl;Tyto ;Tytonidae;Strigiformes;Aves;;BEHAVIORAL;;;10;kHz;0,25;;;;;;extracted;;BEHAVIORAL;
+1;P076;Tyto alba;barn owl;Tyto ;Tytonidae;Strigiformes;Aves;;BEHAVIORAL;;;2;kHz;-6,98;;;;;;extracted;;BEHAVIORAL;
+1;P076;Tyto alba;barn owl;Tyto ;Tytonidae;Strigiformes;Aves;;BEHAVIORAL;;;3;kHz;-12,64;;;;;;extracted;;BEHAVIORAL;
+1;P076;Tyto alba;barn owl;Tyto ;Tytonidae;Strigiformes;Aves;;BEHAVIORAL;;;4;kHz;-16,42;;;;;;extracted;;BEHAVIORAL;
+1;P076;Tyto alba;barn owl;Tyto ;Tytonidae;Strigiformes;Aves;;BEHAVIORAL;;;5,5;kHz;-19,87;;;;;;extracted;;BEHAVIORAL;
+1;P076;Tyto alba;barn owl;Tyto ;Tytonidae;Strigiformes;Aves;;BEHAVIORAL;;;7;kHz;-17,36;;;;;;extracted;;BEHAVIORAL;
+1;P076;Tyto alba;barn owl;Tyto ;Tytonidae;Strigiformes;Aves;;BEHAVIORAL;;;8;kHz;-12,96;;;;;;extracted;;BEHAVIORAL;
+1;P081;Parus major;great tit;Parus ;Paridae;Passeriformes;Aves;;BEHAVIORAL;7;;2000;Hz;6,5;;;;3;10;measured;6,6;BEHAVIORAL;
+1;P081;Parus major;great tit;Parus ;Paridae;Passeriformes;Aves;;BEHAVIORAL;7;;250;Hz;32,4;;;;26;37;measured;32,3;BEHAVIORAL;
+1;P081;Parus major;great tit;Parus ;Paridae;Passeriformes;Aves;;BEHAVIORAL;7;;4000;Hz;9,1;;;;7;10;measured;9;BEHAVIORAL;
+1;P081;Parus major;great tit;Parus ;Paridae;Passeriformes;Aves;;BEHAVIORAL;7;;500;Hz;26,5;;;;26;29;measured;26,4;BEHAVIORAL;
+1;P081;Parus major;great tit;Parus ;Paridae;Passeriformes;Aves;;BEHAVIORAL;7;;6500;Hz;12,8;;;;11;15;measured;12,6;BEHAVIORAL;
+1;P081;Parus major;great tit;Parus ;Paridae;Passeriformes;Aves;;BEHAVIORAL;7;;8000;Hz;18,1;;;;16;22;measured;18,7;BEHAVIORAL;
+1;P086;Oryctolagus cuniculus;rabbit;Oryctolagus ;Leporidae;Lagomorpha;Mammalia;;BEHAVIORAL;;;1000;Hz;11,3;;;;;;extracted;;BEHAVIORAL;
+1;P086;Oryctolagus cuniculus;rabbit;Oryctolagus ;Leporidae;Lagomorpha;Mammalia;;BEHAVIORAL;;;15000;Hz;5;;;;;;extracted;;BEHAVIORAL;
+1;P086;Oryctolagus cuniculus;rabbit;Oryctolagus ;Leporidae;Lagomorpha;Mammalia;;BEHAVIORAL;;;2000;Hz;4;;;;;;extracted;;BEHAVIORAL;
+1;P086;Oryctolagus cuniculus;rabbit;Oryctolagus ;Leporidae;Lagomorpha;Mammalia;;BEHAVIORAL;;;200;Hz;45;;;;;;extracted;;BEHAVIORAL;
+1;P086;Oryctolagus cuniculus;rabbit;Oryctolagus ;Leporidae;Lagomorpha;Mammalia;;BEHAVIORAL;;;30000;Hz;22,4;;;;;;extracted;;BEHAVIORAL;
+1;P086;Oryctolagus cuniculus;rabbit;Oryctolagus ;Leporidae;Lagomorpha;Mammalia;;BEHAVIORAL;;;50000;Hz;61,5;;;;;;extracted;;BEHAVIORAL;
+1;P086;Oryctolagus cuniculus;rabbit;Oryctolagus ;Leporidae;Lagomorpha;Mammalia;;BEHAVIORAL;;;500;Hz;28,1;;;;;;extracted;;BEHAVIORAL;
+1;P086;Oryctolagus cuniculus;rabbit;Oryctolagus ;Leporidae;Lagomorpha;Mammalia;;BEHAVIORAL;;;63;Hz;70,2;;;;;;extracted;;BEHAVIORAL;
+1;P086;Oryctolagus cuniculus;rabbit;Oryctolagus ;Leporidae;Lagomorpha;Mammalia;;BEHAVIORAL;;;8000;Hz;9,1;;;;;;extracted;;BEHAVIORAL;
+1;P093;Gryllus texensis;field cricket;Gryllus ;Gryllidae;Orthoptera;Insecta;;BEHAVIORAL;10;;30;kHz;69;4;4;se;;;extracted;;BEHAVIORAL;long winged cricket
+1;P093;Gryllus texensis;field cricket;Gryllus ;Gryllidae;Orthoptera;Insecta;;BEHAVIORAL;10;;5,2;kHz;49,3;4;4;se;;;extracted;;BEHAVIORAL;long winged cricket
+1;P093;Gryllus texensis;field cricket;Gryllus ;Gryllidae;Orthoptera;Insecta;;BEHAVIORAL;10;;30;kHz;77;2;2;se;;;extracted;;BEHAVIORAL;short winged cricket
+1;P093;Gryllus texensis;field cricket;Gryllus ;Gryllidae;Orthoptera;Insecta;;BEHAVIORAL;10;;5,2;kHz;48,3;2;2;se;;;extracted;;BEHAVIORAL;short winged cricket
+1;P122;Ormia ochracea;NA;Ormia ;Tachinidae;Diptera;Insecta;;BEHAVIORAL;;;10,25;kHz;58,87;2;2;se;;;extracted;;BEHAVIORAL;Population hawaii
+1;P122;Ormia ochracea;NA;Ormia ;Tachinidae;Diptera;Insecta;;BEHAVIORAL;;;13;kHz;69,41;1;1;se;;;extracted;;BEHAVIORAL;Population hawaii
+1;P122;Ormia ochracea;NA;Ormia ;Tachinidae;Diptera;Insecta;;BEHAVIORAL;;;16,25;kHz;69,67;1;1;se;;;extracted;;BEHAVIORAL;Population hawaii
+1;P122;Ormia ochracea;NA;Ormia ;Tachinidae;Diptera;Insecta;;BEHAVIORAL;;;2;kHz;77,95;1;1;se;;;extracted;;BEHAVIORAL;Population hawaii
+1;P122;Ormia ochracea;NA;Ormia ;Tachinidae;Diptera;Insecta;;BEHAVIORAL;;;2,5;kHz;70,92;2;2;se;;;extracted;;BEHAVIORAL;Population hawaii
+1;P122;Ormia ochracea;NA;Ormia ;Tachinidae;Diptera;Insecta;;BEHAVIORAL;;;20,5;kHz;71,67;1;1;se;;;extracted;;BEHAVIORAL;Population hawaii
+1;P122;Ormia ochracea;NA;Ormia ;Tachinidae;Diptera;Insecta;;BEHAVIORAL;;;25,8;kHz;70,92;1;1;se;;;extracted;;BEHAVIORAL;Population hawaii
+1;P122;Ormia ochracea;NA;Ormia ;Tachinidae;Diptera;Insecta;;BEHAVIORAL;;;3,2;kHz;56,61;2;2;se;;;extracted;;BEHAVIORAL;Population hawaii
+1;P122;Ormia ochracea;NA;Ormia ;Tachinidae;Diptera;Insecta;;BEHAVIORAL;;;32,5;kHz;69,92;1;1;se;;;extracted;;BEHAVIORAL;Population hawaii
+1;P122;Ormia ochracea;NA;Ormia ;Tachinidae;Diptera;Insecta;;BEHAVIORAL;;;4;kHz;42,55;2;2;se;;;extracted;;BEHAVIORAL;Population hawaii
+1;P122;Ormia ochracea;NA;Ormia ;Tachinidae;Diptera;Insecta;;BEHAVIORAL;;;41;kHz;69,16;1;1;se;;;extracted;;BEHAVIORAL;Population hawaii
+1;P122;Ormia ochracea;NA;Ormia ;Tachinidae;Diptera;Insecta;;BEHAVIORAL;;;5,1;kHz;34,77;3;3;se;;;extracted;;BEHAVIORAL;Population hawaii
+1;P122;Ormia ochracea;NA;Ormia ;Tachinidae;Diptera;Insecta;;BEHAVIORAL;;;6,5;kHz;45,31;2;2;se;;;extracted;;BEHAVIORAL;Population hawaii
+1;P122;Ormia ochracea;NA;Ormia ;Tachinidae;Diptera;Insecta;;BEHAVIORAL;;;8,1;kHz;57,11;2;2;se;;;extracted;;BEHAVIORAL;Population hawaii
+1;P143;Asio otus;long-eared owl;Asio ;Strigidae;Strigiformes;Aves;;BEHAVIORAL;6;;1000;Hz;-11,3;;;;;;extracted;;BEHAVIORAL;
+1;P143;Asio otus;long-eared owl;Asio ;Strigidae;Strigiformes;Aves;;BEHAVIORAL;6;;10000;Hz;36,8;;;;;;extracted;;BEHAVIORAL;
+1;P143;Asio otus;long-eared owl;Asio ;Strigidae;Strigiformes;Aves;;BEHAVIORAL;6;;2000;Hz;-15,7;;;;;;extracted;;BEHAVIORAL;
+1;P143;Asio otus;long-eared owl;Asio ;Strigidae;Strigiformes;Aves;;BEHAVIORAL;6;;4000;Hz;-20,6;;;;;;extracted;;BEHAVIORAL;
+1;P143;Asio otus;long-eared owl;Asio ;Strigidae;Strigiformes;Aves;;BEHAVIORAL;6;;500;Hz;-6,9;;;;;;extracted;;BEHAVIORAL;
+1;P143;Asio otus;long-eared owl;Asio ;Strigidae;Strigiformes;Aves;;BEHAVIORAL;6;;6000;Hz;-21,4;;;;;;extracted;;BEHAVIORAL;
+1;P143;Asio otus;long-eared owl;Asio ;Strigidae;Strigiformes;Aves;;BEHAVIORAL;6;;8000;Hz;-11;;;;;;extracted;;BEHAVIORAL;
