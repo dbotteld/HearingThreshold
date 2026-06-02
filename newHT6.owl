@@ -1,0 +1,2299 @@
+@prefix ex: <https://github.com/dbotteld/HearingThreshold/blob/main/> .
+@prefix gbif: <https://www.gbif.org/species/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:commonName a owl:AnnotationProperty ;
+    rdfs:label "common name"@en ;
+    rdfs:domain ex:Animal ;
+    rdfs:range xsd:string .
+
+ex:frequency a owl:DatatypeProperty ;
+    rdfs:label "frequency [Hz]"@en ;
+    rdfs:domain ex:HearingThresholdMeasurement ;
+    rdfs:range xsd:double .
+
+ex:hasHearingThresholdCampaign a owl:AnnotationProperty ;
+    rdfs:label "has HT Measurement Campaign"@en ;
+    rdfs:domain ex:Animal ;
+    rdfs:range ex:HearingThresholdMeasurementCampaign .
+
+ex:hasMeasurement a owl:ObjectProperty ;
+    rdfs:label "contains frequency-level pair"@en ;
+    rdfs:domain ex:HearingThresholdMeasurementCampaign ;
+    rdfs:range ex:HearingThresholdMeasurement .
+
+ex:measuredOnTaxon a owl:ObjectProperty ;
+    rdfs:label "is measured on Taxon"@en ;
+    rdfs:domain ex:HearingThresholdMeasurementCampaign ;
+    rdfs:range ex:Animal .
+
+ex:partOf a owl:ObjectProperty ;
+    rdfs:label "is part of"@en ;
+    rdfs:domain ex:HearingThresholdMeasurement ;
+    rdfs:range ex:HearingThresholdMeasurementCampaign .
+
+ex:pubAuthor a owl:DatatypeProperty ;
+    rdfs:label "publication author"@en ;
+    rdfs:domain ex:HearingThresholdMeasurementCampaign ;
+    rdfs:range xsd:string .
+
+ex:pubDOI a owl:DatatypeProperty ;
+    rdfs:label "publication DOI"@en ;
+    rdfs:domain ex:HearingThresholdMeasurementCampaign ;
+    rdfs:range xsd:string .
+
+ex:pubID a owl:DatatypeProperty ;
+    rdfs:label "publication ID"@en ;
+    rdfs:domain ex:HearingThresholdMeasurementCampaign ;
+    rdfs:range xsd:string .
+
+ex:pubTitle a owl:DatatypeProperty ;
+    rdfs:label "publication title"@en ;
+    rdfs:domain ex:HearingThresholdMeasurementCampaign ;
+    rdfs:range xsd:string .
+
+ex:pubYear a owl:DatatypeProperty ;
+    rdfs:label "publication year"@en ;
+    rdfs:domain ex:HearingThresholdMeasurementCampaign ;
+    rdfs:range xsd:integer .
+
+ex:rank a owl:AnnotationProperty ;
+    rdfs:label "taxonomic rank"@en ;
+    rdfs:domain ex:Animal ;
+    rdfs:range xsd:string .
+
+ex:thresholdLevel a owl:DatatypeProperty ;
+    rdfs:label "threshold [dB]"@en ;
+    rdfs:domain ex:HearingThresholdMeasurement ;
+    rdfs:range xsd:double .
+
+ex:usesMeasurementMethod a owl:ObjectProperty ;
+    rdfs:label "uses Measurement Method"@en ;
+    rdfs:domain ex:HearingThresholdMeasurementCampaign ;
+    rdfs:range ex:MeasurementMethod .
+
+ex:Amphibia a owl:Class ;
+    rdfs:label "Amphibia"@en ;
+    rdfs:subClassOf ex:Animal ;
+    ex:commonName " "@en ;
+    ex:rank "class"@en .
+
+ex:Anura a owl:Class ;
+    rdfs:label "Anura"@en ;
+    rdfs:subClassOf ex:Amphibia ;
+    ex:commonName " "@en ;
+    ex:rank "order"@en .
+
+ex:Asio a owl:Class ;
+    rdfs:label "Asio"@en ;
+    rdfs:subClassOf ex:Strigidae ;
+    ex:commonName "Eared Owls"@en ;
+    ex:rank "genus"@en .
+
+ex:Asio_otus a owl:Class ;
+    rdfs:label "Asio otus"@en ;
+    rdfs:seeAlso gbif:2497306 ;
+    rdfs:subClassOf ex:Asio ;
+    ex:commonName "Cat Owl"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P143_A07 .
+
+ex:Bos a owl:Class ;
+    rdfs:label "Bos"@en ;
+    rdfs:subClassOf ex:Bovidae ;
+    ex:commonName "Cattle"@en ;
+    ex:rank "genus"@en .
+
+ex:Bos_taurus a owl:Class ;
+    rdfs:label "Bos taurus"@en ;
+    rdfs:seeAlso gbif:2441022 ;
+    rdfs:subClassOf ex:Bos ;
+    ex:commonName "Aurochs"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P023_A02 .
+
+ex:Bovidae a owl:Class ;
+    rdfs:label "Bovidae"@en ;
+    rdfs:subClassOf ex:Artiodactyla ;
+    ex:commonName "Antelope"@en ;
+    ex:rank "family"@en .
+
+ex:Canidae a owl:Class ;
+    rdfs:label "Canidae"@en ;
+    rdfs:subClassOf ex:Carnivora ;
+    ex:commonName "Canid"@en ;
+    ex:rank "family"@en .
+
+ex:Canis a owl:Class ;
+    rdfs:label "Canis"@en ;
+    rdfs:subClassOf ex:Canidae ;
+    ex:commonName "Canine"@en ;
+    ex:rank "genus"@en .
+
+ex:Canis_lupus_familiaris a owl:Class ;
+    rdfs:label "Canis lupus familiaris"@en ;
+    rdfs:seeAlso gbif:6164210 ;
+    rdfs:subClassOf ex:Canis ;
+    ex:commonName "Domestic Dog"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P034_A09 .
+
+ex:Cervidae a owl:Class ;
+    rdfs:label "Cervidae"@en ;
+    rdfs:subClassOf ex:Artiodactyla ;
+    ex:commonName "Buck"@en ;
+    ex:rank "family"@en .
+
+ex:Cycnia a owl:Class ;
+    rdfs:label "Cycnia"@en ;
+    rdfs:subClassOf ex:Erebidae ;
+    ex:commonName " "@en ;
+    ex:rank "genus"@en .
+
+ex:Cycnia_tenera a owl:Class ;
+    rdfs:label "Cycnia tenera"@en ;
+    rdfs:seeAlso gbif:5114912 ;
+    rdfs:subClassOf ex:Cycnia ;
+    ex:commonName "Delicate Cycnia"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P069_A01 .
+
+ex:Diptera a owl:Class ;
+    rdfs:label "Diptera"@en ;
+    rdfs:subClassOf ex:Insecta ;
+    ex:commonName " "@en ;
+    ex:rank "order"@en .
+
+ex:Dryophytes a owl:Class ;
+    rdfs:label "Dryophytes"@en ;
+    rdfs:subClassOf ex:Hylidae ;
+    ex:commonName "Ameroasian Treefrogs"@en ;
+    ex:rank "genus"@en .
+
+ex:Eptesicus a owl:Class ;
+    rdfs:label "Eptesicus"@en ;
+    rdfs:subClassOf ex:Vespertilionidae ;
+    ex:commonName "Big Brown Bats"@en ;
+    ex:rank "genus"@en .
+
+ex:Eptesicus_fuscus a owl:Class ;
+    rdfs:label "Eptesicus fuscus"@en ;
+    rdfs:seeAlso gbif:2432352 ;
+    rdfs:subClassOf ex:Eptesicus ;
+    ex:commonName "Big Brown Bat"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P006_A01 .
+
+ex:Erebia a owl:Class ;
+    rdfs:label "Erebia"@en ;
+    rdfs:subClassOf ex:Nymphalidae ;
+    ex:commonName "Alpines"@en ;
+    ex:rank "genus"@en .
+
+ex:Erebia_manto a owl:Class ;
+    rdfs:label "Erebia manto"@en ;
+    rdfs:seeAlso gbif:5134815 ;
+    rdfs:subClassOf ex:Erebia ;
+    ex:commonName "Yellow-spotted Ringlet"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P016_A01 .
+
+ex:Erebidae a owl:Class ;
+    rdfs:label "Erebidae"@en ;
+    rdfs:subClassOf ex:Lepidoptera ;
+    ex:commonName "erebid moths"@en ;
+    ex:rank "family"@en .
+
+ex:Felidae a owl:Class ;
+    rdfs:label "Felidae"@en ;
+    rdfs:subClassOf ex:Carnivora ;
+    ex:commonName "Cat"@en ;
+    ex:rank "family"@en .
+
+ex:Felis a owl:Class ;
+    rdfs:label "Felis"@en ;
+    rdfs:subClassOf ex:Felidae ;
+    ex:commonName "Cat"@en ;
+    ex:rank "genus"@en .
+
+ex:Felis_catus a owl:Class ;
+    rdfs:label "Felis catus"@en ;
+    rdfs:seeAlso gbif:2435035 ;
+    rdfs:subClassOf ex:Felis ;
+    ex:commonName "Alley Cat"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P026_A01 .
+
+ex:Gryllidae a owl:Class ;
+    rdfs:label "Gryllidae"@en ;
+    rdfs:subClassOf ex:Orthoptera ;
+    ex:commonName "Blast"@en ;
+    ex:rank "family"@en .
+
+ex:Gryllus a owl:Class ;
+    rdfs:label "Gryllus"@en ;
+    rdfs:subClassOf ex:Gryllidae ;
+    ex:commonName "Grillos"@en ;
+    ex:rank "genus"@en .
+
+ex:HT_P005_A01_100000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+05 ;
+    ex:partOf ex:Campaign_P005_A01 ;
+    ex:thresholdLevel 4.5e+01 .
+
+ex:HT_P005_A01_10000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+04 ;
+    ex:partOf ex:Campaign_P005_A01 ;
+    ex:thresholdLevel 3.6e+01 .
+
+ex:HT_P005_A01_15000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.5e+04 ;
+    ex:partOf ex:Campaign_P005_A01 ;
+    ex:thresholdLevel 1.3e+01 .
+
+ex:HT_P005_A01_20000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+04 ;
+    ex:partOf ex:Campaign_P005_A01 ;
+    ex:thresholdLevel 2.3e+01 .
+
+ex:HT_P005_A01_2500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2.5e+03 ;
+    ex:partOf ex:Campaign_P005_A01 ;
+    ex:thresholdLevel 7.1e+01 .
+
+ex:HT_P005_A01_30000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3e+04 ;
+    ex:partOf ex:Campaign_P005_A01 ;
+    ex:thresholdLevel 3e+01 .
+
+ex:HT_P005_A01_40000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+04 ;
+    ex:partOf ex:Campaign_P005_A01 ;
+    ex:thresholdLevel 3.5e+01 .
+
+ex:HT_P005_A01_5000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+03 ;
+    ex:partOf ex:Campaign_P005_A01 ;
+    ex:thresholdLevel 6.3e+01 .
+
+ex:HT_P005_A01_60000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6e+04 ;
+    ex:partOf ex:Campaign_P005_A01 ;
+    ex:thresholdLevel 4.5e+01 .
+
+ex:HT_P005_A01_7390Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 7.39e+03 ;
+    ex:partOf ex:Campaign_P005_A01 ;
+    ex:thresholdLevel 4.625e+01 .
+
+ex:HT_P005_A01_80000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8e+04 ;
+    ex:partOf ex:Campaign_P005_A01 ;
+    ex:thresholdLevel 4.3e+01 .
+
+ex:HT_P006_A01_100000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+05 ;
+    ex:partOf ex:Campaign_P006_A01 ;
+    ex:thresholdLevel -4.2e+00 .
+
+ex:HT_P006_A01_10000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+04 ;
+    ex:partOf ex:Campaign_P006_A01 ;
+    ex:thresholdLevel -6.2e+01 .
+
+ex:HT_P006_A01_15000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.5e+04 ;
+    ex:partOf ex:Campaign_P006_A01 ;
+    ex:thresholdLevel -6.5e+01 .
+
+ex:HT_P006_A01_20000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+04 ;
+    ex:partOf ex:Campaign_P006_A01 ;
+    ex:thresholdLevel -6.8e+01 .
+
+ex:HT_P006_A01_25000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2.5e+04 ;
+    ex:partOf ex:Campaign_P006_A01 ;
+    ex:thresholdLevel -6.3e+01 .
+
+ex:HT_P006_A01_2500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2.5e+03 ;
+    ex:partOf ex:Campaign_P006_A01 ;
+    ex:thresholdLevel 1.35e+01 .
+
+ex:HT_P006_A01_35000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3.5e+04 ;
+    ex:partOf ex:Campaign_P006_A01 ;
+    ex:thresholdLevel -5.7e+01 .
+
+ex:HT_P006_A01_40000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+04 ;
+    ex:partOf ex:Campaign_P006_A01 ;
+    ex:thresholdLevel -4.1e+01 .
+
+ex:HT_P006_A01_45000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4.5e+04 ;
+    ex:partOf ex:Campaign_P006_A01 ;
+    ex:thresholdLevel -4.2e+01 .
+
+ex:HT_P006_A01_50000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+04 ;
+    ex:partOf ex:Campaign_P006_A01 ;
+    ex:thresholdLevel -5.5e+01 .
+
+ex:HT_P006_A01_5000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+03 ;
+    ex:partOf ex:Campaign_P006_A01 ;
+    ex:thresholdLevel -2.1e+01 .
+
+ex:HT_P006_A01_55000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5.5e+04 ;
+    ex:partOf ex:Campaign_P006_A01 ;
+    ex:thresholdLevel -6e+01 .
+
+ex:HT_P006_A01_60000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6e+04 ;
+    ex:partOf ex:Campaign_P006_A01 ;
+    ex:thresholdLevel -6.5e+01 .
+
+ex:HT_P006_A01_65000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6.5e+04 ;
+    ex:partOf ex:Campaign_P006_A01 ;
+    ex:thresholdLevel -5.8e+01 .
+
+ex:HT_P006_A01_70000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 7e+04 ;
+    ex:partOf ex:Campaign_P006_A01 ;
+    ex:thresholdLevel -5.85e+01 .
+
+ex:HT_P006_A01_80000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8e+04 ;
+    ex:partOf ex:Campaign_P006_A01 ;
+    ex:thresholdLevel -4.53e+01 .
+
+ex:HT_P006_A01_90000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 9e+04 ;
+    ex:partOf ex:Campaign_P006_A01 ;
+    ex:thresholdLevel -3.3e+01 .
+
+ex:HT_P006_A02_100000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+05 ;
+    ex:partOf ex:Campaign_P006_A02 ;
+    ex:thresholdLevel -4.5e+01 .
+
+ex:HT_P006_A02_120000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.2e+05 ;
+    ex:partOf ex:Campaign_P006_A02 ;
+    ex:thresholdLevel -2.34e+00 .
+
+ex:HT_P006_A02_13200Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.32e+04 ;
+    ex:partOf ex:Campaign_P006_A02 ;
+    ex:thresholdLevel -5.4e+01 .
+
+ex:HT_P006_A02_15000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.5e+04 ;
+    ex:partOf ex:Campaign_P006_A02 ;
+    ex:thresholdLevel -4.6e+01 .
+
+ex:HT_P006_A02_20000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+04 ;
+    ex:partOf ex:Campaign_P006_A02 ;
+    ex:thresholdLevel -5.7e+01 .
+
+ex:HT_P006_A02_25000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2.5e+04 ;
+    ex:partOf ex:Campaign_P006_A02 ;
+    ex:thresholdLevel -6e+01 .
+
+ex:HT_P006_A02_35000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3.5e+04 ;
+    ex:partOf ex:Campaign_P006_A02 ;
+    ex:thresholdLevel -6.5e+01 .
+
+ex:HT_P006_A02_40000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+04 ;
+    ex:partOf ex:Campaign_P006_A02 ;
+    ex:thresholdLevel -5.5e+01 .
+
+ex:HT_P006_A02_50000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+04 ;
+    ex:partOf ex:Campaign_P006_A02 ;
+    ex:thresholdLevel -5.2e+01 .
+
+ex:HT_P006_A02_55000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5.5e+04 ;
+    ex:partOf ex:Campaign_P006_A02 ;
+    ex:thresholdLevel -5.7e+01 .
+
+ex:HT_P006_A02_60000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6e+04 ;
+    ex:partOf ex:Campaign_P006_A02 ;
+    ex:thresholdLevel -5.9e+01 .
+
+ex:HT_P006_A02_70000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 7e+04 ;
+    ex:partOf ex:Campaign_P006_A02 ;
+    ex:thresholdLevel -4.8e+01 .
+
+ex:HT_P006_A02_80000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8e+04 ;
+    ex:partOf ex:Campaign_P006_A02 ;
+    ex:thresholdLevel -5e+01 .
+
+ex:HT_P006_A02_90000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 9e+04 ;
+    ex:partOf ex:Campaign_P006_A02 ;
+    ex:thresholdLevel -5.2e+01 .
+
+ex:HT_P007_A01_10000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+04 ;
+    ex:partOf ex:Campaign_P007_A01 ;
+    ex:thresholdLevel 5.25e+00 .
+
+ex:HT_P007_A01_15000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.5e+04 ;
+    ex:partOf ex:Campaign_P007_A01 ;
+    ex:thresholdLevel 6.34e+00 .
+
+ex:HT_P007_A01_16000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.6e+04 ;
+    ex:partOf ex:Campaign_P007_A01 ;
+    ex:thresholdLevel 1.05e+01 .
+
+ex:HT_P007_A01_2000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+03 ;
+    ex:partOf ex:Campaign_P007_A01 ;
+    ex:thresholdLevel 6.52e+01 .
+
+ex:HT_P007_A01_25000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2.5e+04 ;
+    ex:partOf ex:Campaign_P007_A01 ;
+    ex:thresholdLevel 9.2e+00 .
+
+ex:HT_P007_A01_3000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3e+03 ;
+    ex:partOf ex:Campaign_P007_A01 ;
+    ex:thresholdLevel 5.04e+01 .
+
+ex:HT_P007_A01_31000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3.1e+04 ;
+    ex:partOf ex:Campaign_P007_A01 ;
+    ex:thresholdLevel 2.35e+01 .
+
+ex:HT_P007_A01_4000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+03 ;
+    ex:partOf ex:Campaign_P007_A01 ;
+    ex:thresholdLevel 4.04e+01 .
+
+ex:HT_P007_A01_45000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4.5e+04 ;
+    ex:partOf ex:Campaign_P007_A01 ;
+    ex:thresholdLevel 1.27e+01 .
+
+ex:HT_P007_A01_5000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+03 ;
+    ex:partOf ex:Campaign_P007_A01 ;
+    ex:thresholdLevel 3.06e+01 .
+
+ex:HT_P007_A01_64000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6.4e+04 ;
+    ex:partOf ex:Campaign_P007_A01 ;
+    ex:thresholdLevel 6.04e+01 .
+
+ex:HT_P007_A01_8000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8e+03 ;
+    ex:partOf ex:Campaign_P007_A01 ;
+    ex:thresholdLevel 1.02e+01 .
+
+ex:HT_P008_A01_100000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+05 ;
+    ex:partOf ex:Campaign_P008_A01 ;
+    ex:thresholdLevel 6.04e+01 .
+
+ex:HT_P008_A01_10000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+04 ;
+    ex:partOf ex:Campaign_P008_A01 ;
+    ex:thresholdLevel 3.04e+01 .
+
+ex:HT_P008_A01_15000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.5e+04 ;
+    ex:partOf ex:Campaign_P008_A01 ;
+    ex:thresholdLevel -5e-01 .
+
+ex:HT_P008_A01_20000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+04 ;
+    ex:partOf ex:Campaign_P008_A01 ;
+    ex:thresholdLevel -2e-01 .
+
+ex:HT_P008_A01_30000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3e+04 ;
+    ex:partOf ex:Campaign_P008_A01 ;
+    ex:thresholdLevel 2.67e+00 .
+
+ex:HT_P008_A01_40000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+04 ;
+    ex:partOf ex:Campaign_P008_A01 ;
+    ex:thresholdLevel 2.54e+01 .
+
+ex:HT_P008_A01_50000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+04 ;
+    ex:partOf ex:Campaign_P008_A01 ;
+    ex:thresholdLevel 1.75e+01 .
+
+ex:HT_P008_A01_5000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+03 ;
+    ex:partOf ex:Campaign_P008_A01 ;
+    ex:thresholdLevel 5.5e+01 .
+
+ex:HT_P008_A01_60000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6e+04 ;
+    ex:partOf ex:Campaign_P008_A01 ;
+    ex:thresholdLevel 5.9e-01 .
+
+ex:HT_P008_A01_70000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 7e+04 ;
+    ex:partOf ex:Campaign_P008_A01 ;
+    ex:thresholdLevel 1.06e+01 .
+
+ex:HT_P008_A01_80000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8e+04 ;
+    ex:partOf ex:Campaign_P008_A01 ;
+    ex:thresholdLevel 2.85e+01 .
+
+ex:HT_P008_A01_81000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8.1e+04 ;
+    ex:partOf ex:Campaign_P008_A01 ;
+    ex:thresholdLevel -1.8e-01 .
+
+ex:HT_P008_A01_83000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8.3e+04 ;
+    ex:partOf ex:Campaign_P008_A01 ;
+    ex:thresholdLevel 6.4e+00 .
+
+ex:HT_P008_A01_85000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8.5e+04 ;
+    ex:partOf ex:Campaign_P008_A01 ;
+    ex:thresholdLevel 1.25e+01 .
+
+ex:HT_P008_A01_87000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8.7e+04 ;
+    ex:partOf ex:Campaign_P008_A01 ;
+    ex:thresholdLevel 2.04e+01 .
+
+ex:HT_P008_A01_90000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 9e+04 ;
+    ex:partOf ex:Campaign_P008_A01 ;
+    ex:thresholdLevel 3.55e+01 .
+
+ex:HT_P008_A01_95000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 9.5e+04 ;
+    ex:partOf ex:Campaign_P008_A01 ;
+    ex:thresholdLevel 4.05e+01 .
+
+ex:HT_P016_A01_1000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+03 ;
+    ex:partOf ex:Campaign_P016_A01 ;
+    ex:thresholdLevel 4.9e+01 .
+
+ex:HT_P016_A01_125Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.25e+02 ;
+    ex:partOf ex:Campaign_P016_A01 ;
+    ex:thresholdLevel 5.8e+01 .
+
+ex:HT_P016_A01_16000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.6e+04 ;
+    ex:partOf ex:Campaign_P016_A01 ;
+    ex:thresholdLevel 6.8e+01 .
+
+ex:HT_P016_A01_2000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+03 ;
+    ex:partOf ex:Campaign_P016_A01 ;
+    ex:thresholdLevel 5.5e+01 .
+
+ex:HT_P016_A01_250Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2.5e+02 ;
+    ex:partOf ex:Campaign_P016_A01 ;
+    ex:thresholdLevel 5.3e+01 .
+
+ex:HT_P016_A01_4000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+03 ;
+    ex:partOf ex:Campaign_P016_A01 ;
+    ex:thresholdLevel 6.3e+01 .
+
+ex:HT_P016_A01_500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+02 ;
+    ex:partOf ex:Campaign_P016_A01 ;
+    ex:thresholdLevel 4.9e+01 .
+
+ex:HT_P016_A01_8000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8e+03 ;
+    ex:partOf ex:Campaign_P016_A01 ;
+    ex:thresholdLevel 6.6e+01 .
+
+ex:HT_P018_A02_1000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+03 ;
+    ex:partOf ex:Campaign_P018_A02 ;
+    ex:thresholdLevel 9e+00 .
+
+ex:HT_P018_A02_12000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.2e+04 ;
+    ex:partOf ex:Campaign_P018_A02 ;
+    ex:thresholdLevel 3e+00 .
+
+ex:HT_P018_A02_130Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.3e+02 ;
+    ex:partOf ex:Campaign_P018_A02 ;
+    ex:thresholdLevel 5e+01 .
+
+ex:HT_P018_A02_16000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.6e+04 ;
+    ex:partOf ex:Campaign_P018_A02 ;
+    ex:thresholdLevel 5e+00 .
+
+ex:HT_P018_A02_2000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+03 ;
+    ex:partOf ex:Campaign_P018_A02 ;
+    ex:thresholdLevel 1.5e+01 .
+
+ex:HT_P018_A02_250Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2.5e+02 ;
+    ex:partOf ex:Campaign_P018_A02 ;
+    ex:thresholdLevel 3.8e+01 .
+
+ex:HT_P018_A02_32000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3.2e+04 ;
+    ex:partOf ex:Campaign_P018_A02 ;
+    ex:thresholdLevel 2.2e+01 .
+
+ex:HT_P018_A02_38000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3.8e+04 ;
+    ex:partOf ex:Campaign_P018_A02 ;
+    ex:thresholdLevel 6e+01 .
+
+ex:HT_P018_A02_4000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+03 ;
+    ex:partOf ex:Campaign_P018_A02 ;
+    ex:thresholdLevel 4e+00 .
+
+ex:HT_P018_A02_500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+02 ;
+    ex:partOf ex:Campaign_P018_A02 ;
+    ex:thresholdLevel 2.1e+01 .
+
+ex:HT_P018_A02_60Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6e+01 ;
+    ex:partOf ex:Campaign_P018_A02 ;
+    ex:thresholdLevel 6.1e+01 .
+
+ex:HT_P018_A02_8000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8e+03 ;
+    ex:partOf ex:Campaign_P018_A02 ;
+    ex:thresholdLevel 2e+00 .
+
+ex:HT_P023_A02_1000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+03 ;
+    ex:partOf ex:Campaign_P023_A02 ;
+    ex:thresholdLevel 5e+00 .
+
+ex:HT_P023_A02_130Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.3e+02 ;
+    ex:partOf ex:Campaign_P023_A02 ;
+    ex:thresholdLevel 3.1e+01 .
+
+ex:HT_P023_A02_16000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.6e+04 ;
+    ex:partOf ex:Campaign_P023_A02 ;
+    ex:thresholdLevel 1e+01 .
+
+ex:HT_P023_A02_2000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+03 ;
+    ex:partOf ex:Campaign_P023_A02 ;
+    ex:thresholdLevel -5e+00 .
+
+ex:HT_P023_A02_20Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+01 ;
+    ex:partOf ex:Campaign_P023_A02 ;
+    ex:thresholdLevel 7.1e+01 .
+
+ex:HT_P023_A02_250Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2.5e+02 ;
+    ex:partOf ex:Campaign_P023_A02 ;
+    ex:thresholdLevel 2e+01 .
+
+ex:HT_P023_A02_30Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3e+01 ;
+    ex:partOf ex:Campaign_P023_A02 ;
+    ex:thresholdLevel 5.5e+01 .
+
+ex:HT_P023_A02_32000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3.2e+04 ;
+    ex:partOf ex:Campaign_P023_A02 ;
+    ex:thresholdLevel 4.1e+01 .
+
+ex:HT_P023_A02_40000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+04 ;
+    ex:partOf ex:Campaign_P023_A02 ;
+    ex:thresholdLevel 7.6e+01 .
+
+ex:HT_P023_A02_4000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+03 ;
+    ex:partOf ex:Campaign_P023_A02 ;
+    ex:thresholdLevel -1e+01 .
+
+ex:HT_P023_A02_500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+02 ;
+    ex:partOf ex:Campaign_P023_A02 ;
+    ex:thresholdLevel 1e+01 .
+
+ex:HT_P023_A02_60Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6e+01 ;
+    ex:partOf ex:Campaign_P023_A02 ;
+    ex:thresholdLevel 4.1e+01 .
+
+ex:HT_P023_A02_8000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8e+03 ;
+    ex:partOf ex:Campaign_P023_A02 ;
+    ex:thresholdLevel -1.5e+01 .
+
+ex:HT_P026_A01_1000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+03 ;
+    ex:partOf ex:Campaign_P026_A01 ;
+    ex:thresholdLevel 4e+00 .
+
+ex:HT_P026_A01_130Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.3e+02 ;
+    ex:partOf ex:Campaign_P026_A01 ;
+    ex:thresholdLevel 3.6e+01 .
+
+ex:HT_P026_A01_16000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.6e+04 ;
+    ex:partOf ex:Campaign_P026_A01 ;
+    ex:thresholdLevel -2e+00 .
+
+ex:HT_P026_A01_2000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+03 ;
+    ex:partOf ex:Campaign_P026_A01 ;
+    ex:thresholdLevel 1.5e+00 .
+
+ex:HT_P026_A01_250Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2.5e+02 ;
+    ex:partOf ex:Campaign_P026_A01 ;
+    ex:thresholdLevel 2.2e+01 .
+
+ex:HT_P026_A01_32000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3.2e+04 ;
+    ex:partOf ex:Campaign_P026_A01 ;
+    ex:thresholdLevel 3e+00 .
+
+ex:HT_P026_A01_4000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+03 ;
+    ex:partOf ex:Campaign_P026_A01 ;
+    ex:thresholdLevel 1e+00 .
+
+ex:HT_P026_A01_500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+02 ;
+    ex:partOf ex:Campaign_P026_A01 ;
+    ex:thresholdLevel 7e+00 .
+
+ex:HT_P026_A01_50Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+01 ;
+    ex:partOf ex:Campaign_P026_A01 ;
+    ex:thresholdLevel 7.5e+01 .
+
+ex:HT_P026_A01_60Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6e+01 ;
+    ex:partOf ex:Campaign_P026_A01 ;
+    ex:thresholdLevel 5.2e+01 .
+
+ex:HT_P026_A01_64000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6.4e+04 ;
+    ex:partOf ex:Campaign_P026_A01 ;
+    ex:thresholdLevel 3e+01 .
+
+ex:HT_P026_A01_8000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8e+03 ;
+    ex:partOf ex:Campaign_P026_A01 ;
+    ex:thresholdLevel -3e+00 .
+
+ex:HT_P026_A01_91000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 9.1e+04 ;
+    ex:partOf ex:Campaign_P026_A01 ;
+    ex:thresholdLevel 8e+01 .
+
+ex:HT_P034_A09_1000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+03 ;
+    ex:partOf ex:Campaign_P034_A09 ;
+    ex:thresholdLevel 1.4e+01 .
+
+ex:HT_P034_A09_125Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.25e+02 ;
+    ex:partOf ex:Campaign_P034_A09 ;
+    ex:thresholdLevel 4.42e+01 .
+
+ex:HT_P034_A09_16000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.6e+04 ;
+    ex:partOf ex:Campaign_P034_A09 ;
+    ex:thresholdLevel 5.9e+00 .
+
+ex:HT_P034_A09_2000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+03 ;
+    ex:partOf ex:Campaign_P034_A09 ;
+    ex:thresholdLevel 8.8e+00 .
+
+ex:HT_P034_A09_250Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2.5e+02 ;
+    ex:partOf ex:Campaign_P034_A09 ;
+    ex:thresholdLevel 2.8e+01 .
+
+ex:HT_P034_A09_32000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3.2e+04 ;
+    ex:partOf ex:Campaign_P034_A09 ;
+    ex:thresholdLevel 1.79e+01 .
+
+ex:HT_P034_A09_40000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+04 ;
+    ex:partOf ex:Campaign_P034_A09 ;
+    ex:thresholdLevel 4e+01 .
+
+ex:HT_P034_A09_4000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+03 ;
+    ex:partOf ex:Campaign_P034_A09 ;
+    ex:thresholdLevel 4.2e+00 .
+
+ex:HT_P034_A09_46000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4.6e+04 ;
+    ex:partOf ex:Campaign_P034_A09 ;
+    ex:thresholdLevel 5.69e+01 .
+
+ex:HT_P034_A09_50000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+04 ;
+    ex:partOf ex:Campaign_P034_A09 ;
+    ex:thresholdLevel 6.99e+01 .
+
+ex:HT_P034_A09_500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+02 ;
+    ex:partOf ex:Campaign_P034_A09 ;
+    ex:thresholdLevel 1.98e+01 .
+
+ex:HT_P034_A09_6300Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6.3e+03 ;
+    ex:partOf ex:Campaign_P034_A09 ;
+    ex:thresholdLevel 1e+00 .
+
+ex:HT_P034_A09_63Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6.3e+01 ;
+    ex:partOf ex:Campaign_P034_A09 ;
+    ex:thresholdLevel 6.21e+01 .
+
+ex:HT_P034_A09_8000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8e+03 ;
+    ex:partOf ex:Campaign_P034_A09 ;
+    ex:thresholdLevel -1e+00 .
+
+ex:HT_P043_A01_1000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+03 ;
+    ex:partOf ex:Campaign_P043_A01 ;
+    ex:thresholdLevel 1.06e+01 .
+
+ex:HT_P043_A01_2000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+03 ;
+    ex:partOf ex:Campaign_P043_A01 ;
+    ex:thresholdLevel 1.05e+01 .
+
+ex:HT_P043_A01_4000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+03 ;
+    ex:partOf ex:Campaign_P043_A01 ;
+    ex:thresholdLevel 4.2e+00 .
+
+ex:HT_P043_A01_500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+02 ;
+    ex:partOf ex:Campaign_P043_A01 ;
+    ex:thresholdLevel 1.84e+01 .
+
+ex:HT_P043_A01_6000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6e+03 ;
+    ex:partOf ex:Campaign_P043_A01 ;
+    ex:thresholdLevel 8.7e+00 .
+
+ex:HT_P043_A01_8000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8e+03 ;
+    ex:partOf ex:Campaign_P043_A01 ;
+    ex:thresholdLevel 4.29e+01 .
+
+ex:HT_P051_A01_1200Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.2e+03 ;
+    ex:partOf ex:Campaign_P051_A01 ;
+    ex:thresholdLevel 4.4e+01 .
+
+ex:HT_P051_A01_1800Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.8e+03 ;
+    ex:partOf ex:Campaign_P051_A01 ;
+    ex:thresholdLevel 4.6e+01 .
+
+ex:HT_P051_A01_2900Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2.9e+03 ;
+    ex:partOf ex:Campaign_P051_A01 ;
+    ex:thresholdLevel 3.8e+01 .
+
+ex:HT_P051_A01_300Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3e+02 ;
+    ex:partOf ex:Campaign_P051_A01 ;
+    ex:thresholdLevel 5.2e+01 .
+
+ex:HT_P051_A01_3600Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3.6e+03 ;
+    ex:partOf ex:Campaign_P051_A01 ;
+    ex:thresholdLevel 4.3e+01 .
+
+ex:HT_P051_A01_5000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+03 ;
+    ex:partOf ex:Campaign_P051_A01 ;
+    ex:thresholdLevel 6.5e+01 .
+
+ex:HT_P051_A01_5500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5.5e+03 ;
+    ex:partOf ex:Campaign_P051_A01 ;
+    ex:thresholdLevel 6.9e+01 .
+
+ex:HT_P051_A01_600Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6e+02 ;
+    ex:partOf ex:Campaign_P051_A01 ;
+    ex:thresholdLevel 3.8e+01 .
+
+ex:HT_P051_A01_900Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 9e+02 ;
+    ex:partOf ex:Campaign_P051_A01 ;
+    ex:thresholdLevel 3.6e+01 .
+
+ex:HT_P069_A01_20000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 8.72e+01 .
+
+ex:HT_P069_A01_30000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 7.71e+01 .
+
+ex:HT_P069_A01_33000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3.3e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 7.07e+01 .
+
+ex:HT_P069_A01_36000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3.6e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 6.87e+01 .
+
+ex:HT_P069_A01_40000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 6.93e+01 .
+
+ex:HT_P069_A01_44000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4.4e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 7.19e+01 .
+
+ex:HT_P069_A01_45000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4.5e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 6.7e+01 .
+
+ex:HT_P069_A01_50000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 6.67e+01 .
+
+ex:HT_P069_A01_55000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5.5e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 7.16e+01 .
+
+ex:HT_P069_A01_60000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 6.96e+01 .
+
+ex:HT_P069_A01_63000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6.3e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 7.45e+01 .
+
+ex:HT_P069_A01_66000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6.6e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 8e+01 .
+
+ex:HT_P069_A01_70000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 7e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 8.68e+01 .
+
+ex:HT_P069_A01_73000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 7.3e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 8.86e+01 .
+
+ex:HT_P069_A01_75000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 7.5e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 8.74e+01 .
+
+ex:HT_P069_A01_80000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 8.66e+01 .
+
+ex:HT_P069_A01_83000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8.3e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 8.34e+01 .
+
+ex:HT_P069_A01_85000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8.5e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 8.24e+01 .
+
+ex:HT_P069_A01_94000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 9.4e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 7.89e+01 .
+
+ex:HT_P069_A01_95000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 9.5e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 8.18e+01 .
+
+ex:HT_P069_A01_96000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 9.6e+04 ;
+    ex:partOf ex:Campaign_P069_A01 ;
+    ex:thresholdLevel 8.29e+01 .
+
+ex:HT_P076_A06_10000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+04 ;
+    ex:partOf ex:Campaign_P076_A06 ;
+    ex:thresholdLevel 2.5e-01 .
+
+ex:HT_P076_A06_1000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+03 ;
+    ex:partOf ex:Campaign_P076_A06 ;
+    ex:thresholdLevel 2.14e+00 .
+
+ex:HT_P076_A06_100Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+02 ;
+    ex:partOf ex:Campaign_P076_A06 ;
+    ex:thresholdLevel 1.094e+01 .
+
+ex:HT_P076_A06_1500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.5e+03 ;
+    ex:partOf ex:Campaign_P076_A06 ;
+    ex:thresholdLevel -2.58e+00 .
+
+ex:HT_P076_A06_2000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+03 ;
+    ex:partOf ex:Campaign_P076_A06 ;
+    ex:thresholdLevel -6.98e+00 .
+
+ex:HT_P076_A06_200Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+02 ;
+    ex:partOf ex:Campaign_P076_A06 ;
+    ex:thresholdLevel 1e+01 .
+
+ex:HT_P076_A06_3000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3e+03 ;
+    ex:partOf ex:Campaign_P076_A06 ;
+    ex:thresholdLevel -1.264e+01 .
+
+ex:HT_P076_A06_300Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3e+02 ;
+    ex:partOf ex:Campaign_P076_A06 ;
+    ex:thresholdLevel 8.43e+00 .
+
+ex:HT_P076_A06_4000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+03 ;
+    ex:partOf ex:Campaign_P076_A06 ;
+    ex:thresholdLevel -1.642e+01 .
+
+ex:HT_P076_A06_500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+02 ;
+    ex:partOf ex:Campaign_P076_A06 ;
+    ex:thresholdLevel 6.54e+00 .
+
+ex:HT_P076_A06_5500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5.5e+03 ;
+    ex:partOf ex:Campaign_P076_A06 ;
+    ex:thresholdLevel -1.987e+01 .
+
+ex:HT_P076_A06_7000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 7e+03 ;
+    ex:partOf ex:Campaign_P076_A06 ;
+    ex:thresholdLevel -1.736e+01 .
+
+ex:HT_P076_A06_700Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 7e+02 ;
+    ex:partOf ex:Campaign_P076_A06 ;
+    ex:thresholdLevel 4.65e+00 .
+
+ex:HT_P076_A06_8000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8e+03 ;
+    ex:partOf ex:Campaign_P076_A06 ;
+    ex:thresholdLevel -1.296e+01 .
+
+ex:HT_P081_A01_2000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+03 ;
+    ex:partOf ex:Campaign_P081_A01 ;
+    ex:thresholdLevel 6.5e+00 .
+
+ex:HT_P081_A01_250Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2.5e+02 ;
+    ex:partOf ex:Campaign_P081_A01 ;
+    ex:thresholdLevel 3.24e+01 .
+
+ex:HT_P081_A01_4000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+03 ;
+    ex:partOf ex:Campaign_P081_A01 ;
+    ex:thresholdLevel 9.1e+00 .
+
+ex:HT_P081_A01_500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+02 ;
+    ex:partOf ex:Campaign_P081_A01 ;
+    ex:thresholdLevel 2.65e+01 .
+
+ex:HT_P081_A01_6500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6.5e+03 ;
+    ex:partOf ex:Campaign_P081_A01 ;
+    ex:thresholdLevel 1.28e+01 .
+
+ex:HT_P081_A01_8000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8e+03 ;
+    ex:partOf ex:Campaign_P081_A01 ;
+    ex:thresholdLevel 1.81e+01 .
+
+ex:HT_P086_A03_1000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+03 ;
+    ex:partOf ex:Campaign_P086_A03 ;
+    ex:thresholdLevel 1.13e+01 .
+
+ex:HT_P086_A03_15000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.5e+04 ;
+    ex:partOf ex:Campaign_P086_A03 ;
+    ex:thresholdLevel 5e+00 .
+
+ex:HT_P086_A03_2000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+03 ;
+    ex:partOf ex:Campaign_P086_A03 ;
+    ex:thresholdLevel 4e+00 .
+
+ex:HT_P086_A03_200Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+02 ;
+    ex:partOf ex:Campaign_P086_A03 ;
+    ex:thresholdLevel 4.5e+01 .
+
+ex:HT_P086_A03_30000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3e+04 ;
+    ex:partOf ex:Campaign_P086_A03 ;
+    ex:thresholdLevel 2.24e+01 .
+
+ex:HT_P086_A03_50000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+04 ;
+    ex:partOf ex:Campaign_P086_A03 ;
+    ex:thresholdLevel 6.15e+01 .
+
+ex:HT_P086_A03_500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+02 ;
+    ex:partOf ex:Campaign_P086_A03 ;
+    ex:thresholdLevel 2.81e+01 .
+
+ex:HT_P086_A03_63Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6.3e+01 ;
+    ex:partOf ex:Campaign_P086_A03 ;
+    ex:thresholdLevel 7.02e+01 .
+
+ex:HT_P086_A03_8000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8e+03 ;
+    ex:partOf ex:Campaign_P086_A03 ;
+    ex:thresholdLevel 9.1e+00 .
+
+ex:HT_P093_A04_30000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3e+04 ;
+    ex:partOf ex:Campaign_P093_A04 ;
+    ex:thresholdLevel 6.9e+01 .
+
+ex:HT_P093_A04_5200Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5.2e+03 ;
+    ex:partOf ex:Campaign_P093_A04 ;
+    ex:thresholdLevel 4.93e+01 .
+
+ex:HT_P093_A05_30000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3e+04 ;
+    ex:partOf ex:Campaign_P093_A05 ;
+    ex:thresholdLevel 7.7e+01 .
+
+ex:HT_P093_A05_5200Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5.2e+03 ;
+    ex:partOf ex:Campaign_P093_A05 ;
+    ex:thresholdLevel 4.83e+01 .
+
+ex:HT_P122_A01_10250Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.025e+04 ;
+    ex:partOf ex:Campaign_P122_A01 ;
+    ex:thresholdLevel 5.887e+01 .
+
+ex:HT_P122_A01_13000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.3e+04 ;
+    ex:partOf ex:Campaign_P122_A01 ;
+    ex:thresholdLevel 6.941e+01 .
+
+ex:HT_P122_A01_16250Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1.625e+04 ;
+    ex:partOf ex:Campaign_P122_A01 ;
+    ex:thresholdLevel 6.967e+01 .
+
+ex:HT_P122_A01_2000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+03 ;
+    ex:partOf ex:Campaign_P122_A01 ;
+    ex:thresholdLevel 7.795e+01 .
+
+ex:HT_P122_A01_20500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2.05e+04 ;
+    ex:partOf ex:Campaign_P122_A01 ;
+    ex:thresholdLevel 7.167e+01 .
+
+ex:HT_P122_A01_2500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2.5e+03 ;
+    ex:partOf ex:Campaign_P122_A01 ;
+    ex:thresholdLevel 7.092e+01 .
+
+ex:HT_P122_A01_25800Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2.58e+04 ;
+    ex:partOf ex:Campaign_P122_A01 ;
+    ex:thresholdLevel 7.092e+01 .
+
+ex:HT_P122_A01_3200Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3.2e+03 ;
+    ex:partOf ex:Campaign_P122_A01 ;
+    ex:thresholdLevel 5.661e+01 .
+
+ex:HT_P122_A01_32500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 3.25e+04 ;
+    ex:partOf ex:Campaign_P122_A01 ;
+    ex:thresholdLevel 6.992e+01 .
+
+ex:HT_P122_A01_4000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+03 ;
+    ex:partOf ex:Campaign_P122_A01 ;
+    ex:thresholdLevel 4.255e+01 .
+
+ex:HT_P122_A01_41000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4.1e+04 ;
+    ex:partOf ex:Campaign_P122_A01 ;
+    ex:thresholdLevel 6.916e+01 .
+
+ex:HT_P122_A01_5100Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5.1e+03 ;
+    ex:partOf ex:Campaign_P122_A01 ;
+    ex:thresholdLevel 3.477e+01 .
+
+ex:HT_P122_A01_6500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6.5e+03 ;
+    ex:partOf ex:Campaign_P122_A01 ;
+    ex:thresholdLevel 4.531e+01 .
+
+ex:HT_P122_A01_8100Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8.1e+03 ;
+    ex:partOf ex:Campaign_P122_A01 ;
+    ex:thresholdLevel 5.711e+01 .
+
+ex:HT_P143_A07_10000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+04 ;
+    ex:partOf ex:Campaign_P143_A07 ;
+    ex:thresholdLevel 3.68e+01 .
+
+ex:HT_P143_A07_1000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 1e+03 ;
+    ex:partOf ex:Campaign_P143_A07 ;
+    ex:thresholdLevel -1.13e+01 .
+
+ex:HT_P143_A07_2000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 2e+03 ;
+    ex:partOf ex:Campaign_P143_A07 ;
+    ex:thresholdLevel -1.57e+01 .
+
+ex:HT_P143_A07_4000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 4e+03 ;
+    ex:partOf ex:Campaign_P143_A07 ;
+    ex:thresholdLevel -2.06e+01 .
+
+ex:HT_P143_A07_500Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 5e+02 ;
+    ex:partOf ex:Campaign_P143_A07 ;
+    ex:thresholdLevel -6.9e+00 .
+
+ex:HT_P143_A07_6000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 6e+03 ;
+    ex:partOf ex:Campaign_P143_A07 ;
+    ex:thresholdLevel -2.14e+01 .
+
+ex:HT_P143_A07_8000Hz a owl:NamedIndividual,
+        ex:HearingThresholdMeasurement ;
+    ex:frequency 8e+03 ;
+    ex:partOf ex:Campaign_P143_A07 ;
+    ex:thresholdLevel -1.1e+01 .
+
+ex:Hyla_cinerea a owl:Class ;
+    rdfs:label "Hyla cinerea"@en ;
+    rdfs:seeAlso gbif:2427574 ;
+    rdfs:subClassOf ex:Dryophytes ;
+    ex:commonName "American green tree frog"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P051_A01 .
+
+ex:Hylidae a owl:Class ;
+    rdfs:label "Hylidae"@en ;
+    rdfs:subClassOf ex:Anura ;
+    ex:commonName "Casque-headed Tree Frogs"@en ;
+    ex:rank "family"@en .
+
+ex:Lagomorpha a owl:Class ;
+    rdfs:label "Lagomorpha"@en ;
+    rdfs:subClassOf ex:Mammalia ;
+    ex:commonName "Hares"@en ;
+    ex:rank "order"@en .
+
+ex:Leporidae a owl:Class ;
+    rdfs:label "Leporidae"@en ;
+    rdfs:subClassOf ex:Lagomorpha ;
+    ex:commonName "HARES AND RABBITS"@en ;
+    ex:rank "family"@en .
+
+ex:Myotis a owl:Class ;
+    rdfs:label "Myotis"@en ;
+    rdfs:subClassOf ex:Vespertilionidae ;
+    ex:commonName "Mouse-Eared Bats"@en ;
+    ex:rank "genus"@en .
+
+ex:Myotis_lucifugus a owl:Class ;
+    rdfs:label "Myotis lucifugus"@en ;
+    rdfs:seeAlso gbif:2432406 ;
+    rdfs:subClassOf ex:Myotis ;
+    ex:commonName "Kleines Nordamerika-mausohr"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P006_A02 .
+
+ex:Nymphalidae a owl:Class ;
+    rdfs:label "Nymphalidae"@en ;
+    rdfs:subClassOf ex:Lepidoptera ;
+    ex:commonName "Admirals"@en ;
+    ex:rank "family"@en .
+
+ex:Ormia a owl:Class ;
+    rdfs:label "Ormia"@en ;
+    rdfs:subClassOf ex:Tachinidae ;
+    ex:commonName "None"@en ;
+    ex:rank "genus"@en .
+
+ex:Ormia_ochracea a owl:Class ;
+    rdfs:label "Ormia ochracea"@en ;
+    rdfs:seeAlso gbif:1471335 ;
+    rdfs:subClassOf ex:Ormia ;
+    ex:commonName "Tachinid fly"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P122_A01 .
+
+ex:Orthoptera a owl:Class ;
+    rdfs:label "Orthoptera"@en ;
+    rdfs:subClassOf ex:Insecta ;
+    ex:commonName "Crickets"@en ;
+    ex:rank "order"@en .
+
+ex:Oryctolagus a owl:Class ;
+    rdfs:label "Oryctolagus"@en ;
+    rdfs:subClassOf ex:Leporidae ;
+    ex:commonName "European Rabbit"@en ;
+    ex:rank "genus"@en .
+
+ex:Oryctolagus_cuniculus a owl:Class ;
+    rdfs:label "Oryctolagus cuniculus"@en ;
+    rdfs:seeAlso gbif:2436940 ;
+    rdfs:subClassOf ex:Oryctolagus ;
+    ex:commonName "Common Rabbit"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P086_A03 .
+
+ex:Paridae a owl:Class ;
+    rdfs:label "Paridae"@en ;
+    rdfs:subClassOf ex:Passeriformes ;
+    ex:commonName "Chickadees"@en ;
+    ex:rank "family"@en .
+
+ex:Parus a owl:Class ;
+    rdfs:label "Parus"@en ;
+    rdfs:subClassOf ex:Paridae ;
+    ex:commonName "Great Tits and Allies"@en ;
+    ex:rank "genus"@en .
+
+ex:Parus_major a owl:Class ;
+    rdfs:label "Parus major"@en ;
+    rdfs:seeAlso gbif:9705453 ;
+    rdfs:subClassOf ex:Parus ;
+    ex:commonName "Balarin-a"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P081_A01 .
+
+ex:Phyllostomidae a owl:Class ;
+    rdfs:label "Phyllostomidae"@en ;
+    rdfs:subClassOf ex:Chiroptera ;
+    ex:commonName "NEW WORLD LEAF-NOSED BATS"@en ;
+    ex:rank "family"@en .
+
+ex:Phyllostomus a owl:Class ;
+    rdfs:label "Phyllostomus"@en ;
+    rdfs:subClassOf ex:Phyllostomidae ;
+    ex:commonName "Spear-Nosed Bats"@en ;
+    ex:rank "genus"@en .
+
+ex:Phyllostomus_hastatus a owl:Class ;
+    rdfs:label "Phyllostomus hastatus"@en ;
+    rdfs:seeAlso gbif:2433279 ;
+    rdfs:subClassOf ex:Phyllostomus ;
+    ex:commonName "Greater Spear-Nosed Bat"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P005_A01 .
+
+ex:Pteropodidae a owl:Class ;
+    rdfs:label "Pteropodidae"@en ;
+    rdfs:subClassOf ex:Chiroptera ;
+    ex:commonName "Flying Foxes"@en ;
+    ex:rank "family"@en .
+
+ex:Rangifer a owl:Class ;
+    rdfs:label "Rangifer"@en ;
+    rdfs:subClassOf ex:Cervidae ;
+    ex:commonName "Animals"@en ;
+    ex:rank "genus"@en .
+
+ex:Rangifer_tarandus a owl:Class ;
+    rdfs:label "Rangifer tarandus"@en ;
+    rdfs:seeAlso gbif:5220114 ;
+    rdfs:subClassOf ex:Rangifer ;
+    ex:commonName "Caribou"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P018_A02 .
+
+ex:Rhinolophidae a owl:Class ;
+    rdfs:label "Rhinolophidae"@en ;
+    rdfs:subClassOf ex:Chiroptera ;
+    ex:commonName "HORSESHOE BATS"@en ;
+    ex:rank "family"@en .
+
+ex:Rhinolophus a owl:Class ;
+    rdfs:label "Rhinolophus"@en ;
+    rdfs:subClassOf ex:Rhinolophidae ;
+    ex:commonName "Chrysanthemum Bats"@en ;
+    ex:rank "genus"@en .
+
+ex:Rhinolophus_ferrumequinum a owl:Class ;
+    rdfs:label "Rhinolophus ferrumequinum"@en ;
+    rdfs:seeAlso gbif:2432655 ;
+    rdfs:subClassOf ex:Rhinolophus ;
+    ex:commonName "Greater Horseshoe Bat"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P008_A01 .
+
+ex:Rousettus a owl:Class ;
+    rdfs:label "Rousettus"@en ;
+    rdfs:subClassOf ex:Pteropodidae ;
+    ex:commonName "Rousette Bats"@en ;
+    ex:rank "genus"@en .
+
+ex:Rousettus_aegyptiacus a owl:Class ;
+    rdfs:label "Rousettus aegyptiacus"@en ;
+    rdfs:seeAlso gbif:2432953 ;
+    rdfs:subClassOf ex:Rousettus ;
+    ex:commonName "Egyptian Fruit Bat"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P007_A01 .
+
+ex:Strigidae a owl:Class ;
+    rdfs:label "Strigidae"@en ;
+    rdfs:subClassOf ex:Strigiformes ;
+    ex:commonName "Owls"@en ;
+    ex:rank "family"@en .
+
+ex:Sturnidae a owl:Class ;
+    rdfs:label "Sturnidae"@en ;
+    rdfs:subClassOf ex:Passeriformes ;
+    ex:commonName "Starling"@en ;
+    ex:rank "family"@en .
+
+ex:Sturnus a owl:Class ;
+    rdfs:label "Sturnus"@en ;
+    rdfs:subClassOf ex:Sturnidae ;
+    ex:commonName "Common and Spotless Starlings"@en ;
+    ex:rank "genus"@en .
+
+ex:Sturnus_vulgaris a owl:Class ;
+    rdfs:label "Sturnus vulgaris"@en ;
+    rdfs:seeAlso gbif:9809229 ;
+    rdfs:subClassOf ex:Sturnus ;
+    ex:commonName "COST"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P043_A01 .
+
+ex:Tachinidae a owl:Class ;
+    rdfs:label "Tachinidae"@en ;
+    rdfs:subClassOf ex:Diptera ;
+    ex:commonName "Bristle Flies"@en ;
+    ex:rank "family"@en .
+
+ex:Tyto a owl:Class ;
+    rdfs:label "Tyto"@en ;
+    rdfs:subClassOf ex:Tytonidae ;
+    ex:commonName "Barn Owls & Masked Owls"@en ;
+    ex:rank "genus"@en .
+
+ex:Tyto_alba a owl:Class ;
+    rdfs:label "Tyto alba"@en ;
+    rdfs:seeAlso gbif:2497921 ;
+    rdfs:subClassOf ex:Tyto ;
+    ex:commonName "Barn Owl"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P076_A06 .
+
+ex:Tytonidae a owl:Class ;
+    rdfs:label "Tytonidae"@en ;
+    rdfs:subClassOf ex:Strigiformes ;
+    ex:commonName "Barn Owl"@en ;
+    ex:rank "family"@en .
+
+ex:Artiodactyla a owl:Class ;
+    rdfs:label "Artiodactyla"@en ;
+    rdfs:subClassOf ex:Mammalia ;
+    ex:commonName "Artiodactyls"@en ;
+    ex:rank "order"@en .
+
+ex:Aves a owl:Class ;
+    rdfs:label "Aves"@en ;
+    rdfs:subClassOf ex:Animal ;
+    ex:commonName "Bird"@en ;
+    ex:rank "class"@en .
+
+ex:Carnivora a owl:Class ;
+    rdfs:label "Carnivora"@en ;
+    rdfs:subClassOf ex:Mammalia ;
+    ex:commonName "Carnivoran"@en ;
+    ex:rank "order"@en .
+
+ex:Gryllus_texensis a owl:Class ;
+    rdfs:label "Gryllus texensis"@en ;
+    rdfs:seeAlso gbif:1716840 ;
+    rdfs:subClassOf ex:Gryllus ;
+    ex:commonName "Southeast Fast Trilling Field Cricket"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P093_A04,
+        ex:Campaign_P093_A05 .
+
+ex:Lepidoptera a owl:Class ;
+    rdfs:label "Lepidoptera"@en ;
+    rdfs:subClassOf ex:Insecta ;
+    ex:commonName "Butterflies"@en ;
+    ex:rank "order"@en .
+
+ex:MeasurementMethod a owl:Class ;
+    rdfs:label "Measurement Method"@en .
+
+ex:Passeriformes a owl:Class ;
+    rdfs:label "Passeriformes"@en ;
+    rdfs:subClassOf ex:Aves ;
+    ex:commonName "Broadbills, Songbirds"@en ;
+    ex:rank "order"@en .
+
+ex:Strigiformes a owl:Class ;
+    rdfs:label "Strigiformes"@en ;
+    rdfs:subClassOf ex:Aves ;
+    ex:commonName "Goatsuckers"@en ;
+    ex:rank "order"@en .
+
+ex:Vespertilionidae a owl:Class ;
+    rdfs:label "Vespertilionidae"@en ;
+    rdfs:subClassOf ex:Chiroptera ;
+    ex:commonName "Bats"@en ;
+    ex:rank "family"@en .
+
+ex:Campaign_P093_A04 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Gryllus texensis BEHAVIORAL P093"@en ;
+    ex:hasMeasurement ex:HT_P093_A04_30000Hz,
+        ex:HT_P093_A04_5200Hz ;
+    ex:measuredOnTaxon ex:Gryllus_texensis ;
+    ex:pubAuthor "Pollack and Martins"^^xsd:string ;
+    ex:pubDOI "10.1242/jeb.008136"^^xsd:string ;
+    ex:pubID "P093"^^xsd:string ;
+    ex:pubTitle "Flight and hearing: Ultrasound sensitivity differs between flight-capable and flight-incapable morphs of a wing-dimorphic cricket species"^^xsd:string ;
+    ex:pubYear 2007 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:Campaign_P093_A05 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Gryllus texensis BEHAVIORAL P093"@en ;
+    ex:hasMeasurement ex:HT_P093_A05_30000Hz,
+        ex:HT_P093_A05_5200Hz ;
+    ex:measuredOnTaxon ex:Gryllus_texensis ;
+    ex:pubAuthor "Pollack and Martins"^^xsd:string ;
+    ex:pubDOI "10.1242/jeb.008136"^^xsd:string ;
+    ex:pubID "P093"^^xsd:string ;
+    ex:pubTitle "Flight and hearing: Ultrasound sensitivity differs between flight-capable and flight-incapable morphs of a wing-dimorphic cricket species"^^xsd:string ;
+    ex:pubYear 2007 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:Insecta a owl:Class ;
+    rdfs:label "Insecta"@en ;
+    rdfs:subClassOf ex:Animal ;
+    ex:commonName "Insect"@en ;
+    ex:rank "class"@en .
+
+ex:Chiroptera a owl:Class ;
+    rdfs:label "Chiroptera"@en ;
+    rdfs:subClassOf ex:Mammalia ;
+    ex:commonName "Bat"@en ;
+    ex:rank "order"@en .
+
+ex:Mammalia a owl:Class ;
+    rdfs:label "Mammalia"@en ;
+    rdfs:subClassOf ex:Animal ;
+    ex:commonName "Mammal"@en ;
+    ex:rank "class"@en .
+
+ex:Campaign_P043_A01 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Sturnus vulgaris BEHAVIORAL P043"@en ;
+    ex:hasMeasurement ex:HT_P043_A01_1000Hz,
+        ex:HT_P043_A01_2000Hz,
+        ex:HT_P043_A01_4000Hz,
+        ex:HT_P043_A01_500Hz,
+        ex:HT_P043_A01_6000Hz,
+        ex:HT_P043_A01_8000Hz ;
+    ex:measuredOnTaxon ex:Sturnus_vulgaris ;
+    ex:pubAuthor "Langemann et al."^^xsd:string ;
+    ex:pubDOI "10.1016/S0378-5955(99)00139-2"^^xsd:string ;
+    ex:pubID "P043"^^xsd:string ;
+    ex:pubTitle "A behavioral test of presbycusis in the bird auditory system"^^xsd:string ;
+    ex:pubYear 1999 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:Campaign_P081_A01 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Parus major BEHAVIORAL P081"@en ;
+    ex:hasMeasurement ex:HT_P081_A01_2000Hz,
+        ex:HT_P081_A01_250Hz,
+        ex:HT_P081_A01_4000Hz,
+        ex:HT_P081_A01_500Hz,
+        ex:HT_P081_A01_6500Hz,
+        ex:HT_P081_A01_8000Hz ;
+    ex:measuredOnTaxon ex:Parus_major ;
+    ex:pubAuthor "Langemann et al."^^xsd:string ;
+    ex:pubDOI "10.1006/anbe.1998.0879"^^xsd:string ;
+    ex:pubID "P081"^^xsd:string ;
+    ex:pubTitle "Auditory sensitivity in the great tit: perception of signals in the presence and absence of noise"^^xsd:string ;
+    ex:pubYear 1998 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:Animal a owl:Class ;
+    rdfs:label "Animal"@en .
+
+ex:Campaign_P143_A07 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Asio otus BEHAVIORAL P143"@en ;
+    ex:hasMeasurement ex:HT_P143_A07_10000Hz,
+        ex:HT_P143_A07_1000Hz,
+        ex:HT_P143_A07_2000Hz,
+        ex:HT_P143_A07_4000Hz,
+        ex:HT_P143_A07_500Hz,
+        ex:HT_P143_A07_6000Hz,
+        ex:HT_P143_A07_8000Hz ;
+    ex:measuredOnTaxon ex:Asio_otus ;
+    ex:pubAuthor "Dyson et al."^^xsd:string ;
+    ex:pubDOI "10.1007/s003590050214"^^xsd:string ;
+    ex:pubID "P143"^^xsd:string ;
+    ex:pubTitle "Absolute hearing thresholds and critical masking ratios in the European barn owl: a comparison with other owls"^^xsd:string ;
+    ex:pubYear 1998 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:Campaign_P016_A01 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Erebia manto BEHAVIORAL P016"@en ;
+    ex:hasMeasurement ex:HT_P016_A01_1000Hz,
+        ex:HT_P016_A01_125Hz,
+        ex:HT_P016_A01_16000Hz,
+        ex:HT_P016_A01_2000Hz,
+        ex:HT_P016_A01_250Hz,
+        ex:HT_P016_A01_4000Hz,
+        ex:HT_P016_A01_500Hz,
+        ex:HT_P016_A01_8000Hz ;
+    ex:measuredOnTaxon ex:Erebia_manto ;
+    ex:pubAuthor "Ribaric and Gogala"^^xsd:string ;
+    ex:pubDOI "Ribarivc_1996"^^xsd:string ;
+    ex:pubID "P016"^^xsd:string ;
+    ex:pubTitle "Acoustic behaviour of some butterfly species of the genus erebia"^^xsd:string ;
+    ex:pubYear 1996 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:Campaign_P051_A01 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Hyla cinerea BEHAVIORAL P051"@en ;
+    ex:hasMeasurement ex:HT_P051_A01_1200Hz,
+        ex:HT_P051_A01_1800Hz,
+        ex:HT_P051_A01_2900Hz,
+        ex:HT_P051_A01_300Hz,
+        ex:HT_P051_A01_3600Hz,
+        ex:HT_P051_A01_5000Hz,
+        ex:HT_P051_A01_5500Hz,
+        ex:HT_P051_A01_600Hz,
+        ex:HT_P051_A01_900Hz ;
+    ex:measuredOnTaxon ex:Hyla_cinerea ;
+    ex:pubAuthor "Moss and Simmons"^^xsd:string ;
+    ex:pubDOI "10.1007/BF00612308"^^xsd:string ;
+    ex:pubID "P051"^^xsd:string ;
+    ex:pubTitle "Frequency selectivity of hearing in the green treefrog, Hyla cinerea"^^xsd:string ;
+    ex:pubYear 1986 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:Campaign_P086_A03 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Oryctolagus cuniculus BEHAVIORAL P086"@en ;
+    ex:hasMeasurement ex:HT_P086_A03_1000Hz,
+        ex:HT_P086_A03_15000Hz,
+        ex:HT_P086_A03_2000Hz,
+        ex:HT_P086_A03_200Hz,
+        ex:HT_P086_A03_30000Hz,
+        ex:HT_P086_A03_50000Hz,
+        ex:HT_P086_A03_500Hz,
+        ex:HT_P086_A03_63Hz,
+        ex:HT_P086_A03_8000Hz ;
+    ex:measuredOnTaxon ex:Oryctolagus_cuniculus ;
+    ex:pubAuthor "Lue et al."^^xsd:string ;
+    ex:pubDOI "10.1186/s42826-023-00182-3"^^xsd:string ;
+    ex:pubID "P086"^^xsd:string ;
+    ex:pubTitle "Sheep as a large animal model for hearing research: comparison to common laboratory animals and humans"^^xsd:string ;
+    ex:pubYear 2023 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:Campaign_P005_A01 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Phyllostomus hastatus BEHAVIORAL P005"@en ;
+    ex:hasMeasurement ex:HT_P005_A01_100000Hz,
+        ex:HT_P005_A01_10000Hz,
+        ex:HT_P005_A01_15000Hz,
+        ex:HT_P005_A01_20000Hz,
+        ex:HT_P005_A01_2500Hz,
+        ex:HT_P005_A01_30000Hz,
+        ex:HT_P005_A01_40000Hz,
+        ex:HT_P005_A01_5000Hz,
+        ex:HT_P005_A01_60000Hz,
+        ex:HT_P005_A01_7390Hz,
+        ex:HT_P005_A01_80000Hz ;
+    ex:measuredOnTaxon ex:Phyllostomus_hastatus ;
+    ex:pubAuthor "Bohn et al."^^xsd:string ;
+    ex:pubDOI "10.1007/s00359-003-0485-0"^^xsd:string ;
+    ex:pubID "P005"^^xsd:string ;
+    ex:pubTitle "Auditory sensitivity and frequency selectivity in greater spear-nosed bats suggest specializations for acoustic communication"^^xsd:string ;
+    ex:pubYear 2004 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:Campaign_P007_A01 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Rousettus aegyptiacus BEHAVIORAL P007"@en ;
+    ex:hasMeasurement ex:HT_P007_A01_10000Hz,
+        ex:HT_P007_A01_15000Hz,
+        ex:HT_P007_A01_16000Hz,
+        ex:HT_P007_A01_2000Hz,
+        ex:HT_P007_A01_25000Hz,
+        ex:HT_P007_A01_3000Hz,
+        ex:HT_P007_A01_31000Hz,
+        ex:HT_P007_A01_4000Hz,
+        ex:HT_P007_A01_45000Hz,
+        ex:HT_P007_A01_5000Hz,
+        ex:HT_P007_A01_64000Hz,
+        ex:HT_P007_A01_8000Hz ;
+    ex:measuredOnTaxon ex:Rousettus_aegyptiacus ;
+    ex:pubAuthor "Brinkløv et al."^^xsd:string ;
+    ex:pubDOI "10.1007/978-3-030-97540-1_12"^^xsd:string ;
+    ex:pubID "P007"^^xsd:string ;
+    ex:pubTitle "Chapter Echolocation in Bats, Odontocetes, Birds, and Insectivores"^^xsd:string ;
+    ex:pubYear 2022 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:Campaign_P018_A02 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Rangifer tarandus BEHAVIORAL P018"@en ;
+    ex:hasMeasurement ex:HT_P018_A02_1000Hz,
+        ex:HT_P018_A02_12000Hz,
+        ex:HT_P018_A02_130Hz,
+        ex:HT_P018_A02_16000Hz,
+        ex:HT_P018_A02_2000Hz,
+        ex:HT_P018_A02_250Hz,
+        ex:HT_P018_A02_32000Hz,
+        ex:HT_P018_A02_38000Hz,
+        ex:HT_P018_A02_4000Hz,
+        ex:HT_P018_A02_500Hz,
+        ex:HT_P018_A02_60Hz,
+        ex:HT_P018_A02_8000Hz ;
+    ex:measuredOnTaxon ex:Rangifer_tarandus ;
+    ex:pubAuthor "d’Angelo et al."^^xsd:string ;
+    ex:pubDOI "10.2193/2006-326"^^xsd:string ;
+    ex:pubID "P018"^^xsd:string ;
+    ex:pubTitle "Hearing Range of White-Tailed Deer as Determined by Auditory Brainstem Response"^^xsd:string ;
+    ex:pubYear 2007 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:Campaign_P023_A02 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Bos taurus BEHAVIORAL P023"@en ;
+    ex:hasMeasurement ex:HT_P023_A02_1000Hz,
+        ex:HT_P023_A02_130Hz,
+        ex:HT_P023_A02_16000Hz,
+        ex:HT_P023_A02_2000Hz,
+        ex:HT_P023_A02_20Hz,
+        ex:HT_P023_A02_250Hz,
+        ex:HT_P023_A02_30Hz,
+        ex:HT_P023_A02_32000Hz,
+        ex:HT_P023_A02_40000Hz,
+        ex:HT_P023_A02_4000Hz,
+        ex:HT_P023_A02_500Hz,
+        ex:HT_P023_A02_60Hz,
+        ex:HT_P023_A02_8000Hz ;
+    ex:measuredOnTaxon ex:Bos_taurus ;
+    ex:pubAuthor "Heffner and Heffner"^^xsd:string ;
+    ex:pubDOI "10.1037/0735-7044.97.2.299"^^xsd:string ;
+    ex:pubID "P023"^^xsd:string ;
+    ex:pubTitle "Hearing in large mammals: Horses (Equus caballus) and cattle (Bos taurus)"^^xsd:string ;
+    ex:pubYear 1983 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:Campaign_P026_A01 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Felis catus BEHAVIORAL P026"@en ;
+    ex:hasMeasurement ex:HT_P026_A01_1000Hz,
+        ex:HT_P026_A01_130Hz,
+        ex:HT_P026_A01_16000Hz,
+        ex:HT_P026_A01_2000Hz,
+        ex:HT_P026_A01_250Hz,
+        ex:HT_P026_A01_32000Hz,
+        ex:HT_P026_A01_4000Hz,
+        ex:HT_P026_A01_500Hz,
+        ex:HT_P026_A01_50Hz,
+        ex:HT_P026_A01_60Hz,
+        ex:HT_P026_A01_64000Hz,
+        ex:HT_P026_A01_8000Hz,
+        ex:HT_P026_A01_91000Hz ;
+    ex:measuredOnTaxon ex:Felis_catus ;
+    ex:pubAuthor "Heffner and Heffner"^^xsd:string ;
+    ex:pubDOI "10.1016/0378-5955(85)90100-5"^^xsd:string ;
+    ex:pubID "P026"^^xsd:string ;
+    ex:pubTitle "Hearing range of the domestic cat"^^xsd:string ;
+    ex:pubYear 1985 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:Campaign_P006_A02 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Myotis lucifugus BEHAVIORAL P006"@en ;
+    ex:hasMeasurement ex:HT_P006_A02_100000Hz,
+        ex:HT_P006_A02_120000Hz,
+        ex:HT_P006_A02_13200Hz,
+        ex:HT_P006_A02_15000Hz,
+        ex:HT_P006_A02_20000Hz,
+        ex:HT_P006_A02_25000Hz,
+        ex:HT_P006_A02_35000Hz,
+        ex:HT_P006_A02_40000Hz,
+        ex:HT_P006_A02_50000Hz,
+        ex:HT_P006_A02_55000Hz,
+        ex:HT_P006_A02_60000Hz,
+        ex:HT_P006_A02_70000Hz,
+        ex:HT_P006_A02_80000Hz,
+        ex:HT_P006_A02_90000Hz ;
+    ex:measuredOnTaxon ex:Myotis_lucifugus ;
+    ex:pubAuthor "Dalland"^^xsd:string ;
+    ex:pubDOI "10.1126/science.150.3700.1185"^^xsd:string ;
+    ex:pubID "P006"^^xsd:string ;
+    ex:pubTitle "Hearing Sensitivity in Bats"^^xsd:string ;
+    ex:pubYear 1965 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:Campaign_P034_A09 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Canis lupus familiaris BEHAVIORAL P034"@en ;
+    ex:hasMeasurement ex:HT_P034_A09_1000Hz,
+        ex:HT_P034_A09_125Hz,
+        ex:HT_P034_A09_16000Hz,
+        ex:HT_P034_A09_2000Hz,
+        ex:HT_P034_A09_250Hz,
+        ex:HT_P034_A09_32000Hz,
+        ex:HT_P034_A09_40000Hz,
+        ex:HT_P034_A09_4000Hz,
+        ex:HT_P034_A09_46000Hz,
+        ex:HT_P034_A09_50000Hz,
+        ex:HT_P034_A09_500Hz,
+        ex:HT_P034_A09_6300Hz,
+        ex:HT_P034_A09_63Hz,
+        ex:HT_P034_A09_8000Hz ;
+    ex:measuredOnTaxon ex:Canis_lupus_familiaris ;
+    ex:pubAuthor "Heffner and Heffner"^^xsd:string ;
+    ex:pubDOI "PMID: 17203911"^^xsd:string ;
+    ex:pubID "P034"^^xsd:string ;
+    ex:pubTitle "Hearing Ranges of laboratory animals"^^xsd:string ;
+    ex:pubYear 2007 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:Campaign_P076_A06 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Tyto alba BEHAVIORAL P076"@en ;
+    ex:hasMeasurement ex:HT_P076_A06_10000Hz,
+        ex:HT_P076_A06_1000Hz,
+        ex:HT_P076_A06_100Hz,
+        ex:HT_P076_A06_1500Hz,
+        ex:HT_P076_A06_2000Hz,
+        ex:HT_P076_A06_200Hz,
+        ex:HT_P076_A06_3000Hz,
+        ex:HT_P076_A06_300Hz,
+        ex:HT_P076_A06_4000Hz,
+        ex:HT_P076_A06_500Hz,
+        ex:HT_P076_A06_5500Hz,
+        ex:HT_P076_A06_7000Hz,
+        ex:HT_P076_A06_700Hz,
+        ex:HT_P076_A06_8000Hz ;
+    ex:measuredOnTaxon ex:Tyto_alba ;
+    ex:pubAuthor "Gleich and Langemann"^^xsd:string ;
+    ex:pubDOI "10.1016/j.heares.2010.01.009"^^xsd:string ;
+    ex:pubID "P076"^^xsd:string ;
+    ex:pubTitle "Auditory capabilities of birds in relation to the structural diversity of the basilar papilla"^^xsd:string ;
+    ex:pubYear 2011 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:Campaign_P122_A01 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Ormia ochracea BEHAVIORAL P122"@en ;
+    ex:hasMeasurement ex:HT_P122_A01_10250Hz,
+        ex:HT_P122_A01_13000Hz,
+        ex:HT_P122_A01_16250Hz,
+        ex:HT_P122_A01_2000Hz,
+        ex:HT_P122_A01_20500Hz,
+        ex:HT_P122_A01_2500Hz,
+        ex:HT_P122_A01_25800Hz,
+        ex:HT_P122_A01_3200Hz,
+        ex:HT_P122_A01_32500Hz,
+        ex:HT_P122_A01_4000Hz,
+        ex:HT_P122_A01_41000Hz,
+        ex:HT_P122_A01_5100Hz,
+        ex:HT_P122_A01_6500Hz,
+        ex:HT_P122_A01_8100Hz ;
+    ex:measuredOnTaxon ex:Ormia_ochracea ;
+    ex:pubAuthor "Wikle et al."^^xsd:string ;
+    ex:pubDOI "10.1016/j.cub.2025.01.019"^^xsd:string ;
+    ex:pubID "P122"^^xsd:string ;
+    ex:pubTitle "Neural and behavioral evolution in an eavesdropper with a rapidly evolving host"^^xsd:string ;
+    ex:pubYear 2025 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:Campaign_P006_A01 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Eptesicus fuscus BEHAVIORAL P006"@en ;
+    ex:hasMeasurement ex:HT_P006_A01_100000Hz,
+        ex:HT_P006_A01_10000Hz,
+        ex:HT_P006_A01_15000Hz,
+        ex:HT_P006_A01_20000Hz,
+        ex:HT_P006_A01_25000Hz,
+        ex:HT_P006_A01_2500Hz,
+        ex:HT_P006_A01_35000Hz,
+        ex:HT_P006_A01_40000Hz,
+        ex:HT_P006_A01_45000Hz,
+        ex:HT_P006_A01_50000Hz,
+        ex:HT_P006_A01_5000Hz,
+        ex:HT_P006_A01_55000Hz,
+        ex:HT_P006_A01_60000Hz,
+        ex:HT_P006_A01_65000Hz,
+        ex:HT_P006_A01_70000Hz,
+        ex:HT_P006_A01_80000Hz,
+        ex:HT_P006_A01_90000Hz ;
+    ex:measuredOnTaxon ex:Eptesicus_fuscus ;
+    ex:pubAuthor "Dalland"^^xsd:string ;
+    ex:pubDOI "10.1126/science.150.3700.1185"^^xsd:string ;
+    ex:pubID "P006"^^xsd:string ;
+    ex:pubTitle "Hearing Sensitivity in Bats"^^xsd:string ;
+    ex:pubYear 1965 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:Campaign_P008_A01 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Rhinolophus ferrumequinum BEHAVIORAL P008"@en ;
+    ex:hasMeasurement ex:HT_P008_A01_100000Hz,
+        ex:HT_P008_A01_10000Hz,
+        ex:HT_P008_A01_15000Hz,
+        ex:HT_P008_A01_20000Hz,
+        ex:HT_P008_A01_30000Hz,
+        ex:HT_P008_A01_40000Hz,
+        ex:HT_P008_A01_50000Hz,
+        ex:HT_P008_A01_5000Hz,
+        ex:HT_P008_A01_60000Hz,
+        ex:HT_P008_A01_70000Hz,
+        ex:HT_P008_A01_80000Hz,
+        ex:HT_P008_A01_81000Hz,
+        ex:HT_P008_A01_83000Hz,
+        ex:HT_P008_A01_85000Hz,
+        ex:HT_P008_A01_87000Hz,
+        ex:HT_P008_A01_90000Hz,
+        ex:HT_P008_A01_95000Hz ;
+    ex:measuredOnTaxon ex:Rhinolophus_ferrumequinum ;
+    ex:pubAuthor "Long and Schnitzler"^^xsd:string ;
+    ex:pubDOI "10.1007/BF00614531"^^xsd:string ;
+    ex:pubID "P008"^^xsd:string ;
+    ex:pubTitle "Behavioural Audiograms from the Bat, Rhinolophus ferrumequinum"^^xsd:string ;
+    ex:pubYear 1975 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:BEHAVIORAL a owl:NamedIndividual,
+        ex:MeasurementMethod ;
+    rdfs:label "BEHAVIORAL"@en .
+
+ex:Campaign_P069_A01 a owl:NamedIndividual,
+        ex:HearingThresholdMeasurementCampaign ;
+    rdfs:label "Cycnia tenera BEHAVIORAL P069"@en ;
+    ex:hasMeasurement ex:HT_P069_A01_20000Hz,
+        ex:HT_P069_A01_30000Hz,
+        ex:HT_P069_A01_33000Hz,
+        ex:HT_P069_A01_36000Hz,
+        ex:HT_P069_A01_40000Hz,
+        ex:HT_P069_A01_44000Hz,
+        ex:HT_P069_A01_45000Hz,
+        ex:HT_P069_A01_50000Hz,
+        ex:HT_P069_A01_55000Hz,
+        ex:HT_P069_A01_60000Hz,
+        ex:HT_P069_A01_63000Hz,
+        ex:HT_P069_A01_66000Hz,
+        ex:HT_P069_A01_70000Hz,
+        ex:HT_P069_A01_73000Hz,
+        ex:HT_P069_A01_75000Hz,
+        ex:HT_P069_A01_80000Hz,
+        ex:HT_P069_A01_83000Hz,
+        ex:HT_P069_A01_85000Hz,
+        ex:HT_P069_A01_94000Hz,
+        ex:HT_P069_A01_95000Hz,
+        ex:HT_P069_A01_96000Hz ;
+    ex:measuredOnTaxon ex:Cycnia_tenera ;
+    ex:pubAuthor "Fullard"^^xsd:string ;
+    ex:pubDOI "10.1007/BF00679914"^^xsd:string ;
+    ex:pubID "P069"^^xsd:string ;
+    ex:pubTitle "Behavioral Analyses of Auditory Sensitivity in Cycnia tenera Hiibner (Lepidoptera: Arctiidae)"^^xsd:string ;
+    ex:pubYear 1979 ;
+    ex:usesMeasurementMethod ex:BEHAVIORAL .
+
+ex:HearingThresholdMeasurementCampaign a owl:Class ;
+    rdfs:label "Hearing Threshold Measurement Campaign"@en .
+
+ex:HearingThresholdMeasurement a owl:Class ;
+    rdfs:label "Hearing Threshold Measurement"@en .
+
