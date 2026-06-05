@@ -234,15 +234,14 @@ def parse_ontology(input_path: Path) -> dict[str, Any]:
 
 def main() -> None:
     if len(sys.argv) != 3:
-        print("Usage: python build_data_from_ontology.py Ontology_gbif.owl data.js", file=sys.stderr)
+        print("Usage: python build_data_from_ontology.py newHT6.owl ontology_data.json", file=sys.stderr)
         raise SystemExit(2)
 
     input_path = Path(sys.argv[1])
     output_path = Path(sys.argv[2])
     data = parse_ontology(input_path)
 
-    js = "window.HT_DATA = " + json.dumps(data, indent=2, ensure_ascii=False) + ";\n"
-    output_path.write_text(js, encoding="utf-8")
+    output_path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Wrote {output_path} with {data['meta']['speciesCount']} species.")
 
 

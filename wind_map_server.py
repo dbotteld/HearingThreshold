@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import io
-import json
 import math
 import mimetypes
 import re
@@ -17,7 +16,10 @@ import rasterio
 from rasterio.io import MemoryFile
 from rasterio.warp import transform_bounds
 
+from build_data_from_ontology import parse_ontology
+
 ROOT = Path(__file__).resolve().parent
+ONTOLOGY_PATH = ROOT / "newHT6.owl"
 OUTPUT_ROOT = Path(
     r"C:\Users\srangasw\OneDrive - UGent\Desktop\Europe_wind_turbines\Python_code_HP2P\outputs"
 )
@@ -85,9 +87,7 @@ def frequency_from_text(value: str) -> float:
 
 
 def load_data() -> dict:
-    text = (ROOT / "data.js").read_text(encoding="utf-8")
-    payload = text.split("=", 1)[1].rsplit(";", 1)[0].strip()
-    return json.loads(payload)
+    return parse_ontology(ONTOLOGY_PATH)
 
 
 DATA = load_data()

@@ -1,10 +1,10 @@
 @prefix ex: <https://github.com/dbotteld/HearingThreshold/blob/main/> .
+@prefix gbif: <https://www.gbif.org/species/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix gbif: <https://www.gbif.org/species/> .
 
-ex:commonName a owl:DatatypeProperty ;
+ex:commonName a owl:AnnotationProperty ;
     rdfs:label "common name"@en ;
     rdfs:domain ex:Animal ;
     rdfs:range xsd:string .
@@ -14,7 +14,7 @@ ex:frequency a owl:DatatypeProperty ;
     rdfs:domain ex:HearingThresholdMeasurement ;
     rdfs:range xsd:double .
 
-ex:hasHearingThresholdCampaign a owl:ObjectProperty ;
+ex:hasHearingThresholdCampaign a owl:AnnotationProperty ;
     rdfs:label "has HT Measurement Campaign"@en ;
     rdfs:domain ex:Animal ;
     rdfs:range ex:HearingThresholdMeasurementCampaign .
@@ -28,11 +28,6 @@ ex:measuredOnTaxon a owl:ObjectProperty ;
     rdfs:label "is measured on Taxon"@en ;
     rdfs:domain ex:HearingThresholdMeasurementCampaign ;
     rdfs:range ex:Animal .
-
-ex:measuredWithMethod a owl:ObjectProperty ;
-    rdfs:label "measured with Method"@en ;
-    rdfs:domain ex:Animal ;
-    rdfs:range ex:MeasurementMethod .
 
 ex:partOf a owl:ObjectProperty ;
     rdfs:label "is part of"@en ;
@@ -64,6 +59,11 @@ ex:pubYear a owl:DatatypeProperty ;
     rdfs:domain ex:HearingThresholdMeasurementCampaign ;
     rdfs:range xsd:integer .
 
+ex:rank a owl:AnnotationProperty ;
+    rdfs:label "taxonomic rank"@en ;
+    rdfs:domain ex:Animal ;
+    rdfs:range xsd:string .
+
 ex:thresholdLevel a owl:DatatypeProperty ;
     rdfs:label "threshold [dB]"@en ;
     rdfs:domain ex:HearingThresholdMeasurement ;
@@ -76,133 +76,160 @@ ex:usesMeasurementMethod a owl:ObjectProperty ;
 
 ex:Amphibia a owl:Class ;
     rdfs:label "Amphibia"@en ;
-    rdfs:subClassOf ex:Animal .
+    rdfs:subClassOf ex:Animal ;
+    ex:commonName " "@en ;
+    ex:rank "class"@en .
 
 ex:Anura a owl:Class ;
     rdfs:label "Anura"@en ;
-    rdfs:subClassOf ex:Amphibia .
+    rdfs:subClassOf ex:Amphibia ;
+    ex:commonName " "@en ;
+    ex:rank "order"@en .
 
 ex:Asio a owl:Class ;
     rdfs:label "Asio"@en ;
     rdfs:subClassOf ex:Strigidae ;
-    rdfs:seeAlso gbif:8373955 .
+    ex:commonName "Eared Owls"@en ;
+    ex:rank "genus"@en .
 
-ex:Asio_otus a owl:NamedIndividual,
-        ex:Asio ;
+ex:Asio_otus a owl:Class ;
     rdfs:label "Asio otus"@en ;
-    ex:commonName "long-eared owl"^^xsd:string ;
-    ex:hasHearingThresholdCampaign ex:Campaign_P143_A07 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+    rdfs:seeAlso gbif:2497306 ;
+    rdfs:subClassOf ex:Asio ;
+    ex:commonName "Cat Owl"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P143_A07 .
 
 ex:Bos a owl:Class ;
     rdfs:label "Bos"@en ;
     rdfs:subClassOf ex:Bovidae ;
-    rdfs:seeAlso gbif:2441017 .
+    ex:commonName "Cattle"@en ;
+    ex:rank "genus"@en .
 
-ex:Bos_taurus a owl:NamedIndividual,
-        ex:Bos ;
+ex:Bos_taurus a owl:Class ;
     rdfs:label "Bos taurus"@en ;
-    ex:commonName "cattle"^^xsd:string ;
-    ex:hasHearingThresholdCampaign ex:Campaign_P023_A02 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+    rdfs:seeAlso gbif:2441022 ;
+    rdfs:subClassOf ex:Bos ;
+    ex:commonName "Aurochs"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P023_A02 .
 
 ex:Bovidae a owl:Class ;
     rdfs:label "Bovidae"@en ;
     rdfs:subClassOf ex:Artiodactyla ;
-    rdfs:seeAlso gbif:9614 .
+    ex:commonName "Antelope"@en ;
+    ex:rank "family"@en .
 
 ex:Canidae a owl:Class ;
     rdfs:label "Canidae"@en ;
     rdfs:subClassOf ex:Carnivora ;
-    rdfs:seeAlso gbif:9701 .
+    ex:commonName "Canid"@en ;
+    ex:rank "family"@en .
 
 ex:Canis a owl:Class ;
     rdfs:label "Canis"@en ;
     rdfs:subClassOf ex:Canidae ;
-    rdfs:seeAlso gbif:5219142 .
+    ex:commonName "Canine"@en ;
+    ex:rank "genus"@en .
 
-ex:Canis_lupus_familiaris a owl:NamedIndividual,
-        ex:Canis ;
+ex:Canis_lupus_familiaris a owl:Class ;
     rdfs:label "Canis lupus familiaris"@en ;
-    ex:commonName "domestic dog"^^xsd:string ;
-    ex:hasHearingThresholdCampaign ex:Campaign_P034_A09 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+    rdfs:seeAlso gbif:6164210 ;
+    rdfs:subClassOf ex:Canis ;
+    ex:commonName "Domestic Dog"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P034_A09 .
 
 ex:Cervidae a owl:Class ;
     rdfs:label "Cervidae"@en ;
     rdfs:subClassOf ex:Artiodactyla ;
-    rdfs:seeAlso gbif:5298 .
+    ex:commonName "Buck"@en ;
+    ex:rank "family"@en .
 
 ex:Cycnia a owl:Class ;
     rdfs:label "Cycnia"@en ;
-    rdfs:subClassOf ex:Erebidae .
+    rdfs:subClassOf ex:Erebidae ;
+    ex:commonName " "@en ;
+    ex:rank "genus"@en .
 
-ex:Cycnia_tenera a owl:NamedIndividual,
-        ex:Cycnia ;
+ex:Cycnia_tenera a owl:Class ;
     rdfs:label "Cycnia tenera"@en ;
-    ex:commonName "dogbane tiger moth"^^xsd:string ;
-    ex:hasHearingThresholdCampaign ex:Campaign_P069_A01 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+    rdfs:seeAlso gbif:5114912 ;
+    rdfs:subClassOf ex:Cycnia ;
+    ex:commonName "Delicate Cycnia"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P069_A01 .
 
 ex:Diptera a owl:Class ;
     rdfs:label "Diptera"@en ;
-    rdfs:subClassOf ex:Insecta .
+    rdfs:subClassOf ex:Insecta ;
+    ex:commonName " "@en ;
+    ex:rank "order"@en .
+
+ex:Dryophytes a owl:Class ;
+    rdfs:label "Dryophytes"@en ;
+    rdfs:subClassOf ex:Hylidae ;
+    ex:commonName "Ameroasian Treefrogs"@en ;
+    ex:rank "genus"@en .
 
 ex:Eptesicus a owl:Class ;
     rdfs:label "Eptesicus"@en ;
     rdfs:subClassOf ex:Vespertilionidae ;
-    rdfs:seeAlso gbif:2432345 .
+    ex:commonName "Big Brown Bats"@en ;
+    ex:rank "genus"@en .
 
-ex:Eptesicus_fuscus a owl:NamedIndividual,
-        ex:Eptesicus ;
+ex:Eptesicus_fuscus a owl:Class ;
     rdfs:label "Eptesicus fuscus"@en ;
-    ex:commonName "big brown bat"^^xsd:string ;
-    ex:hasHearingThresholdCampaign ex:Campaign_P006_A01 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+    rdfs:seeAlso gbif:2432352 ;
+    rdfs:subClassOf ex:Eptesicus ;
+    ex:commonName "Big Brown Bat"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P006_A01 .
 
 ex:Erebia a owl:Class ;
     rdfs:label "Erebia"@en ;
     rdfs:subClassOf ex:Nymphalidae ;
-    rdfs:seeAlso gbif:1913456 .
+    ex:commonName "Alpines"@en ;
+    ex:rank "genus"@en .
 
-ex:Erebia_manto a owl:NamedIndividual,
-        ex:Erebia ;
+ex:Erebia_manto a owl:Class ;
     rdfs:label "Erebia manto"@en ;
-    ex:commonName "yellow-spotted ringlet"^^xsd:string ;
-    ex:hasHearingThresholdCampaign ex:Campaign_P016_A01 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+    rdfs:seeAlso gbif:5134815 ;
+    rdfs:subClassOf ex:Erebia ;
+    ex:commonName "Yellow-spotted Ringlet"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P016_A01 .
 
 ex:Erebidae a owl:Class ;
     rdfs:label "Erebidae"@en ;
     rdfs:subClassOf ex:Lepidoptera ;
-    rdfs:seeAlso gbif:4532185 .
+    ex:commonName "erebid moths"@en ;
+    ex:rank "family"@en .
 
 ex:Felidae a owl:Class ;
     rdfs:label "Felidae"@en ;
     rdfs:subClassOf ex:Carnivora ;
-    rdfs:seeAlso gbif:9703 .
+    ex:commonName "Cat"@en ;
+    ex:rank "family"@en .
 
 ex:Felis a owl:Class ;
     rdfs:label "Felis"@en ;
     rdfs:subClassOf ex:Felidae ;
-    rdfs:seeAlso gbif:2435022 .
+    ex:commonName "Cat"@en ;
+    ex:rank "genus"@en .
 
-ex:Felis_catus a owl:NamedIndividual,
-        ex:Felis ;
+ex:Felis_catus a owl:Class ;
     rdfs:label "Felis catus"@en ;
-    ex:commonName "feral cat"^^xsd:string ;
-    ex:hasHearingThresholdCampaign ex:Campaign_P026_A01 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+    rdfs:seeAlso gbif:2435035 ;
+    rdfs:subClassOf ex:Felis ;
+    ex:commonName "Alley Cat"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P026_A01 .
 
 ex:Gryllidae a owl:Class ;
     rdfs:label "Gryllidae"@en ;
     rdfs:subClassOf ex:Orthoptera ;
-    rdfs:seeAlso gbif:5925 .
+    ex:commonName "Blast"@en ;
+    ex:rank "family"@en .
 
 ex:Gryllus a owl:Class ;
     rdfs:label "Gryllus"@en ;
     rdfs:subClassOf ex:Gryllidae ;
-    rdfs:seeAlso gbif:1404683 .
+    ex:commonName "Grillos"@en ;
+    ex:rank "genus"@en .
 
 ex:HT_P005_A01_100000Hz a owl:NamedIndividual,
         ex:HearingThresholdMeasurement ;
@@ -1530,245 +1557,273 @@ ex:HT_P143_A07_8000Hz a owl:NamedIndividual,
     ex:partOf ex:Campaign_P143_A07 ;
     ex:thresholdLevel -1.1e+01 .
 
-ex:Hyla a owl:Class ;
-    rdfs:label "Hyla"@en ;
-    rdfs:subClassOf ex:Hylidae ;
-    rdfs:seeAlso gbif:2423589 .
-
-ex:Hyla_cinerea a owl:NamedIndividual,
-        ex:Hyla ;
+ex:Hyla_cinerea a owl:Class ;
     rdfs:label "Hyla cinerea"@en ;
-    ex:commonName "green treefrog"^^xsd:string ;
-    ex:hasHearingThresholdCampaign ex:Campaign_P051_A01 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+    rdfs:seeAlso gbif:2427574 ;
+    rdfs:subClassOf ex:Dryophytes ;
+    ex:commonName "American green tree frog"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P051_A01 .
 
 ex:Hylidae a owl:Class ;
     rdfs:label "Hylidae"@en ;
     rdfs:subClassOf ex:Anura ;
-    rdfs:seeAlso gbif:6735 .
+    ex:commonName "Casque-headed Tree Frogs"@en ;
+    ex:rank "family"@en .
 
 ex:Lagomorpha a owl:Class ;
     rdfs:label "Lagomorpha"@en ;
     rdfs:subClassOf ex:Mammalia ;
-    rdfs:seeAlso gbif:785 .
+    ex:commonName "Hares"@en ;
+    ex:rank "order"@en .
 
 ex:Leporidae a owl:Class ;
     rdfs:label "Leporidae"@en ;
     rdfs:subClassOf ex:Lagomorpha ;
-    rdfs:seeAlso gbif:9379 .
+    ex:commonName "HARES AND RABBITS"@en ;
+    ex:rank "family"@en .
 
 ex:Myotis a owl:Class ;
     rdfs:label "Myotis"@en ;
     rdfs:subClassOf ex:Vespertilionidae ;
-    rdfs:seeAlso gbif:2432384 .
+    ex:commonName "Mouse-Eared Bats"@en ;
+    ex:rank "genus"@en .
 
-ex:Myotis_lucifugus a owl:NamedIndividual,
-        ex:Myotis ;
+ex:Myotis_lucifugus a owl:Class ;
     rdfs:label "Myotis lucifugus"@en ;
-    ex:commonName "little brown bat"^^xsd:string ;
-    ex:hasHearingThresholdCampaign ex:Campaign_P006_A02 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+    rdfs:seeAlso gbif:2432406 ;
+    rdfs:subClassOf ex:Myotis ;
+    ex:commonName "Kleines Nordamerika-mausohr"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P006_A02 .
 
 ex:Nymphalidae a owl:Class ;
     rdfs:label "Nymphalidae"@en ;
     rdfs:subClassOf ex:Lepidoptera ;
-    rdfs:seeAlso gbif:7017 .
+    ex:commonName "Admirals"@en ;
+    ex:rank "family"@en .
 
 ex:Ormia a owl:Class ;
     rdfs:label "Ormia"@en ;
     rdfs:subClassOf ex:Tachinidae ;
-    rdfs:seeAlso gbif:1471316 .
+    ex:commonName "None"@en ;
+    ex:rank "genus"@en .
 
-ex:Ormia_ochracea a owl:NamedIndividual,
-        ex:Ormia ;
+ex:Ormia_ochracea a owl:Class ;
     rdfs:label "Ormia ochracea"@en ;
-    ex:commonName "nan"^^xsd:string ;
-    ex:hasHearingThresholdCampaign ex:Campaign_P122_A01 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+    rdfs:seeAlso gbif:1471335 ;
+    rdfs:subClassOf ex:Ormia ;
+    ex:commonName "Tachinid fly"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P122_A01 .
 
 ex:Orthoptera a owl:Class ;
     rdfs:label "Orthoptera"@en ;
     rdfs:subClassOf ex:Insecta ;
-    rdfs:seeAlso gbif:1458 .
+    ex:commonName "Crickets"@en ;
+    ex:rank "order"@en .
 
 ex:Oryctolagus a owl:Class ;
     rdfs:label "Oryctolagus"@en ;
     rdfs:subClassOf ex:Leporidae ;
-    rdfs:seeAlso gbif:2436939 .
+    ex:commonName "European Rabbit"@en ;
+    ex:rank "genus"@en .
 
-ex:Oryctolagus_cuniculus a owl:NamedIndividual,
-        ex:Oryctolagus ;
+ex:Oryctolagus_cuniculus a owl:Class ;
     rdfs:label "Oryctolagus cuniculus"@en ;
-    ex:commonName "rabbit"^^xsd:string ;
-    ex:hasHearingThresholdCampaign ex:Campaign_P086_A03 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+    rdfs:seeAlso gbif:2436940 ;
+    rdfs:subClassOf ex:Oryctolagus ;
+    ex:commonName "Common Rabbit"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P086_A03 .
 
 ex:Paridae a owl:Class ;
     rdfs:label "Paridae"@en ;
     rdfs:subClassOf ex:Passeriformes ;
-    rdfs:seeAlso gbif:9327 .
+    ex:commonName "Chickadees"@en ;
+    ex:rank "family"@en .
 
 ex:Parus a owl:Class ;
     rdfs:label "Parus"@en ;
     rdfs:subClassOf ex:Paridae ;
-    rdfs:seeAlso gbif:2487923 .
+    ex:commonName "Great Tits and Allies"@en ;
+    ex:rank "genus"@en .
 
-ex:Parus_major a owl:NamedIndividual,
-        ex:Parus ;
+ex:Parus_major a owl:Class ;
     rdfs:label "Parus major"@en ;
-    ex:commonName "great tit"^^xsd:string ;
-    ex:hasHearingThresholdCampaign ex:Campaign_P081_A01 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+    rdfs:seeAlso gbif:9705453 ;
+    rdfs:subClassOf ex:Parus ;
+    ex:commonName "Balarin-a"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P081_A01 .
 
 ex:Phyllostomidae a owl:Class ;
     rdfs:label "Phyllostomidae"@en ;
     rdfs:subClassOf ex:Chiroptera ;
-    rdfs:seeAlso gbif:9366 .
+    ex:commonName "NEW WORLD LEAF-NOSED BATS"@en ;
+    ex:rank "family"@en .
 
 ex:Phyllostomus a owl:Class ;
     rdfs:label "Phyllostomus"@en ;
     rdfs:subClassOf ex:Phyllostomidae ;
-    rdfs:seeAlso gbif:2433278 .
+    ex:commonName "Spear-Nosed Bats"@en ;
+    ex:rank "genus"@en .
 
-ex:Phyllostomus_hastatus a owl:NamedIndividual,
-        ex:Phyllostomus ;
+ex:Phyllostomus_hastatus a owl:Class ;
     rdfs:label "Phyllostomus hastatus"@en ;
-    ex:commonName "greater spear-nosed bat"^^xsd:string ;
-    ex:hasHearingThresholdCampaign ex:Campaign_P005_A01 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+    rdfs:seeAlso gbif:2433279 ;
+    rdfs:subClassOf ex:Phyllostomus ;
+    ex:commonName "Greater Spear-Nosed Bat"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P005_A01 .
 
 ex:Pteropodidae a owl:Class ;
     rdfs:label "Pteropodidae"@en ;
     rdfs:subClassOf ex:Chiroptera ;
-    rdfs:seeAlso gbif:9367 .
+    ex:commonName "Flying Foxes"@en ;
+    ex:rank "family"@en .
 
 ex:Rangifer a owl:Class ;
     rdfs:label "Rangifer"@en ;
     rdfs:subClassOf ex:Cervidae ;
-    rdfs:seeAlso gbif:1 .
+    ex:commonName "Animals"@en ;
+    ex:rank "genus"@en .
 
-ex:Rangifer_tarandus a owl:NamedIndividual,
-        ex:Rangifer ;
+ex:Rangifer_tarandus a owl:Class ;
     rdfs:label "Rangifer tarandus"@en ;
-    ex:commonName "reindeer"^^xsd:string ;
-    ex:hasHearingThresholdCampaign ex:Campaign_P018_A02 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+    rdfs:seeAlso gbif:5220114 ;
+    rdfs:subClassOf ex:Rangifer ;
+    ex:commonName "Caribou"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P018_A02 .
 
 ex:Rhinolophidae a owl:Class ;
     rdfs:label "Rhinolophidae"@en ;
     rdfs:subClassOf ex:Chiroptera ;
-    rdfs:seeAlso gbif:5449 .
+    ex:commonName "HORSESHOE BATS"@en ;
+    ex:rank "family"@en .
 
 ex:Rhinolophus a owl:Class ;
     rdfs:label "Rhinolophus"@en ;
     rdfs:subClassOf ex:Rhinolophidae ;
-    rdfs:seeAlso gbif:2432611 .
+    ex:commonName "Chrysanthemum Bats"@en ;
+    ex:rank "genus"@en .
 
-ex:Rhinolophus_ferrumequinum a owl:NamedIndividual,
-        ex:Rhinolophus ;
+ex:Rhinolophus_ferrumequinum a owl:Class ;
     rdfs:label "Rhinolophus ferrumequinum"@en ;
-    ex:commonName "greater horseshoe bat"^^xsd:string ;
-    ex:hasHearingThresholdCampaign ex:Campaign_P008_A01 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+    rdfs:seeAlso gbif:2432655 ;
+    rdfs:subClassOf ex:Rhinolophus ;
+    ex:commonName "Greater Horseshoe Bat"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P008_A01 .
 
 ex:Rousettus a owl:Class ;
     rdfs:label "Rousettus"@en ;
     rdfs:subClassOf ex:Pteropodidae ;
-    rdfs:seeAlso gbif:2432946 .
+    ex:commonName "Rousette Bats"@en ;
+    ex:rank "genus"@en .
 
-ex:Rousettus_aegyptiacus a owl:NamedIndividual,
-        ex:Rousettus ;
+ex:Rousettus_aegyptiacus a owl:Class ;
     rdfs:label "Rousettus aegyptiacus"@en ;
-    ex:commonName "Egyptian fruit bat"^^xsd:string ;
-    ex:hasHearingThresholdCampaign ex:Campaign_P007_A01 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+    rdfs:seeAlso gbif:2432953 ;
+    rdfs:subClassOf ex:Rousettus ;
+    ex:commonName "Egyptian Fruit Bat"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P007_A01 .
 
 ex:Strigidae a owl:Class ;
     rdfs:label "Strigidae"@en ;
     rdfs:subClassOf ex:Strigiformes ;
-    rdfs:seeAlso gbif:9348 .
+    ex:commonName "Owls"@en ;
+    ex:rank "family"@en .
 
 ex:Sturnidae a owl:Class ;
     rdfs:label "Sturnidae"@en ;
     rdfs:subClassOf ex:Passeriformes ;
-    rdfs:seeAlso gbif:9350 .
+    ex:commonName "Starling"@en ;
+    ex:rank "family"@en .
 
 ex:Sturnus a owl:Class ;
     rdfs:label "Sturnus"@en ;
     rdfs:subClassOf ex:Sturnidae ;
-    rdfs:seeAlso gbif:2489099 .
+    ex:commonName "Common and Spotless Starlings"@en ;
+    ex:rank "genus"@en .
 
-ex:Sturnus_vulgaris a owl:NamedIndividual,
-        ex:Sturnus ;
+ex:Sturnus_vulgaris a owl:Class ;
     rdfs:label "Sturnus vulgaris"@en ;
-    ex:commonName "European starling"^^xsd:string ;
-    ex:hasHearingThresholdCampaign ex:Campaign_P043_A01 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+    rdfs:seeAlso gbif:9809229 ;
+    rdfs:subClassOf ex:Sturnus ;
+    ex:commonName "COST"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P043_A01 .
 
 ex:Tachinidae a owl:Class ;
     rdfs:label "Tachinidae"@en ;
     rdfs:subClassOf ex:Diptera ;
-    rdfs:seeAlso gbif:6918 .
+    ex:commonName "Bristle Flies"@en ;
+    ex:rank "family"@en .
 
 ex:Tyto a owl:Class ;
     rdfs:label "Tyto"@en ;
     rdfs:subClassOf ex:Tytonidae ;
-    rdfs:seeAlso gbif:2497905 .
+    ex:commonName "Barn Owls & Masked Owls"@en ;
+    ex:rank "genus"@en .
 
-ex:Tyto_alba a owl:NamedIndividual,
-        ex:Tyto ;
+ex:Tyto_alba a owl:Class ;
     rdfs:label "Tyto alba"@en ;
-    ex:commonName "barn owl"^^xsd:string ;
-    ex:hasHearingThresholdCampaign ex:Campaign_P076_A06 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+    rdfs:seeAlso gbif:2497921 ;
+    rdfs:subClassOf ex:Tyto ;
+    ex:commonName "Barn Owl"@en ;
+    ex:hasHearingThresholdCampaign ex:Campaign_P076_A06 .
 
 ex:Tytonidae a owl:Class ;
     rdfs:label "Tytonidae"@en ;
     rdfs:subClassOf ex:Strigiformes ;
-    rdfs:seeAlso gbif:5292 .
+    ex:commonName "Barn Owl"@en ;
+    ex:rank "family"@en .
 
 ex:Artiodactyla a owl:Class ;
     rdfs:label "Artiodactyla"@en ;
     rdfs:subClassOf ex:Mammalia ;
-    rdfs:seeAlso gbif:731 .
+    ex:commonName "Artiodactyls"@en ;
+    ex:rank "order"@en .
 
 ex:Aves a owl:Class ;
     rdfs:label "Aves"@en ;
     rdfs:subClassOf ex:Animal ;
-    rdfs:seeAlso gbif:212 .
+    ex:commonName "Bird"@en ;
+    ex:rank "class"@en .
 
 ex:Carnivora a owl:Class ;
     rdfs:label "Carnivora"@en ;
     rdfs:subClassOf ex:Mammalia ;
-    rdfs:seeAlso gbif:732 .
+    ex:commonName "Carnivoran"@en ;
+    ex:rank "order"@en .
 
-ex:Gryllus_texensis a owl:NamedIndividual,
-        ex:Gryllus ;
+ex:Gryllus_texensis a owl:Class ;
     rdfs:label "Gryllus texensis"@en ;
-    ex:commonName "field cricket"^^xsd:string ;
+    rdfs:seeAlso gbif:1716840 ;
+    rdfs:subClassOf ex:Gryllus ;
+    ex:commonName "Southeast Fast Trilling Field Cricket"@en ;
     ex:hasHearingThresholdCampaign ex:Campaign_P093_A04,
-        ex:Campaign_P093_A05 ;
-    ex:measuredWithMethod ex:BEHAVIORAL .
+        ex:Campaign_P093_A05 .
 
 ex:Lepidoptera a owl:Class ;
     rdfs:label "Lepidoptera"@en ;
     rdfs:subClassOf ex:Insecta ;
-    rdfs:seeAlso gbif:797 .
+    ex:commonName "Butterflies"@en ;
+    ex:rank "order"@en .
+
+ex:MeasurementMethod a owl:Class ;
+    rdfs:label "Measurement Method"@en .
 
 ex:Passeriformes a owl:Class ;
     rdfs:label "Passeriformes"@en ;
     rdfs:subClassOf ex:Aves ;
-    rdfs:seeAlso gbif:729 .
+    ex:commonName "Broadbills, Songbirds"@en ;
+    ex:rank "order"@en .
 
 ex:Strigiformes a owl:Class ;
     rdfs:label "Strigiformes"@en ;
     rdfs:subClassOf ex:Aves ;
-    rdfs:seeAlso gbif:1450 .
+    ex:commonName "Goatsuckers"@en ;
+    ex:rank "order"@en .
 
 ex:Vespertilionidae a owl:Class ;
     rdfs:label "Vespertilionidae"@en ;
     rdfs:subClassOf ex:Chiroptera ;
-    rdfs:seeAlso gbif:9368 .
+    ex:commonName "Bats"@en ;
+    ex:rank "family"@en .
 
 ex:Campaign_P093_A04 a owl:NamedIndividual,
         ex:HearingThresholdMeasurementCampaign ;
@@ -1799,20 +1854,20 @@ ex:Campaign_P093_A05 a owl:NamedIndividual,
 ex:Insecta a owl:Class ;
     rdfs:label "Insecta"@en ;
     rdfs:subClassOf ex:Animal ;
-    rdfs:seeAlso gbif:216 .
-
-ex:MeasurementMethod a owl:Class ;
-    rdfs:label "Measurement Method"@en .
+    ex:commonName "Insect"@en ;
+    ex:rank "class"@en .
 
 ex:Chiroptera a owl:Class ;
     rdfs:label "Chiroptera"@en ;
     rdfs:subClassOf ex:Mammalia ;
-    rdfs:seeAlso gbif:734 .
+    ex:commonName "Bat"@en ;
+    ex:rank "order"@en .
 
 ex:Mammalia a owl:Class ;
     rdfs:label "Mammalia"@en ;
     rdfs:subClassOf ex:Animal ;
-    rdfs:seeAlso gbif:359 .
+    ex:commonName "Mammal"@en ;
+    ex:rank "class"@en .
 
 ex:Campaign_P043_A01 a owl:NamedIndividual,
         ex:HearingThresholdMeasurementCampaign ;
@@ -2200,6 +2255,10 @@ ex:Campaign_P008_A01 a owl:NamedIndividual,
     ex:pubYear 1975 ;
     ex:usesMeasurementMethod ex:BEHAVIORAL .
 
+ex:BEHAVIORAL a owl:NamedIndividual,
+        ex:MeasurementMethod ;
+    rdfs:label "BEHAVIORAL"@en .
+
 ex:Campaign_P069_A01 a owl:NamedIndividual,
         ex:HearingThresholdMeasurementCampaign ;
     rdfs:label "Cycnia tenera BEHAVIORAL P069"@en ;
@@ -2234,10 +2293,6 @@ ex:Campaign_P069_A01 a owl:NamedIndividual,
 
 ex:HearingThresholdMeasurementCampaign a owl:Class ;
     rdfs:label "Hearing Threshold Measurement Campaign"@en .
-
-ex:BEHAVIORAL a owl:NamedIndividual,
-        ex:MeasurementMethod ;
-    rdfs:label "BEHAVIORAL"@en .
 
 ex:HearingThresholdMeasurement a owl:Class ;
     rdfs:label "Hearing Threshold Measurement"@en .

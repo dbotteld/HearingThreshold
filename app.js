@@ -1,7 +1,9 @@
 (function () {
   "use strict";
 
-  const DATA = window.HT_DATA || { meta: {}, species: [] };
+  let DATA = { meta: {}, species: [] };
+  const EX = "https://github.com/dbotteld/HearingThreshold/blob/main/";
+  const ONTOLOGY_SOURCE = window.HT_ONTOLOGY_SOURCE || "newHT6.owl";
   const THIRD_OCTAVE_FREQUENCIES = [
     20, 25, 31.5, 40, 50, 63, 80, 100, 125, 160, 200, 250, 315, 400,
     500, 630, 800, 1000, 1250, 1600, 2000, 2500, 3150, 4000, 5000,
@@ -55,6 +57,234 @@
 
   function unique(values) {
     return [...new Set(values.filter(Boolean))];
+  }
+
+  function cleanValue(value) {
+    const text = String(value ?? "").trim();
+    return ["", "nan", "none", "null"].includes(text.toLowerCase()) ? "" : text;
+  }
+
+  function localName(uri) {
+    const text = String(uri ?? "");
+    if (!text) return "";
+    if (text.includes("#")) return text.split("#").pop();
+    return text.replace(/\/$/, "").split("/").pop();
+  }
+
+  function bindingValue(binding, key) {
+    return binding.get(key)?.value || "";
+  }
+
+  async function loadOntologySource() {
+    const candidates = unique([ONTOLOGY_SOURCE]);
+    let lastError = null;
+
+    for (const source of candidates) {
+      try {
+        const response = await fetch(source);
+        if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+        return {
+          label: source,
+          comunicaSource: {
+            type: "serialized",
+            value: await response.text(),
+            mediaType: "text/turtle",
+            baseIRI: EX,
+          },
+        };
+      } catch (error) {
+        lastError = error;
+      }
+    }
+
+    throw new Error(`Could not load ontology source: ${lastError?.message || "unknown error"}`);
+  }
+
+  async function queryRows(engine, source, query) {
+    const rows = [];
+    const bindings = await engine.queryBindings(query, { sources: [source] });
+    for await (const binding of bindings) rows.push(binding);
+    return rows;
+  }
+
+  function taxonomyPathFor(uri, classMap) {
+    const path = [];
+    const seen = new Set();
+    let current = uri;
+
+    while (current && !seen.has(current)) {
+      seen.add(current);
+      const record = classMap.get(current);
+      if (!record) break;
+      path.unshift(record.label || localName(current).replaceAll("_", " "));
+      current = record.parent;
+    }
+
+    return path;
+  }
+
+  function buildOntologyData(sourceFile, classRows, campaignRows, measurementRows) {
+    const classMap = new Map();
+    classRows.forEach((row) => {
+      const uri = bindingValue(row, "class");
+      if (!uri) return;
+      if (!classMap.has(uri)) {
+        classMap.set(uri, {
+          label: "",
+          commonName: "",
+          parent: "",
+          seeAlso: [],
+        });
+      }
+      const record = classMap.get(uri);
+      record.label ||= cleanValue(bindingValue(row, "label")) || localName(uri).replaceAll("_", " ");
+      record.commonName ||= cleanValue(bindingValue(row, "common"));
+      record.parent ||= bindingValue(row, "parent");
+      const gbif = bindingValue(row, "gbif");
+      if (gbif && !record.seeAlso.includes(gbif)) record.seeAlso.push(gbif);
+    });
+
+    const measurementsByCampaign = new Map();
+    const seenMeasurements = new Set();
+    measurementRows.forEach((row) => {
+      const measurement = bindingValue(row, "measurement");
+      const campaign = bindingValue(row, "campaign");
+      const frequency = Number(bindingValue(row, "frequency"));
+      const threshold = Number(bindingValue(row, "threshold"));
+      if (!campaign || !Number.isFinite(frequency) || !Number.isFinite(threshold) || frequency <= 0) return;
+      const key = `${campaign}|${measurement || frequency + "|" + threshold}`;
+      if (seenMeasurements.has(key)) return;
+      seenMeasurements.add(key);
+      if (!measurementsByCampaign.has(campaign)) measurementsByCampaign.set(campaign, []);
+      measurementsByCampaign.get(campaign).push({ frequency, threshold });
+    });
+
+    const speciesByUri = new Map();
+    campaignRows.forEach((row) => {
+      const speciesUri = bindingValue(row, "species");
+      const campaignUri = bindingValue(row, "campaign");
+      if (!speciesUri || !campaignUri) return;
+
+      const speciesRecord = classMap.get(speciesUri) || {
+        label: localName(speciesUri).replaceAll("_", " "),
+        commonName: "",
+        parent: "",
+        seeAlso: [],
+      };
+      const taxonomy = taxonomyPathFor(speciesUri, classMap);
+
+      if (!speciesByUri.has(speciesUri)) {
+        speciesByUri.set(speciesUri, {
+          id: localName(speciesUri),
+          iri: speciesUri,
+          scientificName: speciesRecord.label,
+          commonName: speciesRecord.commonName,
+          group: taxonomy[1] || "Animal",
+          taxonomy,
+          gbifUrl: speciesRecord.seeAlso.find((link) => link.toLowerCase().includes("gbif.org")) || "",
+          seeAlso: [...speciesRecord.seeAlso],
+          campaigns: [],
+        });
+      }
+
+      const methodUri = bindingValue(row, "method");
+      const methodLabel = cleanValue(bindingValue(row, "methodLabel"));
+      speciesByUri.get(speciesUri).campaigns.push({
+        id: localName(campaignUri),
+        iri: campaignUri,
+        label: cleanValue(bindingValue(row, "campaignLabel")) || localName(campaignUri).replaceAll("_", " "),
+        method: methodLabel || (methodUri ? localName(methodUri).replaceAll("_", " ") : "Unknown method"),
+        publicationId: cleanValue(bindingValue(row, "pubID")),
+        authors: cleanValue(bindingValue(row, "pubAuthor")),
+        year: cleanValue(bindingValue(row, "pubYear")),
+        title: cleanValue(bindingValue(row, "pubTitle")),
+        doi: cleanValue(bindingValue(row, "pubDOI")),
+        measurements: (measurementsByCampaign.get(campaignUri) || []).sort((a, b) => a.frequency - b.frequency),
+      });
+    });
+
+    const species = [...speciesByUri.values()]
+      .filter((item) => item.campaigns.length)
+      .sort((a, b) => a.scientificName.localeCompare(b.scientificName));
+
+    species.forEach((item) => {
+      item.campaigns.sort((a, b) => a.label.localeCompare(b.label));
+    });
+
+    const allMeasurements = species.flatMap((item) => item.campaigns.flatMap((campaign) => campaign.measurements));
+    const frequencies = allMeasurements.map((row) => row.frequency);
+    const thresholds = allMeasurements.map((row) => row.threshold);
+    const methods = unique(species.flatMap((item) => item.campaigns.map((campaign) => campaign.method))).sort();
+
+    return {
+      meta: {
+        sourceFile,
+        speciesCount: species.length,
+        campaignCount: species.reduce((sum, item) => sum + item.campaigns.length, 0),
+        measurementCount: allMeasurements.length,
+        methodCount: methods.length,
+        frequencyMin: frequencies.length ? Math.min(...frequencies) : null,
+        frequencyMax: frequencies.length ? Math.max(...frequencies) : null,
+        thresholdMin: thresholds.length ? Math.min(...thresholds) : null,
+        thresholdMax: thresholds.length ? Math.max(...thresholds) : null,
+        methods,
+      },
+      species,
+    };
+  }
+
+  async function loadOntologyData() {
+    if (!window.Comunica?.QueryEngine) {
+      throw new Error("Comunica query engine is not loaded.");
+    }
+
+    const { label: sourceFile, comunicaSource } = await loadOntologySource();
+    const engine = new Comunica.QueryEngine();
+    const prefixes = `
+      PREFIX ex: <https://github.com/dbotteld/HearingThreshold/blob/main/>
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    `;
+
+    const [classRows, campaignRows, measurementRows] = await Promise.all([
+      queryRows(engine, comunicaSource, `${prefixes}
+        SELECT ?class ?label ?common ?parent ?gbif WHERE {
+          ?class a owl:Class .
+          OPTIONAL { ?class rdfs:label ?label . }
+          OPTIONAL { ?class ex:commonName ?common . }
+          OPTIONAL { ?class rdfs:subClassOf ?parent . }
+          OPTIONAL { ?class rdfs:seeAlso ?gbif . }
+        }
+      `),
+      queryRows(engine, comunicaSource, `${prefixes}
+        SELECT ?species ?campaign ?campaignLabel ?method ?methodLabel ?pubID ?pubAuthor ?pubYear ?pubTitle ?pubDOI WHERE {
+          ?species ex:hasHearingThresholdCampaign ?campaign .
+          ?campaign a ex:HearingThresholdMeasurementCampaign .
+          OPTIONAL { ?campaign rdfs:label ?campaignLabel . }
+          OPTIONAL {
+            ?campaign ex:usesMeasurementMethod ?method .
+            OPTIONAL { ?method rdfs:label ?methodLabel . }
+          }
+          OPTIONAL { ?campaign ex:pubID ?pubID . }
+          OPTIONAL { ?campaign ex:pubAuthor ?pubAuthor . }
+          OPTIONAL { ?campaign ex:pubYear ?pubYear . }
+          OPTIONAL { ?campaign ex:pubTitle ?pubTitle . }
+          OPTIONAL { ?campaign ex:pubDOI ?pubDOI . }
+        }
+      `),
+      queryRows(engine, comunicaSource, `${prefixes}
+        SELECT ?measurement ?campaign ?frequency ?threshold WHERE {
+          ?measurement a ex:HearingThresholdMeasurement ;
+            ex:frequency ?frequency ;
+            ex:thresholdLevel ?threshold .
+          { ?measurement ex:partOf ?campaign . }
+          UNION
+          { ?campaign ex:hasMeasurement ?measurement . }
+        }
+      `),
+    ]);
+
+    return buildOntologyData(sourceFile, classRows, campaignRows, measurementRows);
   }
 
   function getSelectedSpecies() {
@@ -213,7 +443,7 @@
     $("freqRange").textContent = `${formatHz(meta.frequencyMin)} to ${formatHz(meta.frequencyMax)}`;
     $("thresholdRange").textContent = `${formatNumber(meta.thresholdMin, 1)} to ${formatNumber(meta.thresholdMax, 1)} dB SPL`;
     $("methodCount").textContent = formatNumber(meta.methodCount ?? unique(DATA.species.flatMap((species) => species.campaigns.map((campaign) => campaign.method))).length);
-    $("sourceFile").textContent = meta.sourceFile || "Generated data.js";
+    $("sourceFile").textContent = meta.sourceFile || "Ontology data";
   }
 
   function renderSpeciesList() {
@@ -493,9 +723,20 @@
     renderChart();
   }
 
-  function init() {
+  async function init() {
+    $("sourceFile").textContent = "Loading ontology...";
+    try {
+      DATA = await loadOntologyData();
+    } catch (error) {
+      document.body.innerHTML = `<main class="shell legacy-page"><h1>Could not load ontology data</h1><p>${escapeHtml(error.message)}</p></main>`;
+      return;
+    }
+
+    state.speciesId = DATA.species?.[0]?.id || null;
+    state.campaignId = DATA.species?.[0]?.campaigns?.[0]?.id || null;
+
     if (!DATA.species.length) {
-      document.body.innerHTML = `<main class="shell legacy-page"><h1>No ontology data found</h1><p>Check that data.js exists and defines window.HT_DATA.</p></main>`;
+      document.body.innerHTML = `<main class="shell legacy-page"><h1>No ontology data found</h1><p>Check that ${escapeHtml(ONTOLOGY_SOURCE)} contains species classes with hearing-threshold campaigns.</p></main>`;
       return;
     }
 
